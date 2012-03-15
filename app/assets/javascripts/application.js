@@ -13,3 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+
+    $("ul.sf-menu").superfish({
+        delay: 250,
+        speed: 0.8,
+        autoArrows: false,
+        dropShadows: false,
+        animation: {height:'show'}
+    });
+
+});

@@ -1,0 +1,7 @@
+%h1 Events Directory
+%table
+  %thead
+    %td Name
+  - @events.each do |event|
+    %tr
+      %td= link_to event.name, event
