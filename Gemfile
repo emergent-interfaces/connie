@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'haml'
 
 group :test do
+  gem 'minitest'
+  gem 'minitest-reporters'
   gem 'shoulda'
   gem 'factory_girl_rails'
 end

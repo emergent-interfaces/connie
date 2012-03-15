@@ -18,10 +18,10 @@ $(document).ready(function() {
 
     $("ul.sf-menu").superfish({
         delay: 250,
-        speed: 0.8,
+        speed: 0,
         autoArrows: false,
         dropShadows: false,
-        animation: {height:'show'}
+        disableHI: true
     });
 
 });
