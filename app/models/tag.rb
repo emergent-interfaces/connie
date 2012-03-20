@@ -1,9 +1,4 @@
 class Tag < ActiveRecord::Base
-  # Really weird: if you change or get rid of the following 2 belongs_to
-  # statements, you get errors during testing
-  belongs_to :tag
-  belongs_to :taggable, :polymorphic => true
-
   belongs_to :tag_group
   has_many :taggings
 
