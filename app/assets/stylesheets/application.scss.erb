@@ -17,7 +17,31 @@ body {
     margin: 0px;
 }
 
+#content {
+    padding: 0px 10px;
+}
+
 div#header {
     background: url('<%= asset_path 'header_background.png' %>');
     height: 40px;
+}
+
+div#con_filter {
+    margin-top: 4px;
+    padding-left: 14px;
+    float: left;
+}
+
+#con_filter select {
+    background: #333333;
+    color: #acacac;
+    border: none;
+}
+
+div.divider {
+    width: 4px;
+    height: 30px;
+    float: left;
+    margin-left: 14px;
+    background: url('<%= asset_path 'divider.png' %>') no-repeat;
 }

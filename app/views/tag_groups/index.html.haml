@@ -1,0 +1,5 @@
+%h1 Manage Tags
+
+%ul
+  - @tag_groups.each do |tag_group|
+    %li= render :partial => "row_with_tags", :locals =>  {:tag_group => tag_group}

@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82ca6959-5a7b-4713-a6a1-bebc7ad54aa0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/tag.rb" afterPath="$PROJECT_DIR$/app/models/tag.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/cons/index.html.haml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/cons/show.html.haml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/shared/_con_filter.html.haml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/tag_groups/_row_with_tags.html.haml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/tag_groups/index.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/superfish.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/superfish.scss.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/cons_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/cons_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_nav.html.haml" afterPath="$PROJECT_DIR$/app/views/shared/_nav.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
     </list>
     <ignored path="connie.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,28 +38,19 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="tag.rb" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/models/tag.rb">
+          <file leaf-file-name="_nav.html.haml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/shared/_nav.html.haml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1" column="23" selection-start="54" selection-end="54" vertical-scroll-proportion="0.025510205">
+                <state line="15" column="43" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="con.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/con.rb">
+          <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/config/routes.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="20" column="0" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="tag_group.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/tag_group.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="1" column="16" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
+                <state line="8" column="4" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -56,16 +59,43 @@
           <file leaf-file-name="cons_controller.rb" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controllers/cons_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="13" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
+                <state line="29" column="16" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tagging.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/tagging.rb">
+          <file leaf-file-name="index.html.haml" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/tag_groups/index.html.haml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="2" column="44" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
+                <state line="4" column="69" selection-start="126" selection-end="126" vertical-scroll-proportion="0.10638298">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html.haml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/cons/index.html.haml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="4" column="28" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="show.html.haml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/cons/show.html.haml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="application.html.haml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="19" column="6" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -75,28 +105,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="tag_test.rb" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/test/unit/tag_test.rb">
+          <file leaf-file-name="_row_with_tags.html.haml" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/tag_groups/_row_with_tags.html.haml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="4" column="29" selection-start="121" selection-end="121" vertical-scroll-proportion="0.10204082">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="con_test.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/unit/con_test.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="4" column="37" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cons_controller_test.rb" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/functional/cons_controller_test.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="0" selection-start="879" selection-end="879" vertical-scroll-proportion="0.0">
+                <state line="0" column="36" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -119,26 +131,27 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Rails console: connie" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Rails console: connie" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20120315010856_create_taggings.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/db/seeds.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20120315014333_add_description_to_tag_group.rb" />
-        <option value="$PROJECT_DIR$/test/unit/con_test.rb" />
-        <option value="$PROJECT_DIR$/app/models/tagging.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/models/tag_group.rb" />
-        <option value="$PROJECT_DIR$/test/factories.rb" />
-        <option value="$PROJECT_DIR$/test/unit/tag_test.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/test/test_helper.rb" />
-        <option value="$PROJECT_DIR$/test/functional/cons_controller_test.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/cons_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/con.rb" />
         <option value="$PROJECT_DIR$/app/models/tag.rb" />
+        <option value="$PROJECT_DIR$/app/views/shared/_con_filter.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/shared/_nav.html.haml" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/superfish.scss.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss.erb" />
+        <option value="$PROJECT_DIR$/app/views/cons/index.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/cons/show.html.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/cons_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/tag_groups_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/tag_groups/_row_with_tags" />
+        <option value="$PROJECT_DIR$/db/seeds.rb" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/app/views/tag_groups/_row_with_tags.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/tag_groups/index.html.haml" />
       </list>
     </option>
   </component>
@@ -181,16 +194,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="RailsProjectView">
         <subPane>
           <PATH>
@@ -261,7 +264,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -275,7 +278,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tag_groups" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -362,6 +373,10 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -415,19 +430,29 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="recentsLimit" value="5" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.tag_test">
+  <component name="RunManager" selected="Rake.test">
     <configuration default="false" name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="connie" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -725,6 +750,8 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
     <configuration default="false" name="spec" type="RakeRunConfigurationType" factoryName="Rake">
@@ -842,7 +869,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16470589" sideWeight="0.6677489" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16684492" sideWeight="0.6677489" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33225107" sideWeight="0.4983957" order="7" side_tool="true" content_ui="tabs" />
@@ -911,100 +938,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/superfish.scss.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="20" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.31284916">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="17" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="27" selection-start="259" selection-end="259" vertical-scroll-proportion="0.29191616" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="17" selection-start="162" selection-end="162" vertical-scroll-proportion="0.12755102" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="45" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.86608696" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/tagging.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="44" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.2-p290/gems/activesupport-3.2.2/lib/active_support/callbacks.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="404" column="0" selection-start="13367" selection-end="13367" vertical-scroll-proportion="0.3321234">
+        <state line="19" column="6" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/con_test.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/cons/show.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="37" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/factories.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="36" selection-start="287" selection-end="287" vertical-scroll-proportion="0.28061223">
+        <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_helper.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/cons/index.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="23" selection-start="168" selection-end="168" vertical-scroll-proportion="0.13297872">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="28" selection-start="577" selection-end="577" vertical-scroll-proportion="0.5816327">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/tag_group.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="16" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/functional/cons_controller_test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="879" selection-end="879" vertical-scroll-proportion="0.0">
+        <state line="4" column="28" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/cons_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
+        <state line="29" column="16" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/con.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_nav.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0">
+        <state line="15" column="43" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/tag_test.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/tag_group.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="29" selection-start="121" selection-end="121" vertical-scroll-proportion="0.10204082">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/tag.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="23" selection-start="54" selection-end="54" vertical-scroll-proportion="0.025510205">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/con.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="31" selection-start="579" selection-end="579" vertical-scroll-proportion="0.44347826">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/tag_groups_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="30" selection-start="92" selection-end="92" vertical-scroll-proportion="0.05102041">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="11" selection-start="114" selection-end="114" vertical-scroll-proportion="0.10204082">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tag_groups/_row_with_tags.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="36" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.2-p290/gems/minitest-2.11.3/lib/minitest/unit.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="179" column="0" selection-start="4349" selection-end="4349" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tag_groups/index.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="69" selection-start="126" selection-end="126" vertical-scroll-proportion="0.10638298">
           <folding />
         </state>
       </provider>

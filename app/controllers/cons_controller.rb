@@ -1,4 +1,12 @@
 class ConsController < ApplicationController
+  def index
+    @cons = Con.all
+  end
+
+  def show
+    @con = Con.find(params[:id])
+  end
+
   def create
     con = Con.new(params[:con])
 

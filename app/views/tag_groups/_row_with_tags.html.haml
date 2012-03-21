@@ -1,0 +1,4 @@
+%span.tag_group_name= tag_group.name
+
+- tag_group.tags.each do |tag|
+  %span.tag_name= tag.name

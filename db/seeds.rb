@@ -15,7 +15,7 @@ Tagging.delete_all
 TagGroup.delete_all
 
 # Core data required for the app
-Factory :tag_group, name: 'Conventions', description: 'Automatically generated list of all conventions in the database'
+Factory :tag_group, name: 'Cons', description: 'Automatically generated list of all conventions in the database'
 
 # Additional models for demonstration
 Factory :con, name: 'AnimeNext 2010'
