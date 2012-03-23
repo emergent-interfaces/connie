@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120315014333) do
+ActiveRecord::Schema.define(:version => 20120323000800) do
 
   create_table "cons", :force => true do |t|
     t.string   "name"
@@ -54,5 +54,15 @@ ActiveRecord::Schema.define(:version => 20120315014333) do
   end
 
   add_index "tags", ["tag_group_id"], :name => "index_tags_on_tag_group_id"
+
+  create_table "time_spans", :force => true do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "confidence"
+    t.string   "time_spanable_type"
+    t.integer  "time_spanable_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
 
 end
