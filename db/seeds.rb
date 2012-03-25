@@ -8,7 +8,7 @@
 require 'factory_girl'
 require File.dirname(__FILE__) + '/../test/factories.rb'
 
-Con.delete_all
+Convention.delete_all
 Event.delete_all
 Tagging.delete_all
 Tagging.delete_all

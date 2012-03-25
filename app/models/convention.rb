@@ -1,4 +1,4 @@
-class Con < ActiveRecord::Base
+class Convention < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
 
@@ -6,13 +6,13 @@ class Con < ActiveRecord::Base
   before_save :rename_tag
 
   def create_tag
-    tag = Tag.new(:name => self.name, :tag_group => TagGroup.find_by_name('Cons'))
+    tag = Tag.new(:name => self.name, :tag_group => TagGroup.find_by_name('Conventions'))
     tag.save
   end
 
   def rename_tag
     unless self.new_record?
-      tag = Tag.find_by_group_and_tag_name('Cons', self.name_was)
+      tag = Tag.find_by_group_and_tag_name('Conventions', self.name_was)
       tag.name = self.name
       tag.save
     end

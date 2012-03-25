@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120323000800) do
+ActiveRecord::Schema.define(:version => 20120325181605) do
 
-  create_table "cons", :force => true do |t|
+  create_table "conventions", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  :null => false

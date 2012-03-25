@@ -12,7 +12,7 @@ Factory.define :tag do |f|
   f.sequence(:name) {|n| "Tag #{n}"}
 end
 
-Factory.define :con do |f|
+Factory.define :convention do |f|
   f.sequence(:name) {|n| "Convention #{n}"}
   f.description 'Convention description'
 end

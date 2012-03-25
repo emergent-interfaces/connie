@@ -1,0 +1,7 @@
+%h1 Convention Listing
+
+= link_to 'Create new Convention', new_convention_path
+
+%ul
+- @conventions.each do |convention|
+  %li= link_to convention.name, convention

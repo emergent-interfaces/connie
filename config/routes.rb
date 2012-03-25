@@ -3,7 +3,7 @@ Connie::Application.routes.draw do
   # first created -> highest priority.
 
   resources :events
-  resources :cons
+  resources :conventions
 
   resources :tag_groups do
     resources :tags

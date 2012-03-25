@@ -1,6 +1,6 @@
 class CreateCons < ActiveRecord::Migration
   def change
-    create_table :cons do |t|
+    create_table :conventions do |t|
       t.string :name
       t.string :description
 
