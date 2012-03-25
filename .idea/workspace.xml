@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82ca6959-5a7b-4713-a6a1-bebc7ad54aa0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/conventions_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/helpers/conventions_helper_test.rb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/helpers/cons_helper.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/unit/con_test.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/unit/helpers/cons_helper_test.rb" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/controllers/cons_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/conventions_controller.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/models/con.rb" afterPath="$PROJECT_DIR$/app/models/convention.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/cons/_form.html.haml" afterPath="$PROJECT_DIR$/app/views/conventions/_form.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/cons/edit.html.haml" afterPath="$PROJECT_DIR$/app/views/conventions/edit.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/cons/index.html.haml" afterPath="$PROJECT_DIR$/app/views/conventions/index.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/cons/new.html.haml" afterPath="$PROJECT_DIR$/app/views/conventions/new.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/cons/show.html.haml" afterPath="$PROJECT_DIR$/app/views/conventions/show.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/functional/cons_controller_test.rb" afterPath="$PROJECT_DIR$/test/functional/conventions_controller_test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/connie.iml" afterPath="$PROJECT_DIR$/.idea/connie.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_con_filter.html.haml" afterPath="$PROJECT_DIR$/app/views/shared/_con_filter.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_nav.html.haml" afterPath="$PROJECT_DIR$/app/views/shared/_nav.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20120315013301_create_cons.rb" afterPath="$PROJECT_DIR$/db/migrate/20120315013301_create_cons.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/factories.rb" afterPath="$PROJECT_DIR$/test/factories.rb" />
     </list>
     <ignored path="connie.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,7 +67,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/events/_form.html.haml" />
         <option value="$PROJECT_DIR$/app/views/events/index.html.haml" />
         <option value="$PROJECT_DIR$/app/views/events/new.html.haml" />
         <option value="$PROJECT_DIR$/app/views/events/edit.html.haml" />
@@ -105,6 +82,7 @@
         <option value="$PROJECT_DIR$/test/unit/con_test.rb" />
         <option value="$PROJECT_DIR$/app/models/convention.rb" />
         <option value="$PROJECT_DIR$/app/controllers/conventions_controller.rb" />
+        <option value="$PROJECT_DIR$/db/seeds.rb" />
       </list>
     </option>
   </component>
@@ -913,13 +891,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_nav.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="31" selection-start="408" selection-end="408" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/events_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="54" selection-start="784" selection-end="784" vertical-scroll-proportion="0.0">
@@ -1010,6 +981,13 @@
     <entry file="file://$PROJECT_DIR$/test/functional/conventions_controller_test.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="7" selection-start="1091" selection-end="1091" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="757" selection-end="757" vertical-scroll-proportion="0.48238897">
           <folding />
         </state>
       </provider>

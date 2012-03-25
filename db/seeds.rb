@@ -15,10 +15,10 @@ Tagging.delete_all
 TagGroup.delete_all
 
 # Core data required for the app
-Factory :tag_group, name: 'Cons', description: 'Automatically generated list of all conventions in the database'
+Factory :tag_group, name: 'Convetions', description: 'Automatically generated list of all conventions in the database'
 
 # Additional models for demonstration
-Factory :con, name: 'AnimeNext 2010'
+Factory :convention, name: 'AnimeNext 2010'
 
 events = [
   {name: 'BlazBlue & King of Fighters 2002 Ultimate Match'},
