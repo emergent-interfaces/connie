@@ -2,8 +2,19 @@ Connie::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  resources :conventions do
+    member do
+      put 'set_as_default'
+    end
+
+    collection do
+      put 'remove_default'
+    end
+
+    resources :events
+  end
+
   resources :events
-  resources :conventions
 
   resources :tag_groups do
     resources :tags

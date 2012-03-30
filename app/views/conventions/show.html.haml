@@ -1,3 +1,6 @@
 %h1= @convention.name
 
 = link_to "Edit", edit_convention_path
+
+= form_tag("/conventions/#{@convention.id}/set_as_default", :method => "put") do
+  = submit_tag("Set as default")

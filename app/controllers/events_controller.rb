@@ -1,6 +1,11 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    if params[:convention_id]
+      @convention = Convention.find(params[:convention_id])
+      @events = @convention.events
+    else
+      @events = Event.all
+    end
   end
 
   def show

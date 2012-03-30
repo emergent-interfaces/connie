@@ -2,6 +2,9 @@ class Convention < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
 
+  has_many :convention_events
+  has_many :events, :through => :convention_events
+
   after_create :create_tag
   before_save :rename_tag
 

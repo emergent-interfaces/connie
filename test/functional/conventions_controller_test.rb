@@ -33,4 +33,34 @@ class ConventionsControllerTest < ActionController::TestCase
     end
   end
 
+  context "with a convention" do
+    setup do
+      @convention = Factory :convention
+    end
+
+    should "have route to set default convention for session" do
+      assert_recognizes({:controller => "conventions", :action => "set_as_default", :id => "#{@convention.id}"},
+                        {:path => "conventions/#{@convention.id}/set_as_default", :method => :put})
+    end
+
+    should "have a route to set no default convention for session" do
+      assert_recognizes({:controller => "conventions", :action => "remove_default"},
+                        {:path => "conventions/remove_default", :method => :put})
+    end
+
+    should "be able to set default convention" do
+      put :set_as_default, :id => @convention.id
+      assert :success
+
+      assert_equal @convention.id, session[:default_convention_id]
+    end
+
+    should "be able to set no default convention" do
+      put :remove_default, :id => nil
+      assert :success
+
+      assert_nil session[:default_convention_id]
+    end
+  end
+
 end

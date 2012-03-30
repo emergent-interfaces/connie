@@ -41,4 +41,15 @@ class ConventionsController < ApplicationController
     @convention.destroy
     redirect_to conventions_path
   end
+
+  def set_as_default
+    @convention = Convention.find(params[:id])
+    session[:default_convention_id] = @convention.id
+    redirect_to @convention
+  end
+
+  def remove_default
+    session[:default_convention_id] = nil
+    redirect_to conventions_path
+  end
 end

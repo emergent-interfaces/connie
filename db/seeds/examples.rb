@@ -5,10 +5,11 @@ puts "== Add Example Data =="
 
 puts "Creating example convention"
 # Additional models for demonstration
-Factory :convention, name: 'AnimeNext 2010'
+anext = Factory :convention, name: 'AnimeNext 2010'
+bcon = Factory :convention, name: 'Bureaucracon IV'
 
 puts "Creating example events"
-events = [
+anext_events = [
   {name: 'BlazBlue & King of Fighters 2002 Ultimate Match'},
   {name: 'Tatsunoki vs. Capcom & Vampire Savior'},
   {name: 'Dealers Room Friday'},
@@ -35,6 +36,18 @@ events = [
   {name: 'These are a Few of my Favorite Scenes'}
 ]
 
-events.each do |event|
-  Factory :event, name: event[:name], description: event[:description]
+bcon_events = [
+  {name: 'Legal-size Paper Distribution'},
+  {name: 'On the Influence of #3 Pencils'},
+  {name: 'Pre-registration'},
+  {name: 'Post-pre-registration Presentation'},
+  {name: 'Committee for Formation of Committees Meeting'},
+]
+
+anext_events.each do |event|
+  Factory :event, name: event[:name], description: event[:description], conventions: [anext]
+end
+
+bcon_events.each do |event|
+  Factory :event, name: event[:name], description: event[:description], conventions: [bcon]
 end

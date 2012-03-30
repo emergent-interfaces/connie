@@ -1,6 +1,9 @@
 require 'factory_girl'
 require File.dirname(__FILE__) + '/../../test/factories.rb'
 
+Rake::Task["tmp:sessions:clear"].execute
+puts "Remember to reset your cookies to clear the session"
+
 puts "== Setup Core Models =="
 
 puts "Deleting existing data"
