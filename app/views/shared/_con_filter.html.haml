@@ -1,16 +1,9 @@
-= content_for :head do
-  = javascript_include_tag "superfish"
-  = javascript_include_tag "supersubs"
-  = javascript_include_tag "jquery.hoverintent.minified"
-  = stylesheet_link_tag "superfish"
-
-%ul.sf-menu
-  %li
-    = link_to default_convention_name, default_convention
-    %ul
-      - Convention.all.each do |con|
-        %li
-          %a= link_to con.name, con
-
+%li
+  = link_to default_convention_name, default_convention
+  %ul
+    - Convention.all.each do |con|
       %li
-        %a= link_to 'All conventions', conventions_path
+        %a= link_to con.name, con
+
+    %li
+      %a= link_to 'All conventions', conventions_path

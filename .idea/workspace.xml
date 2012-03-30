@@ -2,26 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82ca6959-5a7b-4713-a6a1-bebc7ad54aa0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/superfish.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/superfish.scss.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/conventions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/conventions_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/events_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/events_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/convention.rb" afterPath="$PROJECT_DIR$/app/models/convention.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/event.rb" afterPath="$PROJECT_DIR$/app/models/event.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/conventions/index.html.haml" afterPath="$PROJECT_DIR$/app/views/conventions/index.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/conventions/show.html.haml" afterPath="$PROJECT_DIR$/app/views/conventions/show.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_con_filter.html.haml" afterPath="$PROJECT_DIR$/app/views/shared/_con_filter.html.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_nav.html.haml" afterPath="$PROJECT_DIR$/app/views/shared/_nav.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds/core.rb" afterPath="$PROJECT_DIR$/db/seeds/core.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds/examples.rb" afterPath="$PROJECT_DIR$/db/seeds/examples.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/functional/conventions_controller_test.rb" afterPath="$PROJECT_DIR$/test/functional/conventions_controller_test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/convention_test.rb" afterPath="$PROJECT_DIR$/test/unit/convention_test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/event_test.rb" afterPath="$PROJECT_DIR$/test/unit/event_test.rb" />
     </list>
     <ignored path="connie.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,19 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="conventions_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/conventions_controller.rb">
+      <file leaf-file-name="application_helper.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="33" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="events_controller.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/events_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="8" selection-start="192" selection-end="192" vertical-scroll-proportion="0.118858956">
+            <state line="16" column="0" selection-start="486" selection-end="486" vertical-scroll-proportion="0.38034865">
               <folding />
             </state>
           </provider>
@@ -77,8 +51,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/conventions/show.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/conventions/index.html.haml" />
         <option value="$PROJECT_DIR$/test/unit/event_test.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120329012851_create_convention_events.rb" />
         <option value="$PROJECT_DIR$/app/models/convention_event.rb" />
@@ -87,12 +59,14 @@
         <option value="$PROJECT_DIR$/test/unit/convention_test.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-        <option value="$PROJECT_DIR$/app/views/shared/_nav.html.haml" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/controllers/conventions_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/events_controller.rb" />
         <option value="$PROJECT_DIR$/db/seeds/examples.rb" />
         <option value="$PROJECT_DIR$/db/seeds/core.rb" />
+        <option value="$PROJECT_DIR$/app/views/shared/_con_filter.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/shared/_nav.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
       </list>
     </option>
   </component>
@@ -913,18 +887,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="44" selection-start="1398" selection-end="1398" vertical-scroll-proportion="0.78446907" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/convention_test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="57" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/event_test.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="3" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0" />
@@ -933,13 +895,6 @@
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="21" selection-start="278" selection-end="278" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="4" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -954,13 +909,6 @@
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="54" column="32" selection-start="2621" selection-end="2621" vertical-scroll-proportion="0.69335604">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_nav.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="39" selection-start="274" selection-end="274" vertical-scroll-proportion="0.23771791">
           <folding />
         </state>
       </provider>
@@ -982,13 +930,6 @@
     <entry file="file://$PROJECT_DIR$/app/models/convention_event.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="24" selection-start="67" selection-end="67" vertical-scroll-proportion="0.02377179">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/conventions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="33" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1016,7 +957,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/events_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="8" selection-start="192" selection-end="192" vertical-scroll-proportion="0.118858956">
+        <state line="15" column="22" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/conventions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="33" selection-start="97" selection-end="97" vertical-scroll-proportion="0.04754358">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="12" selection-start="285" selection-end="285" vertical-scroll-proportion="0.35657686">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_con_filter.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="50" selection-start="204" selection-end="204" vertical-scroll-proportion="0.19017433">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_nav.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="30" selection-start="237" selection-end="237" vertical-scroll-proportion="0.16640253">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="486" selection-end="486" vertical-scroll-proportion="0.38034865">
           <folding />
         </state>
       </provider>
