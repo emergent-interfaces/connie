@@ -13,3 +13,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignoring rubymine configuration files per http://devnet.jetbrains.net/thread/303322
+/.idea/
