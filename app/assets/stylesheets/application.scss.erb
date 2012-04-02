@@ -8,6 +8,7 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require reset
  *= require_self
  *= require_tree .
  *= require formtastic
@@ -24,8 +25,8 @@ body {
 }
 
 div#header {
-    background: url('<%= asset_path 'header_background.png' %>');
-    height: 40px;
+    background: #333333;
+    height: 32px;
 }
 
 #con_filter select {
@@ -40,4 +41,9 @@ div.divider {
     float: left;
     margin-left: 4px;
     background: url('<%= asset_path 'divider.png' %>') no-repeat;
+}
+
+h1 {
+    font-size: 1.4em;
+    padding: 1em 0em;
 }

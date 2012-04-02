@@ -19,7 +19,7 @@ $(document).ready(function() {
     $("ul.sf-menu").superfish({
         delay: 250,
         speed: 0,
-        autoArrows: false,
+        autoArrows: true,
         dropShadows: false,
         disableHI: true
     });

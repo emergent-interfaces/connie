@@ -3,7 +3,7 @@
   %ul
     - Convention.all.each do |con|
       %li
-        %a= link_to con.name, con
+        = link_to con.name, con
 
     %li
-      %a= link_to 'All conventions', conventions_path
+      = link_to 'All conventions', conventions_path
