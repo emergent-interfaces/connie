@@ -1,0 +1,8 @@
+%h1 Spaces
+= link_to "Add new space", new_space_path
+%ul
+  - @spaces.each do |space|
+    %li
+      = link_to space.name, space
+      = link_to "edit", edit_space_path(space)
+      = link_to "delete", space, :method => :delete

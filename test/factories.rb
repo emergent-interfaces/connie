@@ -16,3 +16,8 @@ Factory.define :convention do |f|
   f.sequence(:name) {|n| "Convention #{n}"}
   f.description 'Convention description'
 end
+
+Factory.define :space do |f|
+  f.sequence(:name) {|n| "Space #{n}"}
+  f.sequence(:venue_designated_name) {|n| "Designated Venue Name #{n}"}
+end

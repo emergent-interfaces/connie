@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120329012851) do
+ActiveRecord::Schema.define(:version => 20120330011851) do
 
   create_table "convention_events", :force => true do |t|
     t.integer  "convention_id"
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(:version => 20120329012851) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "spaces", :force => true do |t|
+    t.string   "name"
+    t.string   "venue_designated_name"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "depth"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   create_table "tag_groups", :force => true do |t|

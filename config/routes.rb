@@ -15,6 +15,7 @@ Connie::Application.routes.draw do
   end
 
   resources :events
+  resources :spaces
 
   resources :tag_groups do
     resources :tags

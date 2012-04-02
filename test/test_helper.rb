@@ -12,6 +12,8 @@ else
   MiniTest::Unit.runner.reporters << MiniTest::Reporters::ProgressReporter.new
 end
 
+require 'mocha'
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #

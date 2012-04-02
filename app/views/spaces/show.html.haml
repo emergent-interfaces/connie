@@ -1,0 +1,9 @@
+%h1= @space.name
+- if @space.parent
+  != "Sub-space of #{link_to @space.parent.name, @space.parent}"
+
+- if @space.children.count > 0
+  %p
+    Contains
+    - @space.children.each do |child|
+      = link_to child.name, child

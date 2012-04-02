@@ -1,0 +1,51 @@
+class SpacesController < ApplicationController
+  def index
+    @spaces = Space.all
+  end
+
+  def show
+    @space = Space.find(params[:id])
+  end
+
+  def new
+    @space = Space.new
+  end
+
+  def create
+    @space = Space.new(params[:space])
+
+    unless @space.parent_id
+      @space.parent_id = Space.find_by_name('world').id
+    end
+
+    if @space.save
+      redirect_to @space, :notice => "Space created successfully"
+    else
+      render :action => :new
+    end
+  end
+
+  def edit
+    @space = Space.find(params[:id])
+  end
+
+  def update
+    @space = Space.find(params[:id])
+
+    unless @space.parent_id
+      @space.parent_id = Space.find_by_name('world').id
+    end
+
+    if @space.update_attributes(params[:space])
+      redirect_to @space, :notice => "Space updated"
+    else
+      render :action => 'edit'
+    end
+  end
+
+  def destroy
+    @space = Space.find(params[:id])
+    @space.destroy
+    redirect_to spaces_path
+  end
+end

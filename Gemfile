@@ -8,8 +8,10 @@ gem 'rails', '3.2.2'
 gem 'sqlite3'
 gem 'haml'
 gem 'formtastic'
+gem 'awesome_nested_set'
 
 group :test do
+  gem 'mocha', :require => false  # Prevent mocha from loading until after test framework
   gem 'minitest'
   gem 'minitest-reporters'
   gem 'shoulda'
