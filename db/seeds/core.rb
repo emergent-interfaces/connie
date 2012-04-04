@@ -19,4 +19,4 @@ Space.create(name: 'world', venue_designated_name: 'world')
 
 puts "Creating core tags"
 # Core data required for the app
-Factory :tag_group, name: 'Conventions', description: 'Automatically generated list of all conventions in the database'
+FactoryGirl.create :tag_group, name: 'Conventions', description: 'Automatically generated list of all conventions in the database'

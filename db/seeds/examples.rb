@@ -5,8 +5,8 @@ puts "== Add Example Data =="
 
 puts "Creating example convention"
 # Additional models for demonstration
-anext = Factory :convention, name: 'AnimeNext 2010'
-bcon = Factory :convention, name: 'Bureaucracon IV'
+anext = FactoryGirl.create :convention, name: 'AnimeNext 2010'
+bcon = FactoryGirl.create :convention, name: 'Bureaucracon IV'
 
 puts "Creating example events"
 anext_events = [
@@ -45,9 +45,9 @@ bcon_events = [
 ]
 
 anext_events.each do |event|
-  Factory :event, name: event[:name], description: event[:description], conventions: [anext]
+  FactoryGirl.create :event, name: event[:name], description: event[:description], conventions: [anext]
 end
 
 bcon_events.each do |event|
-  Factory :event, name: event[:name], description: event[:description], conventions: [bcon]
+  FactoryGirl.create :event, name: event[:name], description: event[:description], conventions: [bcon]
 end

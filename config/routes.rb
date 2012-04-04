@@ -12,6 +12,7 @@ Connie::Application.routes.draw do
     end
 
     resources :events
+    resources :spaces
   end
 
   resources :events
@@ -20,6 +21,8 @@ Connie::Application.routes.draw do
   resources :tag_groups do
     resources :tags
   end
+
+  match 'reset_session' => 'application#reset_app_session'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

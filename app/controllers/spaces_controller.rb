@@ -1,6 +1,11 @@
 class SpacesController < ApplicationController
   def index
-    @spaces = Space.all
+    if params[:convention_id]
+      @convention = Convention.find(params[:convention_id])
+      @spaces = @convention.spaces
+    else
+      @spaces = Space.all
+    end
   end
 
   def show

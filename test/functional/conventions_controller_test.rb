@@ -35,7 +35,7 @@ class ConventionsControllerTest < ActionController::TestCase
 
   context "with a convention" do
     setup do
-      @convention = Factory :convention
+      @convention = FactoryGirl.create(:convention)
     end
 
     should "have route to set default convention for session" do

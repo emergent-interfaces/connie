@@ -1,5 +1,5 @@
 require 'test_helper'
 
 class EventTest < ActiveSupport::TestCase
-  should have_many(:conventions).through(:convention_events)
+  should have_many(:conventions).through(:convention_resourceables)
 end

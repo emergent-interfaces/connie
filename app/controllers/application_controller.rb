@@ -3,5 +3,6 @@ class ApplicationController < ActionController::Base
 
   def reset_app_session
     reset_session
+    redirect_to conventions_path
   end
 end

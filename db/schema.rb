@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120330011851) do
+ActiveRecord::Schema.define(:version => 20120403002147) do
 
-  create_table "convention_events", :force => true do |t|
+  create_table "convention_resourceables", :force => true do |t|
     t.integer  "convention_id"
-    t.integer  "event_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.integer  "resourceable_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "resourceable_type"
   end
 
   create_table "conventions", :force => true do |t|
