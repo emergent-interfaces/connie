@@ -1,0 +1,26 @@
+= form_for [@event, @time_span], :url => event_time_span_path(@event), :html => {:class=>"formtastic"} do |f|
+  - if @time_span.errors.present?
+    %ul.errors
+      - @time_span.errors.full_messages.each do |msg|
+        %li= msg
+    
+  %fieldset.inputs
+    %ol
+      %li.datetime.required
+        = f.label :start_time, "Start time*"
+        = f.datetime_select :start_time, :default => 1.day.from_now, :minute_step => 5
+
+      %li.datetime.required
+        = f.label :start_time, "End time*"
+        = f.datetime_select :end_time, :default => 2.day.from_now, :minute_step => 5
+
+      %li.string.required
+        = f.label :confidence, "Confidence*"
+        = f.select :confidence, TimeSpan::CONFIDENCES
+        %p.inline-hints= t "formtastic.hints.time_span.confidence"
+
+  %fieldset.buttons
+    %ol
+      %li.commit
+        = f.submit
+      %li= link_to "Cancel", :back, :class => "back"

@@ -1,5 +1,14 @@
 %h1= @event.name
 = link_to "Edit", edit_event_path(@event)
 = link_to "Delete", @event, :method => :delete, :confirm => "Are you sure you want to delete #{@event.name}?"
+
 #description
   = @event.description
+
+#scheduling
+  - if @event.time_span
+    = render :partial => "time_spans/inline", :locals => {:event => @event,
+                                                          :time_span => @event.time_span}
+    - else
+    This event has not been scheduled.
+    = link_to "Schedule this event", new_event_time_span_path(@event)

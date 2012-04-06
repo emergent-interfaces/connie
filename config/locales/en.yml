@@ -1,5 +1,33 @@
 # Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
   hello: "Hello world"
+  event:
+    need_dates: |
+      This event does not have any dates associated with it.
+      Having dates is very important for identifying requirements for your event.
+      Please add some dates.  Tentative is OK!
+
+  formtastic:
+    hints:
+      event:
+        name: "Unique identifier for this event"
+        tag_line: "Marketing blurb that typically follows the event name"
+      time_span:
+        confidence: "How confident you are that these will be the actual times"
+
+  rule:
+    be_scheduled_rule:
+      satisfied: "Rule satisfied"
+      not_satisfied: "This activity needs to be scheduled"
+    be_during_event_rule:
+      satisfied: "Rule satisfied"
+      schedule_event: "The event for this activity is not scheduled"
+      schedule_inside_event: "This activity needs to be scheduled inside of its event"
+    be_located_rule:
+      satisfied: "Rule satisfied"
+      no_location: "This activity has not reserved a location"
+    be_located_in_rule:
+      satisfied: "Rule satisfied"
+      violated: "This activity must reserve %{space} or one of its sub-spaces"

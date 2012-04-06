@@ -1,0 +1,10 @@
+%span.inline_time_span{:id => "time_span_#{time_span.id}"}
+  %span.time_span_text
+    = "#{l time_span.start_time} to #{l time_span.end_time}"
+
+    - if time_span.confidence < 2
+      = " (#{confidence_string_for(time_span.confidence)})"
+
+  %span.delete
+    = link_to image_tag("icons/pencil.png"), edit_event_time_span_path(event)
+    = link_to image_tag("icons/cross.png"), [event, time_span], :method=>:delete, :confirm=>"Are you sure?"
