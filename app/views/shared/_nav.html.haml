@@ -7,9 +7,9 @@
 %ul.sf-menu
   = render "shared/con_filter"
   %li
-    = link_to 'Events', filtered_events_path
+    = link_to 'Events', session_filter(events_path)
   %li
-    = link_to 'Spaces', filtered_spaces_path
+    = link_to 'Spaces', session_filter(spaces_path)
   %li
     %a Administration
     %ul

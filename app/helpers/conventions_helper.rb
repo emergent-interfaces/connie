@@ -13,13 +13,12 @@ module ConventionsHelper
     session[:default_convention_id] ? true : false
   end
 
-  def filtered_events_path
-    return events_path unless default_convention_set?
-    convention_events_path(default_convention)
-  end
-
-  def filtered_spaces_path
-      return spaces_path unless default_convention_set?
-      convention_spaces_path(default_convention)
+  def session_filter(obj)
+    if default_convention_set?
+      return [default_convention, obj] if obj.class.ancestors.include?(ActiveRecord::Base)
+      return "/conventions/#{default_convention.id}#{obj}" if obj.class == String
+    else
+      return obj
     end
+  end
 end
