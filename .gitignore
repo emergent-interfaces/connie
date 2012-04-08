@@ -16,3 +16,6 @@
 
 # Ignoring rubymine configuration files per http://devnet.jetbrains.net/thread/303322
 /.idea/
+
+# Ignore simplecov results, https://github.com/colszowka/simplecov
+/coverage

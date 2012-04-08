@@ -16,6 +16,7 @@ group :test do
   gem 'minitest-reporters'
   gem 'shoulda'
   gem 'factory_girl_rails'
+  gem 'simplecov', :require => false
 end
 
 # Gems used only for assets and not required
