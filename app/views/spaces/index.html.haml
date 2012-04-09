@@ -1,5 +1,5 @@
 %h1 Spaces
-= link_to "Add new space", new_space_path
+= link_to "Add new space", session_filter(new_space_path)
 %ul
   - @spaces.each do |space|
     %li

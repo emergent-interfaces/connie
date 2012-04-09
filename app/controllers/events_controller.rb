@@ -13,7 +13,8 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new
+    @event = Event.new()
+    @event.conventions << Convention.find(params[:convention_id]) if params[:convention_id]
   end
 
   def create

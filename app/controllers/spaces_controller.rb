@@ -14,6 +14,7 @@ class SpacesController < ApplicationController
 
   def new
     @space = Space.new
+    @space.conventions << Convention.find(params[:convention_id]) if params[:convention_id]
   end
 
   def create
