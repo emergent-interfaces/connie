@@ -10,8 +10,11 @@
       = yield :head
 
   %body
-    #header
-      #nav
-        = render "shared/nav"
-    #content
+    #left-sidebar
+      #user
+      = render 'shared/con_filter'
+      %input.search
+      .bar
+      = render 'shared/nav'
+    #main
       = yield

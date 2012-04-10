@@ -1,20 +1,7 @@
-= content_for :head do
-  = javascript_include_tag "superfish"
-  = javascript_include_tag "supersubs"
-  = javascript_include_tag "jquery.hoverintent.minified"
-  = stylesheet_link_tag "superfish"
-
-%ul.sf-menu
-  = render "shared/con_filter"
+%ul.main_nav
   %li
     = link_to 'Events', session_filter(events_path)
   %li
     = link_to 'Spaces', session_filter(spaces_path)
   %li
-    %a Administration
-    %ul
-      %li
-        = link_to 'Tags', tag_groups_path
-
-      %li
-        = link_to 'Conventions', conventions_path
+    = link_to 'Tags', tag_groups_path
