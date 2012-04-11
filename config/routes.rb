@@ -27,6 +27,8 @@ Connie::Application.routes.draw do
 
   match 'reset_session' => 'application#reset_app_session'
 
+  root :to => 'conventions#index'
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
