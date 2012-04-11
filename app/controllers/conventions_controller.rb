@@ -52,4 +52,15 @@ class ConventionsController < ApplicationController
     session[:default_convention_id] = nil
     redirect_to conventions_path
   end
+
+  def set_default
+    if params[:default_convention] == ""
+      session[:default_convention_id] = nil
+      redirect_to conventions_path
+    else
+      @convention = Convention.find(params[:default_convention])
+      session[:default_convention_id] = @convention.id
+      redirect_to @convention
+    end
+  end
 end

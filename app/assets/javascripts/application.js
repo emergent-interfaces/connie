@@ -16,12 +16,10 @@
 
 $(document).ready(function() {
 
-    $("ul.sf-menu").superfish({
-        delay: 250,
-        speed: 0,
-        autoArrows: true,
-        dropShadows: false,
-        disableHI: true
+    // Unobtrusive formatting of set_default_convention_form for browsers with Javascript
+    $('#set_default_convention_form input').hide();
+    $('#set_default_convention_form select').change(function(){
+       $(this).closest("form").submit();
     });
 
 });

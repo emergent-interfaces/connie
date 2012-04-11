@@ -21,4 +21,14 @@ module ConventionsHelper
       return obj
     end
   end
+
+  def conventions_for_select
+    collection = Convention.all
+    collection << Convention.new(:name => 'All Conventions')
+
+    selected = default_convention.id if default_convention_set?
+    selected = "" unless default_convention_set?
+
+    options_string = options_from_collection_for_select(collection,"id","name",selected)
+  end
 end

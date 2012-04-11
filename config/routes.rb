@@ -9,6 +9,7 @@ Connie::Application.routes.draw do
 
     collection do
       put 'remove_default'
+      put 'set_default'
     end
 
     resources :events

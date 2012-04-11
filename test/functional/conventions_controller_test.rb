@@ -4,7 +4,7 @@ class ConventionsControllerTest < ActionController::TestCase
 
   context "with a TagGroup called 'Conventions'" do
     setup do
-      Factory :tag_group, :name => "Conventions"
+      FactoryGirl.create :tag_group, :name => "Conventions"
     end
 
     should "create a tag when created" do
@@ -18,7 +18,7 @@ class ConventionsControllerTest < ActionController::TestCase
     end
 
     should "rename its tag when renamed" do
-      convention = Factory(:convention, :name => "New Convention")
+      convention = FactoryGirl.create(:convention, :name => "New Convention")
       put :update, :id => convention.id, :convention => {:name => "Changed Name"}
 
       tag = Tag.find_by_group_and_tag_name("Conventions", "Changed Name")
@@ -26,7 +26,7 @@ class ConventionsControllerTest < ActionController::TestCase
     end
 
     should "not remove its tag when deleted" do
-      convention = Factory(:convention, :name => "New Convention")
+      convention = FactoryGirl.create(:convention, :name => "New Convention")
       delete :destroy, :id => convention.id
 
       assert_not_nil Tag.find_by_group_and_tag_name("Conventions", "New Convention")
@@ -55,7 +55,9 @@ class ConventionsControllerTest < ActionController::TestCase
       assert_equal @convention.id, session[:default_convention_id]
     end
 
-    should "be able to set no default convention" do
+    should "be able to set no default convention by remove_default" do
+      session[:default_convention_id] = 1
+
       put :remove_default, :id => nil
       assert :success
 
