@@ -2,9 +2,6 @@
 
 = link_to 'Create new Convention', new_convention_path
 
-= form_tag("/conventions/remove_default", :method => "put") do
-  = submit_tag("Remove default")
-
 %ul
 - @conventions.each do |convention|
   %li= link_to convention.name, convention
