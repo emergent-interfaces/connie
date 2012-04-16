@@ -2,6 +2,7 @@ module RuleMixin
 
   def self.included(base)
     base.has_one :rule_assignment, :as => :rule, :dependent => :destroy
+    base.has_one :event, :through => :rule_assignment
     #base.has_one :activity, :through => :rule_assignment
   end
 

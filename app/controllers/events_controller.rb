@@ -46,4 +46,13 @@ class EventsController < ApplicationController
     @event.destroy
     redirect_to events_path, :notice => "Event deleted"
   end
+
+  def create_rule
+    @event = Event.find(params[:event_id])
+
+    @rule = params[:rule_type].constantize.new
+    @event.rule_assignments << RuleAssignment.new(:rule => @rule)
+
+    redirect_to @event
+  end
 end

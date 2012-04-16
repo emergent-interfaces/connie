@@ -18,12 +18,16 @@ Connie::Application.routes.draw do
 
   resources :events do
     resource :time_span
+    post 'create_rule'
   end
   resources :spaces
 
   resources :tag_groups do
     resources :tags
   end
+
+  match 'rules/:rule_type/:rule_id' => 'rules#destroy',
+        :via => :delete
 
   match 'reset_session' => 'application#reset_app_session'
 

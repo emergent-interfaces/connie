@@ -20,3 +20,15 @@
 .section
   %h2 Rules
   = "#{@event.rule_assignments.count} rules assigned"
+
+  %ul
+    - @event.rule_assignments.each do |rule_assignment|
+      %li
+        = rule_assignment.rule.class
+        = form_tag "/rules/#{rule_assignment.rule.class}/#{rule_assignment.rule.id}", :method => :delete do
+          = submit_tag 'Delete'
+
+  = form_tag event_create_rule_path(@event), :method => :post do |f|
+    Create a BeScheduledRule
+    = hidden_field_tag 'rule_type', 'BeScheduledRule'
+    = submit_tag 'Create'
