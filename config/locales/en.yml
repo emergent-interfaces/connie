@@ -19,8 +19,8 @@ en:
 
   rule:
     be_scheduled_rule:
-      satisfied: "Rule satisfied"
-      not_satisfied: "This activity needs to be scheduled"
+      satisfied: "This event is scheduled"
+      not_satisfied: "This event needs to be scheduled"
     be_during_event_rule:
       satisfied: "Rule satisfied"
       schedule_event: "The event for this activity is not scheduled"

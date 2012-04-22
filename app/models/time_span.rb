@@ -27,6 +27,16 @@ class TimeSpan < ActiveRecord::Base
     false
   end
 
+  def before?(time_span)
+    return true if end_time < time_span.start_time
+    false
+  end
+
+  def after?(time_span)
+    return true if start_time > time_span.end_time
+    false
+  end
+
   def init_confidence_to_max
     self.confidence = CONFIDENCES.values.max
   end

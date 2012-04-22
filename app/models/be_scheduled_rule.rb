@@ -2,15 +2,15 @@ class BeScheduledRule < ActiveRecord::Base
   include RuleMixin
       
   def satisfied?
-    return true if self.rule_assignment.event.time_span
+    return true if event.time_span
     false
   end
 
-  def current_hint
+  def message
     if satisfied?
-      I18n.t 'rule.be_scheduled_rule.satisfied'
+      :event_is_scheduled
     else
-      I18n.t 'rule.be_scheduled_rule.not_satisfied'
+      :event_not_scheduled
     end
   end
 end

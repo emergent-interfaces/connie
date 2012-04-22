@@ -94,6 +94,22 @@ class TimeSpanTest < ActiveSupport::TestCase
 
       refute @ts.is_during?([@ts1, @ts2])
     end
+
+    should "know if is before another event" do
+      assert_equal true, @ts1.before?(@ts2)
+    end
+
+    should "know if is not before another event" do
+      assert_equal false, @ts2.before?(@ts1)
+    end
+
+    should "know if is after another event" do
+      assert_equal true, @ts2.after?(@ts1)
+    end
+
+    should "know if is not after another event" do
+      assert_equal false, @ts1.after?(@ts2)
+    end
   end
 
 end

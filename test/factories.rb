@@ -22,4 +22,10 @@ FactoryGirl.define do
     sequence(:name) {|n| "Space #{n}"}
     sequence(:venue_designated_name) {|n| "Designated Venue Name #{n}"}
   end
+
+  factory :time_span do
+    start_time Time.parse("Jan 1 2011")
+    end_time Time.parse("Jan 5 2011")
+    confidence 0
+  end
 end

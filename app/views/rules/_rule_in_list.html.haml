@@ -1,0 +1,7 @@
+.rule
+  .rule-class= "#{rule.class}"
+  %span.rule-icon= rule_status_icon(rule)
+  %span.rule-message= rule_message(rule)
+
+  = form_tag "/rules/#{rule.class}/#{rule.id}", :method => :delete do
+    = submit_tag 'Delete'

@@ -50,8 +50,16 @@ class EventsController < ApplicationController
   def create_rule
     @event = Event.find(params[:event_id])
 
-    @rule = params[:rule_type].constantize.new
-    @event.rule_assignments << RuleAssignment.new(:rule => @rule)
+    if params[:rule_type] == 'BeScheduledRule'
+      @rule = BeScheduledRule.create
+    elsif params[:rule_type] == 'IsRelatedRule'
+      @rule = IsRelatedRule.create(:relation => params[:relation],
+                                   :related_event_id => params[:related_event_id])
+    end
+
+    if @rule
+      @event.rule_assignments << RuleAssignment.new(:rule => @rule)
+    end
 
     redirect_to @event
   end
