@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.purr
+//= require best_in_place
 //= require_tree .
 
 $(document).ready(function() {
@@ -20,6 +22,12 @@ $(document).ready(function() {
     $('#set_default_convention_form input').hide();
     $('#set_default_convention_form select').change(function(){
        $(this).closest("form").submit();
+    });
+
+    // Add bindings for best_in_place
+    $(document).ready(function() {
+      /* Activating Best In Place */
+      jQuery(".best_in_place").best_in_place();
     });
 
 });

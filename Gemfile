@@ -10,6 +10,7 @@ gem 'haml'
 gem 'formtastic'
 gem 'awesome_nested_set'
 gem 'chronic_duration'
+gem 'best_in_place'
 
 group :test do
   gem 'mocha', :require => false  # Prevent mocha from loading until after test framework

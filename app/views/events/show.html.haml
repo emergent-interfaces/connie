@@ -4,9 +4,9 @@
 
 %h1= @event.name
 
-.section
+.section.description
   %h2 Description
-  = @event.description
+  = best_in_place @event, :description, :type => :textarea
 
 .section
   %h2 Scheduling
