@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120417003136) do
+ActiveRecord::Schema.define(:version => 20120422204526) do
 
   create_table "be_scheduled_rules", :force => true do |t|
     t.datetime "created_at"
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(:version => 20120417003136) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "duration_rules", :force => true do |t|
+    t.integer  "min_duration"
+    t.integer  "max_duration"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "events", :force => true do |t|

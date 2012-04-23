@@ -50,11 +50,16 @@ class EventsController < ApplicationController
   def create_rule
     @event = Event.find(params[:event_id])
 
-    if params[:rule_type] == 'BeScheduledRule'
-      @rule = BeScheduledRule.create
-    elsif params[:rule_type] == 'IsRelatedRule'
-      @rule = IsRelatedRule.create(:relation => params[:relation],
-                                   :related_event_id => params[:related_event_id])
+    case params[:rule_type]
+      when 'BeScheduledRule'
+        @rule = BeScheduledRule.create
+      when 'IsRelatedRule'
+        @rule = IsRelatedRule.create(:relation => params[:relation],
+                                     :related_event_id => params[:related_event_id])
+      when 'DurationRule'
+        min_duration = ChronicDuration.parse(params[:min_duration_str])
+        max_duration = ChronicDuration.parse(params[:max_duration_str])
+        @rule = DurationRule.create(:min_duration => min_duration, :max_duration => max_duration)
     end
 
     if @rule

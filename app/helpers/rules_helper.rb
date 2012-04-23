@@ -27,4 +27,25 @@ module RulesHelper
         "#{event.name} is scheduled #{rule.relation} #{rule.related_event.name}"
     end
   end
+
+  def message_for_duration_rule(rule)
+    event = rule.rule_assignment.event
+    event_duration_str = ChronicDuration.output(event.time_span.duration.to_i)
+    msg = ""
+
+    case rule.message
+      when :duration_ok
+        msg << "The event has a duration of #{event_duration_str} which satisfies"
+        msg << " a minimum duration of #{ChronicDuration.output(rule.min_duration)}" if rule.min_duration
+        msg << " and" if (rule.min_duration && rule.max_duration)
+        msg << " a maximum duration of #{ChronicDuration.output(rule.max_duration)}" if rule.max_duration
+      when :duration_violated
+        msg << "The event has a duration of #{event_duration_str} which violates"
+        msg << " a minimum duration of #{ChronicDuration.output(rule.min_duration)}" if rule.min_duration
+        msg << " and" if (rule.min_duration && rule.max_duration)
+        msg << " a maximum duration of #{ChronicDuration.output(rule.max_duration)}" if rule.max_duration
+    end
+
+    msg
+  end
 end
