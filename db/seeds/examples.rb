@@ -1,7 +1,15 @@
 require 'factory_girl'
 require File.dirname(__FILE__) + '/../../test/factories.rb'
+require 'yaml'
+
+data = YAML::load(File.open("#{Rails.root}/db/seeds/example_data.yaml"))
 
 puts "== Add Example Data =="
+
+puts "Deleting existing data"
+Convention.delete_all
+Event.delete_all
+Space.delete_all
 
 puts "Creating example convention"
 # Additional models for demonstration
@@ -9,45 +17,15 @@ anext = FactoryGirl.create :convention, name: 'AnimeNext 2010'
 bcon = FactoryGirl.create :convention, name: 'Bureaucracon IV'
 
 puts "Creating example events"
-anext_events = [
-  {name: 'BlazBlue & King of Fighters 2002 Ultimate Match'},
-  {name: 'Tatsunoki vs. Capcom & Vampire Savior'},
-  {name: 'Dealers Room Friday'},
-  {name: 'Manga Library Friday'},
-  {name: 'Art Show'},
-  {name: 'Masquerade Rehearsal Part 1'},
-  {name: 'Launch Party'},
-  {name: 'Kenji Kamiyama'},
-  {name: 'Concert Seating'},
-  {name: 'Stereopony Concert'},
-  {name: 'Uncle Yo'},
-  {name: 'Cosplay Burlesque'},
-  {name: 'AMV Screening'},
-  {name: 'Kenji Kamiyama Autograph Session'},
-  {name: 'Anime Parliament'},
-  {name: 'Stereopony Green Room'},
-  {name: 'Sleeping Samurai'},
-  {name: 'Big Bald Broadcast'},
-  {name: 'Crossplay for Girls'},
-  {name: 'Baron Munchausen - Charity Drive'},
-  {name: 'Hetalia: 2010 World Summit'},
-  {name: 'Robotech: Goes to the Movies'},
-  {name: 'Greg Ayres: From Host Club to Hospital'},
-  {name: 'These are a Few of my Favorite Scenes'}
-]
-
-bcon_events = [
-  {name: 'Legal-size Paper Distribution'},
-  {name: 'On the Influence of #3 Pencils'},
-  {name: 'Pre-registration'},
-  {name: 'Post-pre-registration Presentation'},
-  {name: 'Committee for Formation of Committees Meeting'},
-]
+anext_events = data["anext"]["events"]
+bcon_events = data["bcon"]["events"]
 
 anext_events.each do |event|
-  FactoryGirl.create :event, name: event[:name], description: event[:description], conventions: [anext]
+  puts "- #{event["name"]}"
+  e = FactoryGirl.create :event, name: event["name"], description: event["description"], conventions: [anext]
+  e.create_time_span(:start_time => event["start"], :end_time => event["end"])
 end
 
 bcon_events.each do |event|
-  FactoryGirl.create :event, name: event[:name], description: event[:description], conventions: [bcon]
+  FactoryGirl.create :event, name: event["name"], description: event["description"], conventions: [bcon]
 end

@@ -1,0 +1,142 @@
+anext:
+  events:
+    -
+      name: BlazBlue & King of Fighters 2002 Ultimate Match
+      start: June 18th 2010 7:00PM
+      end: June 18th 2010 9:00PM
+    -
+      name: Tatsunoki vs. Capcom & Vampire Savior
+      start: June 18th 2010 9:00PM
+      end: June 18th 2010 10:30PM
+    -
+      name: Dealers Room Friday
+      start: June 18th 2010 12:30PM
+      end: June 18th 2010 8:00PM
+    -
+      name: Manga Library Friday
+      start: June 18th 2010 10:00AM
+      end: June 19th 2010 12:00AM
+    -
+      name: Art Show
+      start: June 18th 2010 12:00PM
+      end: June 19th 2010 12:00AM
+    -
+      name: Masquerade Rehearsal Part 1
+      start: June 18th 2010 1:00PM
+      end: June 18th 2010 3:30PM
+    -
+      name: Launch Party
+      start: June 18th 2010 4:00PM
+      end: June 18th 2010 5:30PM
+    -
+      name: Kenji Kamiyama
+      start: June 18th 2010 6:00PM
+      end: June 18th 2010 7:00PM
+    -
+      name: Concert Seating
+      start: June 18th 2010 8:00PM
+      end: June 18th 2010 8:30PM
+    -
+      name: Stereopony Concert
+      start: June 18th 2010 9:00PM
+      end: June 18th 2010 10:00PM
+    -
+      name: Uncle Yo
+      start: June 18th 2010 10:30PM
+      end: June 18th 2010 11:30PM
+    -
+      name: Cosplay Burlesque
+      start: June 19th 2010 12:00AM
+      end: June 19th 2010 2:00AM
+    -
+      name: AMV Screening
+      start: June 18th 2010 2:30PM
+      end: June 18th 2010 4:00PM
+    -
+      name: Kenji Kamiyama Autograph Session
+      start: June 18th 2010 4:30PM
+      end: June 18th 2010 5:30PM
+    -
+      name: Anime Parliament
+      start: June 18th 2010 6:00PM
+      end: June 18th 2010 8:00PM
+    -
+      name: Stereopony Green Room
+      start: June 18th 2010 7:00PM
+      end: June 18th 2010 10:00PM
+    -
+      name: Sleeping Samurai
+      start: June 18th 2010 12:00PM
+      end: June 18th 2010 10:00PM
+    -
+      name: Big Bald Broadcast
+      start: June 18th 2010 1:00PM
+      end: 2:00PM
+    -
+      name: Crossplay for Girls
+      start: June 18th 2010 2:00PM
+      end: June 18th 2010 3:30PM
+    -
+      name: Baron Munchausen - Charity Drive
+      start: June 18th 2010 4:00PM
+      end: June 18th 2010 5:00PM
+    -
+      name: 'Hetalia: 2010 World Summit'
+      start: June 18th 2010 5:30PM
+      end: June 18th 2010 7:00PM
+    -
+      name: 'Robotech: Goes to the Movies'
+      start: June 18th 2010 7:00PM
+      end: June 18th 2010 8:00PM
+    -
+      name: 'Greg Ayres: From Host Club to Hospital'
+      start: June 18th 2010 8:30PM
+      end: June 18th 2010 10:00PM
+    -
+      name: These are a Few of my Favorite Scenes
+      start: June 18th 2010 10:00PM
+      end: June 19th 2010 12:00AM
+    -
+      name: Convention Ettiquete
+      start: June 18th 2010 1:00PM
+      end: June 18th 2010 2:00PM
+    -
+      name: How to Spot Bootleg Merchandise
+      start: June 18th 2010 2:00PM
+      end: June 18th 2010 3:00PM
+    -
+      name: Soul Eater Fan Panel
+      start: June 18th 2010 4:00PM
+      end: June 18th 2010 5:00PM
+    -
+      name: "Elrik Blackwolf's Storyline Writina"
+      start: June 18th 2010 5:30PM
+      end: June 18th 2010 6:30PM
+    -
+      name: "Dead Like Us: Shinigami"
+      start: June 18th 2010 7:00PM
+      end: June 18th 2010 8:00PM
+    -
+      name: "Ask the Organization"
+      start: June 18th 2010 8:00PM
+      end: June 18th 2010 9:00PM
+    -
+      name: "Restricted Rock, Paper, Scissors"
+      start: June 18th 2010  9:00PM
+      end: June 18th 2010 10:00PM
+    -
+      name: "18+ Anime Uncensored"
+      start: June 18th 2010 11:00PM
+      end: June 19th 2010 12:00AM
+bcon:
+  events:
+    -
+      name: 'Legal-size Paper Distribution'
+    -
+      name: 'On the Influence of #3 Pencils'
+    -
+      name: 'Pre-registration'
+    -
+      name: 'Post-pre-registration Presentation'
+    -
+      name: 'Committee for Formation of Committees Meeting'
