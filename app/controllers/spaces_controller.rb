@@ -20,10 +20,10 @@ class SpacesController < ApplicationController
   def create
     @space = Space.new(params[:space])
 
-    unless @space.parent_id
-      Space.create!(:name => 'world') unless Space.find_by_name('world')
-      @space.parent_id = Space.find_by_name('world').id
-    end
+    #unless @space.parent_id
+    #  Space.create!(:name => 'world') unless Space.find_by_name('world')
+    #  @space.parent_id = Space.find_by_name('world').id
+    #end
 
     if @space.save
       redirect_to @space, :notice => "Space created successfully"

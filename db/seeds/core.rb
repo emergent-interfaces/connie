@@ -15,7 +15,6 @@ TagGroup.delete_all
 Space.delete_all
 
 puts "Creating core spaces"
-Space.create(name: 'world', venue_designated_name: 'world')
 
 puts "Creating core tags"
 # Core data required for the app

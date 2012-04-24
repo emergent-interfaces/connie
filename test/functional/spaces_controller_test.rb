@@ -74,16 +74,13 @@ class SpacesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  should "create new Space with the World as parent if no parent given" do
-    world = FactoryGirl.create(:space,:name=>"world")
-    Space.expects(:find_by_name).with('world').returns(world)
-
+  should "create new Space with no parent if no parent given" do
     assert_difference('Space.count') do
       post :create, :space => {:name => "New Space", :venue_designated_name => "New Venue Space"}
     end
 
     new_space = assigns(:space)
     assert_redirected_to new_space
-    assert_equal world, new_space.parent
+    assert_nil new_space.parent
   end
 end
