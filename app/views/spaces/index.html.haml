@@ -1,8 +1,11 @@
 %h1 Spaces
-= link_to "Add new space", session_filter(new_space_path)
-%ul
-  - @spaces.each do |space|
-    %li
-      = link_to space.name, space
-      = link_to "edit", edit_space_path(space)
-      = link_to "delete", space, :method => :delete
+
+.section
+  = link_to "Add new space", session_filter(new_space_path)
+
+.section
+  %h2 Spaces Tree
+  %ul
+    - Space.all.keep_if{|s| s.level.==0}.each do |root_space|
+      %ul.spaces_tree
+        = display_segment(root_space)

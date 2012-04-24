@@ -2,7 +2,7 @@
   = f.inputs do
     = f.input :name
     = f.input :venue_designated_name
-    = f.input :parent_id, :as => :select, :collection => Space.all
+    = f.input :parent_id, :as => :select, :collection => nested_set_options(Space, @space) {|i| "#{'-' * i.level} #{i.name}"}
     = f.input :conventions, :as => :check_boxes
   = f.actions do
     = f.action :submit, :as => :button

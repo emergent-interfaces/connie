@@ -1,3 +1,8 @@
 // Place all the styles related to the spaces controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.spaces_tree li {
+  list-style-type: circle;
+  margin-left: 12px;
+}

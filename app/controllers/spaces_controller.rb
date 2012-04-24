@@ -21,6 +21,7 @@ class SpacesController < ApplicationController
     @space = Space.new(params[:space])
 
     unless @space.parent_id
+      Space.create!(:name => 'world') unless Space.find_by_name('world')
       @space.parent_id = Space.find_by_name('world').id
     end
 

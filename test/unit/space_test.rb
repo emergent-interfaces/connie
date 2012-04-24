@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SpaceTest < ActiveSupport::TestCase
   should validate_presence_of :name
-  should validate_presence_of :venue_designated_name
+  #should validate_presence_of :venue_designated_name
   should belong_to :parent
 
   should have_db_column(:parent_id).of_type(:integer)

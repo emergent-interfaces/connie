@@ -29,3 +29,23 @@ end
 bcon_events.each do |event|
   FactoryGirl.create :event, name: event["name"], description: event["description"], conventions: [bcon]
 end
+
+puts "Creating example spaces"
+anext_spaces = data["anext"]["spaces"]
+
+anext_spaces.each do |space|
+  s = Space.create(:name => space["name"], :parent_id => space["parent_id"])
+  Space.connection.execute("UPDATE spaces SET id = #{space["id"]} WHERE id = #{s.id}")
+  puts "- #{s.name}"
+end
+
+data["anext"]["rules"].each do |rule|
+  case rule["type"]
+    when "IsRelatedRule"
+      event = Event.find_by_name(rule["event_name"])
+      related_event = Event.find_by_name(rule["related_event_name"])
+      #puts "#{event.name} #{related_event.name}"
+      rule = IsRelatedRule.create(:related_event => related_event, :relation => rule["relation"])
+      RuleAssignment.create(:event => event, :rule => rule)
+  end
+end

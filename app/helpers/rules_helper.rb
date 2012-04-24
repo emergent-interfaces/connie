@@ -24,7 +24,7 @@ module RulesHelper
       when :scheduled_in_violation
         "#{event.name} must be scheduled #{rule.relation} #{link_to rule.related_event.name, rule.related_event}"
       when :scheduled_ok
-        "#{event.name} is scheduled #{rule.relation} #{rule.related_event.name}"
+        "#{event.name} is scheduled #{rule.relation} #{link_to rule.related_event.name, rule.related_event}"
     end
   end
 
