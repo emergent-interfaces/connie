@@ -12,43 +12,39 @@ class BeScheduledRuleTest < ActiveSupport::TestCase
     end
 
     should "be satisfied if Event has a TimeSpan" do
-      @event.expects(:time_span).returns(TimeSpan.new)
+      @time_span = FactoryGirl.create(:time_span)
+      @event.time_span = @time_span
+      @event.save
 
       assert @rule.satisfied?
     end
 
     should "be violated if Event does not have a TimeSpan" do
-      @event.expects(:time_span).returns(nil)
-
       assert @rule.violated?
     end
 
     should "not be satisfied if Event does not have a TimeSpan" do
-      @rule_assignment.expects(:event).returns(@event)
-      @event.expects(:time_span).returns(nil)
-      
       refute @rule.satisfied?
     end
 
     should "not be violated if Event does not have a TimeSpan" do
-      @rule_assignment.expects(:event).returns(@event)
-      @event.expects(:time_span).returns(TimeSpan.new)
+      @time_span = FactoryGirl.create(:time_span)
+      @event.time_span = @time_span
+      @event.save
 
       refute @rule.violated?
     end
 
     should "hint to schedule when no TimeSpan" do
-      @rule_assignment.expects(:event).returns(@event)
-      @event.expects(:time_span).returns(nil)
-      
-      assert_equal I18n.t('rule.be_scheduled_rule.not_satisfied'), @rule.message
+      assert_equal :event_not_scheduled, @rule.message
     end
 
     should "hint satisfied when Event has TimeSpan" do
-      @rule_assignment.expects(:event).returns(@event)
-      @event.expects(:time_span).returns(TimeSpan.new)
+      @time_span = FactoryGirl.create(:time_span)
+      @event.time_span = @time_span
+      @event.save
       
-      assert_match I18n.t('rule.be_scheduled_rule.satisfied'), @rule.message
+      assert_equal :event_is_scheduled, @rule.message
     end
   end
 end

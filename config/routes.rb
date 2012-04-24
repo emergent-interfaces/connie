@@ -26,6 +26,8 @@ Connie::Application.routes.draw do
     resources :tags
   end
 
+  resources :time_spans
+
   match 'rules/:rule_type/:rule_id' => 'rules#destroy',
         :via => :delete
 
