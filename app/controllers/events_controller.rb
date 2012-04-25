@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  respond_to :html, :json
+
   def index
     if params[:convention_id]
       @convention = Convention.find(params[:convention_id])
@@ -34,10 +36,14 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
 
-    if @event.update_attributes(params[:event])
-      redirect_to @event, :notice => 'Event was successfully updated'
-    else
-      render :action => "edit"
+    respond_to do |format|
+      if @event.update_attributes(params[:event])
+        format.html { redirect_to @event, :notice => 'Event was successfully updated' }
+        format.json { respond_with_bip @event }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip @event }
+      end
     end
   end
 

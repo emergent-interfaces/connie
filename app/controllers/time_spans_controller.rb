@@ -1,5 +1,4 @@
 class TimeSpansController < ApplicationController
-
   def new
     @event = Event.find(params[:event_id])
     @time_span = @event.build_time_span
