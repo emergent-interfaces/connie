@@ -71,11 +71,12 @@ class TimeSpansControllerTest < ActionController::TestCase
       assert_difference('TimeSpan.count') do
         post :create, {:time_span => {:start_time => Time.parse("Jan 1"),
                                      :end_time => Time.parse("Jan 5"),
-                                     :confidence => 2},
+                                     :confidence => 1},
                        :event_id => @event.id}
       end
 
       assert @event.time_span
+      assert_equal 1, @event.time_span.confidence
     end
 
     should "fail to create an invalid TimeSpan" do

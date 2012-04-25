@@ -7,7 +7,6 @@ class TimeSpan < ActiveRecord::Base
   validate :end_time_follows_start_time
 
   CONFIDENCES = {"tentative" => 0, "likely" => 1, "firm" => 2}
-  after_initialize :init_confidence_to_max
 
   belongs_to :time_spanable, :polymorphic => true
 
@@ -35,10 +34,6 @@ class TimeSpan < ActiveRecord::Base
   def after?(time_span)
     return true if start_time > time_span.end_time
     false
-  end
-
-  def init_confidence_to_max
-    self.confidence = CONFIDENCES.values.max
   end
 
   def duration(resolution = :seconds)

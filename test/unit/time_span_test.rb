@@ -61,11 +61,6 @@ class TimeSpanTest < ActiveSupport::TestCase
     end
   end
 
-  should "default to most confident at initialization" do
-    ts = TimeSpan.new
-    assert_equal TimeSpan::CONFIDENCES.values.max, ts.confidence
-  end
-
   context "with multiple TimeSpans" do
     setup do
       @ts1 = TimeSpan.new(:start_time => Time.parse("Jan 1"),

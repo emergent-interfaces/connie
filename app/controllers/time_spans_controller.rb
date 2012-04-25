@@ -9,10 +9,9 @@ class TimeSpansController < ApplicationController
     @event = Event.find(params[:event_id])
 
     @time_span = @event.build_time_span(params[:time_span])
-    parent_path = Event.find(params[:event_id])
 
     if @time_span.save
-      redirect_to parent_path, :notice => "Added dates"
+      redirect_to @event, :notice => "Added dates"
     else
       render :new
     end
