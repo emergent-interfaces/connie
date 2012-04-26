@@ -18,6 +18,16 @@
     = link_to "Schedule this event", new_event_time_span_path(@event)
 
 .section
+  %h2 Reservations
+  = link_to "Create new reservation", new_event_reservations_path(@event)
+
+  %ul
+    - @event.reservations.each do |reservation|
+      %li
+        = "#{reservation.reservable.class}: #{reservation.reservable.name}"
+        = link_to image_tag("icons/cross.png"), [@event, reservation], :method=>:delete, :confirm=>"Are you sure?"
+
+.section
   %h2 Rules
 
   %ul

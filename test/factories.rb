@@ -28,4 +28,9 @@ FactoryGirl.define do
     end_time Time.parse("Jan 5 2011")
     confidence 0
   end
+
+  factory :reservation do
+    association :event
+    association :reservable, :factory => :space
+  end
 end

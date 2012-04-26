@@ -18,6 +18,7 @@ Connie::Application.routes.draw do
 
   resources :events do
     resource :time_span
+    resources :reservations
     post 'create_rule'
   end
   resources :spaces
