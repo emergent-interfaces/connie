@@ -129,30 +129,23 @@ anext:
       start: June 18th 2010 11:00PM
       end: June 19th 2010 12:00AM
   spaces:
-    -
-      id: 11
+    11:
       name: Holiday Inn Hotel
-    -
-      id: 12
+    12:
       name: Ground Floor
       parent_id: 11
-    -
-      id: 13
+    13:
       name: Video Gaming
       parent_id: 12
-    -
-      id: 14
+    14:
       name: Double Tree Hotel
-    -
-      id: 15
+    15:
       name: 1st Floor
       parent_id: 14
-    -
-      id: 16
+    16:
       name: 2nd Floor
       parent_id: 14
-    -
-      id: 17
+    17:
       name: Garden State Expo Center
   rules:
     -

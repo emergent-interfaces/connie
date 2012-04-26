@@ -33,9 +33,9 @@ end
 puts "Creating example spaces"
 anext_spaces = data["anext"]["spaces"]
 
-anext_spaces.each do |space|
+anext_spaces.each do |id, space|
   s = Space.create(:name => space["name"], :parent_id => space["parent_id"])
-  Space.connection.execute("UPDATE spaces SET id = #{space["id"]} WHERE id = #{s.id}")
+  Space.connection.execute("UPDATE spaces SET id = #{id} WHERE id = #{s.id}")
   puts "- #{s.name}"
 end
 
