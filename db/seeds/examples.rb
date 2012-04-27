@@ -20,10 +20,11 @@ puts "Creating example events"
 anext_events = data["anext"]["events"]
 bcon_events = data["bcon"]["events"]
 
-anext_events.each do |event|
+anext_events.each do |id, event|
   puts "- #{event["name"]}"
-  e = FactoryGirl.create :event, name: event["name"], description: event["description"], conventions: [anext]
-  e.create_time_span(:start_time => event["start"], :end_time => event["end"])
+  e = Event.create name: event["name"], description: event["description"], conventions: [anext]
+  e.create_time_span(:start_time => event["start"], :end_time => event["end"], :confidence => 2)
+  Event.connection.execute("UPDATE events SET id = #{id} WHERE id = #{e.id}")
 end
 
 bcon_events.each do |event|
@@ -38,6 +39,20 @@ anext_spaces.each do |id, space|
   Space.connection.execute("UPDATE spaces SET id = #{id} WHERE id = #{s.id}")
   puts "- #{s.name}"
 end
+
+puts "Creating example reservations"
+anext_reservations = data["anext"]["reservations"]
+
+anext_reservations.each do |reservation|
+  e = Event.find(reservation["event"])
+  reservable_class = reservation["reservable_type"].constantize
+  reservable_id = reservation["reservable_id"]
+  r = e.reservations.create(:reservable => reservable_class.find(reservable_id))
+
+  puts "- #{e.name} reserves #{r.reservable.name}"
+end
+
+puts "Creating example rules"
 
 data["anext"]["rules"].each do |rule|
   case rule["type"]

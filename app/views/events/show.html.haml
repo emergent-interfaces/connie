@@ -19,7 +19,7 @@
 
 .section
   %h2 Reservations
-  = link_to "Create new reservation", new_event_reservations_path(@event)
+  = link_to "Create new reservation", new_event_reservation_path(@event)
 
   %ul
     - @event.reservations.each do |reservation|
