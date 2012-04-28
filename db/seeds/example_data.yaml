@@ -165,11 +165,8 @@ anext:
     25: {name: Panel 1, parent_id: 15}
     26: {name: Panel 2, parent_id: 16}
   rules:
-    -
-      type: IsRelatedRule
-      event_name: Concert Seating
-      relation: before
-      related_event_name: Stereopony Concert
+    - {type: IsRelatedRule, event_id: 9, relation: before, related_event_id: 10}
+    - {type: IsRelatedRule, event_id: 10,relation: after,  related_event_id: 9}
   reservations:
     - {event: 1, reservable_type: Space, reservable_id: 13}
     - {event: 2, reservable_type: Space, reservable_id: 13}

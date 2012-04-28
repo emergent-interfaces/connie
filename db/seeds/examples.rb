@@ -12,6 +12,13 @@ Event.delete_all
 Space.delete_all
 Reservation.delete_all
 
+ConventionResourceable.delete_all
+
+BeScheduledRule.delete_all
+IsRelatedRule.delete_all
+DurationRule.delete_all
+RuleAssignment.delete_all
+
 puts "Creating example convention"
 # Additional models for demonstration
 anext = FactoryGirl.create :convention, name: 'AnimeNext 2010'
@@ -23,9 +30,12 @@ bcon_events = data["bcon"]["events"]
 
 anext_events.each do |id, event|
   puts "- #{event["name"]}"
-  e = Event.create name: event["name"], description: event["description"], conventions: [anext]
-  e.create_time_span(:start_time => event["start"], :end_time => event["end"], :confidence => 2)
+  e = Event.create name: event["name"], description: event["description"]
   Event.connection.execute("UPDATE events SET id = #{id} WHERE id = #{e.id}")
+  e = Event.find(id)
+  e.conventions << anext
+  e.save
+  e.create_time_span(:start_time => event["start"], :end_time => event["end"], :confidence => 2)
 end
 
 bcon_events.each do |event|
@@ -58,10 +68,11 @@ puts "Creating example rules"
 data["anext"]["rules"].each do |rule|
   case rule["type"]
     when "IsRelatedRule"
-      event = Event.find_by_name(rule["event_name"])
-      related_event = Event.find_by_name(rule["related_event_name"])
-      #puts "#{event.name} #{related_event.name}"
+      event = Event.find(rule["event_id"])
+      related_event = Event.find(rule["related_event_id"])
       rule = IsRelatedRule.create(:related_event => related_event, :relation => rule["relation"])
       RuleAssignment.create(:event => event, :rule => rule)
+
+      puts "- #{event.name} #{rule["relation"]} #{related_event.name}"
   end
 end
