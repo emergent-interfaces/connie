@@ -25,9 +25,10 @@ $(document).ready(function() {
     });
 
     // Add bindings for best_in_place
-    $(document).ready(function() {
-      /* Activating Best In Place */
-      jQuery(".best_in_place").best_in_place();
-    });
+    jQuery(".best_in_place").best_in_place();
 
+    $(".best_in_place").hover(
+        function () { $(this).addClass('best_in_place_highlight'); },
+        function() { $(this).removeClass('best_in_place_highlight'); }
+    );
 });

@@ -10,6 +10,7 @@ puts "Deleting existing data"
 Convention.delete_all
 Event.delete_all
 Space.delete_all
+Reservation.delete_all
 
 puts "Creating example convention"
 # Additional models for demonstration

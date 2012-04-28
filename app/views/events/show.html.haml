@@ -6,7 +6,7 @@
 
 .section.description
   %h2 Description
-  = best_in_place @event, :description, :type => :textarea
+  = best_in_place @event, :description, :type => :textarea, :nil => "<span class=\"nil\">#{t(:please_set_description)}</span>"
 
 .section
   %h2 Scheduling
