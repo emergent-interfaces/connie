@@ -24,6 +24,13 @@ $(document).ready(function() {
        $(this).closest("form").submit();
     });
 
+    // Unobtrusive formatting of Events
+    $('.actions').hide();
+    $('#event_name').hover(
+        function() { $(this).find('.actions').show() },
+        function() {$(this).find('.actions').hide() }
+    );
+
     // Add bindings for best_in_place
     jQuery(".best_in_place").best_in_place();
 

@@ -1,8 +1,8 @@
-.actions
-  = link_to "Edit", edit_event_path(@event)
-  = link_to "Delete", @event, :method => :delete, :confirm => "Are you sure you want to delete #{@event.name}?"
-
-%h1= best_in_place @event, :name
+%h1#event_name
+  = best_in_place @event, :name
+  .actions
+    = link_to image_tag("icons/pencil.png"), edit_event_path(@event)
+    = link_to image_tag("icons/cross.png"), @event, :method => :delete, :confirm => "Are you sure you want to delete #{@event.name}?"
 
 .section.description
   %h2 Description
