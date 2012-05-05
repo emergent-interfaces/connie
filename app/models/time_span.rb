@@ -41,13 +41,13 @@ class TimeSpan < ActiveRecord::Base
       when :seconds
         duration_in_seconds
       when :minutes
-        duration_in_seconds/60
+        duration_in_seconds/60.0
       when :hours
-        duration_in_seconds/3600
+        duration_in_seconds/3600.0
     end
   end
 
   def duration_in_seconds
-    end_time - start_time
+    Float(end_time - start_time)
   end
 end
