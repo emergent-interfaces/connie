@@ -35,7 +35,7 @@ anext:
     9:
       name: Concert Seating
       start: June 18th 2010 8:00PM
-      end: June 18th 2010 8:30PM
+      end: June 18th 2010 9:00PM
     10:
       name: Stereopony Concert
       start: June 18th 2010 9:00PM
@@ -71,7 +71,7 @@ anext:
     18:
       name: Big Bald Broadcast
       start: June 18th 2010 1:00PM
-      end: 2:00PM
+      end: June 18th 2010 2:00PM
     19:
       name: Crossplay for Girls
       start: June 18th 2010 2:00PM
@@ -171,7 +171,7 @@ anext:
     - {event: 1, reservable_type: Space, reservable_id: 13}
     - {event: 2, reservable_type: Space, reservable_id: 13}
     - {event: 3, reservable_type: Space, reservable_id: 18}
-    - {event: 4, reservable_type: Space, reservable_id: 13}
+    - {event: 4, reservable_type: Space, reservable_id: 19}
     - {event: 5, reservable_type: Space, reservable_id: 20}
     - {event: 6, reservable_type: Space, reservable_id: 21}
     - {event: 7, reservable_type: Space, reservable_id: 21}

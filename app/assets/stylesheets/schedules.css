@@ -1,0 +1,90 @@
+/*
+ * CSS for the scheduling application
+ */
+
+#schedule {
+    width: 100%;
+    margin: 1em 0em;
+    position: relative;
+
+    background: #F0F0F0;
+}
+
+/* Locations */
+
+#schedule #locations {
+    width: 200px;
+    float: left;
+}
+
+#schedule #locations .header {
+    width: 100%;
+    height: 20px;
+
+    background: #B0D0FF;
+}
+
+#schedule #locations .location {
+    width: 100%;
+    height: 50px;
+
+    background: #E0E0E0;
+}
+
+#schedule #locations .odd {
+    background: #E8E8E8;
+}
+
+/* Matrix */
+#schedule #matrix {
+    position: relative;
+    overflow-x: scroll;
+}
+
+#schedule #matrix .header {
+    position: relative;
+
+    background: #E0E0E0;
+}
+
+#schedule #matrix .header .hour {
+    display: block;
+    position: relative;
+    float: left;
+    padding-top: 4px;
+    padding-left: 4px;
+    width: 95px;
+
+    border-left:  1px solid #C0C0C0;
+}
+
+.track {
+    width: 100%;
+    height: 50px;
+    background: #F0F0F0;
+    float: left;
+}
+
+.odd {
+    background: #FAFAFA;
+}
+
+a.reservation, a.reservation:visited {
+    float: left;
+    height: 48px;
+    border: 1px solid #D0D0D0;
+    display: block;
+    position: absolute;
+
+    text-decoration: none;
+    color: #0055FF;
+}
+
+a.reservation:hover, a.reservation:active {
+    background: #FFFFFF;
+}
+
+.reservation .name {
+    font-size: 0.8em;
+    padding-left: 2px;
+}

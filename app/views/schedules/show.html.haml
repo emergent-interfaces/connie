@@ -1,0 +1,25 @@
+%p= @start_time
+%p= @end_time
+
+- hour_width = 100;
+- reservation_border = 1;
+- matrix_width = hour_width*@hours.size
+
+#schedule
+  #locations
+    .header
+    - @spaces.each do |space|
+      .location{:class=>cycle("even","odd")}= space.name
+  #matrix
+    #matrix_expander(style="width: #{matrix_width}px")
+      .header
+        - @hours.each do |hour|
+          .hour= hour.hour
+      - @spaces.each do |space|
+        .track{:class=>cycle("event","odd")}
+          - reservations = Reservation.where("reservable_type = 'Space' and reservable_id = ?", space.id)
+          - reservations.keep_if {|r| r.event.time_span.end_time > @start_time && r.event.time_span.start_time < @end_time}
+
+          - reservations.each do |r|
+            %a.reservation(href="#{event_path(r.event)}" style="width: #{(hour_width-reservation_border*2)*r.event.time_span.duration(:hours)}px;left:#{(r.event.time_span.start_time - @start_time)*hour_width/3600}px;")
+              .name= r.event.name

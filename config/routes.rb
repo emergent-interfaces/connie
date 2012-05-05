@@ -29,11 +29,15 @@ Connie::Application.routes.draw do
 
   resources :time_spans
 
-  match 'rules/:rule_type/:rule_id' => 'rules#destroy',
-        :via => :delete
+  match 'rules/:rule_type/:rule_id' => 'rules#destroy', :via => :delete
 
   match 'reset_session' => 'application#reset_app_session'
 
+  # Schedule routes
+  match 'schedules' => 'schedules#index'
+  match 'schedules/:start/to/:end/spaces/:space_ids' => 'schedules#show'
+
+  #todo Make this useful
   root :to => 'conventions#index'
 
   # Sample of regular route:
