@@ -1,6 +1,6 @@
 module SchedulesHelper
   def reservation_width(reservation,hour_width,border)
-    (Float(hour_width)-Float(border)*2.0)*reservation.event.time_span.duration(:hours)
+    (Float(hour_width))*reservation.event.time_span.duration(:hours) - Float(border)*2.0
   end
 
   def reservation_left(reservation,track_start_time,hour_width,border)
