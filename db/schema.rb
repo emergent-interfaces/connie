@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120426002245) do
+ActiveRecord::Schema.define(:version => 20120506193647) do
 
   create_table "be_scheduled_rules", :force => true do |t|
     t.datetime "created_at"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20120426002245) do
     t.integer  "depth"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
+    t.string   "space_type"
   end
 
   create_table "tag_groups", :force => true do |t|

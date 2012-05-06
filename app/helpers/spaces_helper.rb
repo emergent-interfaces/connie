@@ -24,4 +24,42 @@ module SpacesHelper
     html << "</ul></li>"
     html.html_safe
   end
+
+  def location(space)
+    ancestors = space.ancestors
+
+    loc = ancestors.reverse.collect {|a| in_space_text(a.name,a.space_type)}.join(" ")
+  end
+
+  def in_space_text(name,type)
+    text = ""
+
+    case type
+      when 'building'
+        if name.downcase.include?('building')
+          text = "in the #{name}"
+        else
+          text = "in the #{name} building"
+        end
+      when 'floor'
+        if name.downcase.include?('floor')
+          text = "on the #{name}"
+        else
+          text = "on the #{name} floor"
+        end
+      when 'area'
+        text = "in the #{name}"
+      when 'room'
+        if name.downcase.include?('room') or
+           name.downcase.include?('hall') or
+           name.downcase.include?('lobby')
+          text = "in the #{name}"
+        else
+          text = "in #{name}"
+        end
+    end
+
+    text
+  end
+
 end
