@@ -13,6 +13,8 @@ gem 'chronic_duration'
 gem 'best_in_place'
 
 group :test do
+  gem 'spork'
+  gem 'spork-minitest'
   gem 'mocha', :require => false  # Prevent mocha from loading until after test framework
   gem 'minitest'
   gem 'minitest-reporters'
