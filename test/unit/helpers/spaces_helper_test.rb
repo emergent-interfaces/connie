@@ -13,6 +13,11 @@ class SpacesHelperTest < ActionView::TestCase
       assert_equal "on the 1st Floor in the Babbio Center building in the Stevens Campus",
                    location(@s4)
     end
+
+    should "generate an ancestors list with links" do
+      assert_equal "#{link_to @s3.name, @s3}, #{link_to @s2.name, @s2}, #{link_to @s1.name, @s1}",
+                   ancestors_list(@s4)
+    end
   end
 
   should "generate 'in space' text for building" do

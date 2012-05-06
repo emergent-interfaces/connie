@@ -9,6 +9,10 @@ module SpacesHelper
     trail.join(" > ").html_safe
   end
 
+  def ancestors_list(space)
+    space.ancestors.reverse.collect {|a| link_to a.name, a}.join(", ").html_safe
+  end
+
   def display_segment(node)
     html = "<li>"
     node_class = node.children.length == 0 ? "file" : "folder"
