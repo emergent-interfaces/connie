@@ -1,4 +1,6 @@
 Connie::Application.routes.draw do
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -28,6 +30,8 @@ Connie::Application.routes.draw do
   end
 
   resources :time_spans
+
+  resources :users
 
   match 'rules/:rule_type/:rule_id' => 'rules#destroy', :via => :delete
 

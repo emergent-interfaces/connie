@@ -11,6 +11,7 @@ gem 'formtastic'
 gem 'awesome_nested_set'
 gem 'chronic_duration'
 gem 'best_in_place'
+gem 'devise'
 
 group :test do
   gem 'spork'

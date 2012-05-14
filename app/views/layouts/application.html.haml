@@ -12,9 +12,13 @@
   %body
     #left-sidebar
       #user
+        = render :partial => 'users/status'
+
       = render 'shared/con_filter'
       %input.search
       .bar
       = render 'shared/nav'
     #main
+      .notice= notice
+      .alert= alert
       = yield

@@ -33,4 +33,10 @@ FactoryGirl.define do
     association :event
     association :reservable, :factory => :space
   end
+
+  factory :user do
+    sequence(:email) {|n| "user#{n}@fakemail.net"}
+    password 'password'
+    password_confirmation 'password'
+  end
 end
