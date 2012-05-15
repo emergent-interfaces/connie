@@ -21,6 +21,7 @@ FactoryGirl.define do
   factory :space do
     sequence(:name) {|n| "Space #{n}"}
     sequence(:venue_designated_name) {|n| "Designated Venue Name #{n}"}
+    space_type 'area'
   end
 
   factory :time_span do

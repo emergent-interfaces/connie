@@ -18,4 +18,9 @@ class SpaceTest < ActiveSupport::TestCase
   should allow_value("room").for(:space_type)
   should_not allow_value("hurkburjurgur").for(:space_type)
   should_not allow_value("bajizzlestein").for(:space_type)
+
+  should "build icalendar of reservations" do
+    @space = FactoryGirl.create(:space)
+    assert @space.respond_to? :icalendar
+  end
 end

@@ -9,8 +9,7 @@ class SpacesControllerTest < ActionController::TestCase
 
   context "when Spaces exist" do
     setup do
-      @world = FactoryGirl.create(:space, :name=>'world')
-      @space1 = FactoryGirl.create(:space, :parent=>@world)
+      @space1 = FactoryGirl.create(:space)
       @space2 = FactoryGirl.create(:space, :parent=>@space1)
     end
 
@@ -26,6 +25,10 @@ class SpacesControllerTest < ActionController::TestCase
       assert assigns(:space)
     end
 
+    should "get space calendar" do
+      get :show, {:id => @space1.id, :format => 'ics'}
+    end
+
     should "get edit" do
       get :edit, {:id => @space1.id}
       assert_response :success
@@ -36,7 +39,8 @@ class SpacesControllerTest < ActionController::TestCase
       assert_difference('Space.count') do
         post :create, :space => {:name => "New Space",
                                  :venue_designated_name => "New Venue Space",
-                                 :parent_id => @space1.id}
+                                 :parent_id => @space1.id,
+                                 :space_type => 'area'}
       end
 
       new_space = assigns(:space)
@@ -76,7 +80,7 @@ class SpacesControllerTest < ActionController::TestCase
 
   should "create new Space with no parent if no parent given" do
     assert_difference('Space.count') do
-      post :create, :space => {:name => "New Space", :venue_designated_name => "New Venue Space"}
+      post :create, :space => {:name => "New Space", :venue_designated_name => "New Venue Space", :space_type=>'area'}
     end
 
     new_space = assigns(:space)

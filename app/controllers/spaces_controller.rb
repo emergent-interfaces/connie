@@ -10,6 +10,12 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
+
+    respond_to do |format|
+      format.html {}
+      format.ics {render :text => @space.icalendar.to_ical}
+    end
+
   end
 
   def new
@@ -38,10 +44,6 @@ class SpacesController < ApplicationController
 
   def update
     @space = Space.find(params[:id])
-
-    unless @space.parent_id
-      @space.parent_id = Space.find_by_name('world').id
-    end
 
     if @space.update_attributes(params[:space])
       redirect_to @space, :notice => "Space updated"
