@@ -29,7 +29,8 @@ class DurationRuleTest < ActiveSupport::TestCase
       @rule = DurationRule.create(:min_duration => 10)
       @rule_assignment = RuleAssignment.create(:event => @event, :rule => @rule)
       @event.create_time_span(:start_time => Time.parse("Jan 1st 1:00PM"),
-                             :end_time => Time.parse("Jan 1st 1:10PM"))
+                             :end_time => Time.parse("Jan 1st 1:10PM"),
+                             :confidence => 0)
     end
 
     should "be satisfied if meets minimum duration" do
