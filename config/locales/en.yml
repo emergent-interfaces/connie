@@ -4,6 +4,17 @@
 en:
   please_set_description: "No description provided. Please add one."
 
+  date:
+    formats:
+      default: "%b %d, %Y"
+
+  time:
+    formats:
+      default: "%b %d, %Y %l:%M %p"
+      only_time: "%l:%M %p"
+      only_date: "%b %d, %Y"
+
+
   hello: "Hello world"
   event:
     need_dates: |

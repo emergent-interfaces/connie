@@ -11,6 +11,7 @@ Convention.delete_all
 Event.delete_all
 Space.delete_all
 Reservation.delete_all
+TimeSpan.delete_all
 
 ConventionResourceable.delete_all
 
@@ -35,7 +36,9 @@ anext_events.each do |id, event|
   e = Event.find(id)
   e.conventions << anext
   e.save
-  e.create_time_span(:start_time => event["start"], :end_time => event["end"], :confidence => 2)
+  start_time = DateTime.parse("#{event["start"]} EST")
+  end_time = DateTime.parse("#{event["end"]} EST")
+  e.create_time_span(:start_time => start_time, :end_time => end_time, :confidence => 2)
 end
 
 bcon_events.each do |event|

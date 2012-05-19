@@ -7,6 +7,6 @@
     %td= link_to event.name, event
     %td
       - if event.time_span
-        = render :partial=>'time_spans/inline', :locals => {event: event,time_span: event.time_span}
+        = condensed_time_span(event.time_span)
         -else
         Not scheduled
