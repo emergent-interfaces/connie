@@ -131,39 +131,50 @@ anext:
   spaces:
     11:
       name: Holiday Inn Hotel
+      space_type: building
     12:
       name: Ground Floor
       parent_id: 11
+      space_type: floor
     13:
       name: Video Gaming
       parent_id: 12
+      space_type: room
     14:
       name: Double Tree Hotel
+      space_type: building
     15:
       name: 1st Floor
       parent_id: 14
+      space_type: floor
     16:
       name: 2nd Floor
       parent_id: 14
+      space_type: floor
     17:
       name: Garden State Expo Center
+      space_type: building
     18:
       name: Dealer's Room
       parent_id: 17
+      space_type: room
     19:
       name: Manga Library
       parent_id: 15
+      space_type: room
     20:
       name: Artist's Alley
       parent_id: 15
+      space_type: area
     21:
       name: Main Events
       parent_id: 17
-    22: {name: Main Events B, parent_id: 17}
-    23: {name: Main Events C, parent_id: 17}
-    24: {name: Arena, parent_id: 17}
-    25: {name: Panel 1, parent_id: 15}
-    26: {name: Panel 2, parent_id: 16}
+      space_type: area
+    22: {name: Main Events B, parent_id: 17, space_type: area}
+    23: {name: Main Events C, parent_id: 17, space_type: area}
+    24: {name: Arena, parent_id: 17, space_type: area}
+    25: {name: Panel 1, parent_id: 15, space_type: room}
+    26: {name: Panel 2, parent_id: 16, space_type: room}
   rules:
     - {type: IsRelatedRule, event_id: 9, relation: before, related_event_id: 10}
     - {type: IsRelatedRule, event_id: 10,relation: after,  related_event_id: 9}
