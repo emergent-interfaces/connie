@@ -1,8 +1,12 @@
 %h1 Events Directory
-= link_to "New Event", session_filter(new_event_path)
-%table
-  %thead
-    %td Name
-  - @events.each do |event|
-    %tr
-      %td= link_to event.name, event
+
+= link_to image_tag('icons/add.png')+"New Event", session_filter(new_event_path), {class:'button_link'}
+
+= table(@events,["Name","Schedule"]) do |event,klass|
+  %tr(class=klass)
+    %td= link_to event.name, event
+    %td
+      - if event.time_span
+        = render :partial=>'time_spans/inline', :locals => {event: event,time_span: event.time_span}
+        -else
+        Not scheduled

@@ -35,6 +35,7 @@ body {
 
     padding: 10px;
     background: #e4e7f2;
+    border-right: 2px solid #e0e0eb;
 }
 
 #main {
@@ -116,4 +117,35 @@ input.search {
 
 .best_in_place_highlight {
     background: #E0E5FF;
+}
+
+/* Button Links */
+a.button_link, a.button_link:visited {
+    display: block;
+    float: left;
+    font-size: 0.9em;
+
+    text-decoration: none;
+    background: #F0F2F8 url('white_1px.png') repeat-x top;
+    border: 1px solid #E0E5EF;
+    border-bottom: 1px solid #D0D5DF;
+    padding: 3px 10px 4px 10px;
+
+    border-radius: 2px;
+
+    color: #505050;
+    text-shadow: 0px 1px 0px #ffffff;
+}
+
+a.button_link:hover, a.button_link:active {
+    background: #F6F8FE url('white_1px.png') repeat-x top;
+    border: 1px solid #D5E0E8;
+    border-top: 1px solid #E5F0FF;
+    color: #707070;
+}
+
+.button_link img {
+    position: relative;
+    top: 2px;
+    padding-right: 4px;
 }
