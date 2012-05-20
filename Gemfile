@@ -14,6 +14,10 @@ gem 'best_in_place'
 gem 'devise'
 gem 'icalendar'
 
+gem 'sunspot_rails'
+gem 'sunspot_solr' #pre-packaged Solr distribution for development
+gem 'progress_bar'
+
 group :test do
   gem 'spork'
   gem 'spork-minitest'

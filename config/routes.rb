@@ -37,6 +37,8 @@ Connie::Application.routes.draw do
 
   match 'reset_session' => 'application#reset_app_session'
 
+  match 'search' => 'searches#show'
+
   # Schedule routes
   match 'schedules' => 'schedules#index'
   match 'schedules/:start/to/:end/spaces/:space_ids' => 'schedules#show'

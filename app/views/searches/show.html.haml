@@ -1,0 +1,8 @@
+%h1 Search Results
+
+- if @search.results.count > 0
+  - @search.results.each do |result|
+    %ul
+      %li= link_to result.name, result
+- else
+  No results found.

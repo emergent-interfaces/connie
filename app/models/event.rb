@@ -17,4 +17,8 @@ class Event < ActiveRecord::Base
     return true if time_span
     false
   end
+
+  searchable :auto_index => true, :auto_remove => true do
+    text :name, :description
+  end
 end
