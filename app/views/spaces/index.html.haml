@@ -1,8 +1,9 @@
 %h1 Spaces
 
 .section
-  = link_to "Add new space", session_filter(new_space_path)
-
+  = link_to image_tag('icons/add.png')+"New Space", session_filter(new_space_path), {class:'button_link'}
+  <br/>
+  
 .section
   %h2 Spaces Tree
   %ul

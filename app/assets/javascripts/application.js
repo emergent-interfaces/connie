@@ -25,10 +25,14 @@ $(document).ready(function() {
     });
 
     // Unobtrusive formatting of Events
-    $('.actions').hide();
+    $('.model_tools').hide();
     $('#event_name').hover(
-        function() { $(this).find('.actions').show() },
-        function() {$(this).find('.actions').hide() }
+        function() { $(this).find('.model_tools').show() },
+        function() {$(this).find('.model_tools').hide() }
+    );
+    $('#space_name').hover(
+        function() { $(this).find('.model_tools').show() },
+        function() {$(this).find('.model_tools').hide() }
     );
 
     // Add bindings for best_in_place
