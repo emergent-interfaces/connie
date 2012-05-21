@@ -8,6 +8,10 @@
   = space_breadcrumbs(@space)
 
 .section
+  %h2 Type
+  = @space.space_type
+
+.section
   - if @space.children.count > 0
     Contained Spaces:
     = @space.children.collect {|child| link_to child.name, child}.join(", ").html_safe
