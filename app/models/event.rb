@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
-  has_many :convention_resourceables, :as => :resourceable
-  has_many :conventions, :through => :convention_resourceables
+  has_many :convention_linkables, :as => :linkable
+  has_many :conventions, :through => :convention_linkables
   has_one :time_span, :as => :time_spanable
 
   has_many :reservations, :dependent => :destroy

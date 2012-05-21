@@ -2,11 +2,11 @@ class Convention < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
 
-  has_many :convention_resourceables
-  has_many :resourceables, :through => :convention_resourceables
-  has_many :events, :through => :convention_resourceables, :source => :resourceable,
+  has_many :convention_linkables
+  has_many :linkables, :through => :convention_linkables
+  has_many :events, :through => :convention_linkables, :source => :linkable,
                     :source_type => "Event"
-  has_many :spaces, :through => :convention_resourceables, :source => :resourceable,
+  has_many :spaces, :through => :convention_linkables, :source => :linkable,
                     :source_type => "Space"
 
   after_create :create_tag

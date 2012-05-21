@@ -11,19 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120506210612) do
+ActiveRecord::Schema.define(:version => 20120520233853) do
 
   create_table "be_scheduled_rules", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "convention_resourceables", :force => true do |t|
+  create_table "convention_linkables", :force => true do |t|
     t.integer  "convention_id"
-    t.integer  "resourceable_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-    t.string   "resourceable_type"
+    t.integer  "linkable_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "linkable_type"
   end
 
   create_table "conventions", :force => true do |t|

@@ -6,5 +6,5 @@ class ConventionTest < ActiveSupport::TestCase
   FactoryGirl.create(:convention)  # required to validate_uniqueness
   should validate_uniqueness_of :name
 
-  should have_many(:resourceables).through(:convention_resourceables)
+  should have_many(:linkables).through(:convention_linkables)
 end

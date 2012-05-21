@@ -2,6 +2,7 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -13,8 +14,8 @@
    id="svg3086"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   width="202"
-   height="12"
+   width="301.97247"
+   height="112.40638"
    sodipodi:docname="faux_column.svg"
    inkscape:export-filename="/home/lsimons/RubymineProjects/connie/app/assets/images/faux_column.png"
    inkscape:export-xdpi="90"
@@ -27,12 +28,20 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
      id="defs3090">
+    <linearGradient
+       id="linearGradient3905"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3907" />
+    </linearGradient>
     <linearGradient
        inkscape:collect="always"
        id="linearGradient3889">
@@ -55,6 +64,28 @@
        y2="6.2090392"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.49999999,0,0,1,-298.94564,0)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3889-8"
+       id="linearGradient3895-5"
+       x1="193.94638"
+       y1="6.2090392"
+       x2="202.27724"
+       y2="6.2090392"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.49999999,0,0,9.3200184,-298.94564,-3.00293e-7)" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3889-8">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop3891-8" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop3893-0" />
+    </linearGradient>
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -69,32 +100,53 @@
      inkscape:window-height="894"
      id="namedview3088"
      showgrid="false"
-     inkscape:zoom="9.8429264"
-     inkscape:cx="174.49566"
-     inkscape:cy="1.1904111"
+     inkscape:zoom="2.4607316"
+     inkscape:cx="111.17669"
+     inkscape:cy="45.164213"
      inkscape:window-x="284"
      inkscape:window-y="31"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg3086" />
-  <image
-     width="201.93031"
-     height="12"
-     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAAMCAYAAAAnIfI8AAAABHNCSVQICAgIfAhkiAAAAENJREFU
-aIHt07ENgDAAwLDS/8+sxM4D9IEqKwz2BVlyrft5B3A0vw6APzMIBINAMAgEg0AwCASDQDAIBINA
-MAgEg0DYHboD1FObe8gAAAAASUVORK5CYII=
-"
-     id="image3094"
-     x="0"
-     y="0" />
-  <rect
-     style="opacity:0.08;fill:url(#linearGradient3895);fill-opacity:1;stroke:none"
-     id="rect3887"
-     width="4.1654272"
-     height="12.394688"
-     x="-201.97246"
-     y="0.011695361"
-     transform="scale(-1,1)"
-     inkscape:export-filename="/home/lsimons/RubymineProjects/connie/app/assets/images/rect3887.png"
-     inkscape:export-xdpi="90"
-     inkscape:export-ydpi="90" />
+     inkscape:current-layer="layer1"
+     fit-margin-bottom="100"
+     fit-margin-right="100"
+     fit-margin-top="0"
+     fit-margin-left="0" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer"
+     style="display:inline">
+    <image
+       width="201.93031"
+       height="111.84022"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAAMCAYAAAAnIfI8AAAABHNCSVQICAgIfAhkiAAAAENJREFU aIHt07ENgDAAwLDS/8+sxM4D9IEqKwz2BVlyrft5B3A0vw6APzMIBINAMAgEg0AwCASDQDAIBINA MAgEg0DYHboD1FObe8gAAAAASUVORK5CYII= "
+       id="image3094"
+       x="0"
+       y="-3.002931e-07" />
+    <rect
+       style="opacity:0.07999998;fill:url(#linearGradient3895-5);fill-opacity:1;stroke:none"
+       id="rect3887"
+       width="4.1654272"
+       height="115.51871"
+       x="-201.97246"
+       y="0.10900068"
+       transform="scale(-1,1)"
+       inkscape:export-filename="/home/lsimons/RubymineProjects/connie/app/assets/images/rect3887.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Selections"
+     style="display:none"
+     sodipodi:insensitive="true">
+    <rect
+       style="fill:#44ff39;fill-opacity:1;stroke:none;display:inline"
+       id="rect3919"
+       width="202"
+       height="12"
+       x="0"
+       y="0.4063797" />
+  </g>
 </svg>

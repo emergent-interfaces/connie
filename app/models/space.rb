@@ -6,8 +6,8 @@ class Space < ActiveRecord::Base
 
   validates_presence_of :name
 
-  has_many :convention_resourceables, :as => :resourceable
-  has_many :conventions, :through => :convention_resourceables
+  has_many :convention_linkables, :as => :linkable
+  has_many :conventions, :through => :convention_linkables
 
   validates_presence_of :space_type
   validates_inclusion_of :space_type, :in => %w{building floor area room}

@@ -13,7 +13,7 @@ Space.delete_all
 Reservation.delete_all
 TimeSpan.delete_all
 
-ConventionResourceable.delete_all
+ConventionLinkable.delete_all
 
 BeScheduledRule.delete_all
 IsRelatedRule.delete_all
