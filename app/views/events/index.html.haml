@@ -2,7 +2,7 @@
 
 = link_to image_tag('icons/add.png')+"New Event", session_filter(new_event_path), {class:'button_link'}
 
-= table(@events,["Name","Schedule"]) do |event,klass|
+= table(@events,["Name","Schedule","Rules"]) do |event,klass|
   %tr(class=klass)
     %td= link_to event.name, event
     %td
@@ -10,3 +10,4 @@
         = condensed_time_span(event.time_span)
         -else
         Not scheduled
+    %td= rules_summary(event)

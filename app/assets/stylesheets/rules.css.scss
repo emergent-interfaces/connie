@@ -13,3 +13,26 @@
   font-style: italic;
   color: #A0A0A0;
 }
+
+.violated_rules_indicator {
+  color: #ca9510;
+  position: absolute;
+}
+
+.violated_rules_indicator img {
+  position: relative;
+  top: 2px;
+  margin-top: -5px;
+  padding-right: 2px;
+}
+
+.satisfied_rules_indicator {
+  color: #006600;
+}
+
+.satisfied_rules_indicator img {
+  position: relative;
+  top: 2px;
+  margin-top: -5px;
+  padding-right: 2px;
+}

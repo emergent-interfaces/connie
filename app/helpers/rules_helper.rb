@@ -48,4 +48,20 @@ module RulesHelper
 
     msg
   end
+
+  def rule_status_icon(rule)
+    if rule.satisfied?
+      rule_satisfied_icon
+    else
+      rule_violated_icon
+    end
+  end
+
+  def rule_violated_icon
+    image_tag "icons/error.png"#, :style => "position: relative; top: 1px; padding: 0px 3px;"
+  end
+
+  def rule_satisfied_icon
+    image_tag "icons/accept.png"#, :style => "position: relative; top: 1px; padding: 0px 3px;"
+  end
 end
