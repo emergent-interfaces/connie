@@ -5,6 +5,9 @@
     = f.input :parent_id, :as => :select, :collection => nested_set_options(Space, @space) {|i| "#{'-' * i.level} #{i.name}"}
     = f.input :space_type, :as => :select, :collection => %w{area building floor room}
     = f.input :conventions, :as => :check_boxes
+  = f.inputs  "Details" do
+    = f.input :occupancy_standing
+    = f.input :occupancy_seated
   = f.actions do
     = f.action :submit, :as => :button
     = f.action :cancel, :as => :link

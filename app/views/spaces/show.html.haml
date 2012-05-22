@@ -12,6 +12,12 @@
   = @space.space_type
 
 .section
+  %h2 Occupancy
+  = "Seated: #{@space.occupancy_seated}"
+  <br/>
+  = "Standing: #{@space.occupancy_standing}"
+
+.section
   - if @space.children.count > 0
     Contained Spaces:
     = @space.children.collect {|child| link_to child.name, child}.join(", ").html_safe

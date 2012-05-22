@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120520233853) do
+ActiveRecord::Schema.define(:version => 20120522000001) do
 
   create_table "be_scheduled_rules", :force => true do |t|
     t.datetime "created_at"
@@ -81,6 +81,8 @@ ActiveRecord::Schema.define(:version => 20120520233853) do
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
     t.string   "space_type"
+    t.integer  "occupancy_seated"
+    t.integer  "occupancy_standing"
   end
 
   create_table "tag_groups", :force => true do |t|
