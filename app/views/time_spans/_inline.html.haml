@@ -1,8 +1,6 @@
 %span.inline_time_span{:id => "time_span_#{time_span.id}"}
   %span.time_span_text
-    = "#{time_span.start_time}"
-    = " to #{time_span.end_time}"
-
+    = condensed_time_span(time_span)
     - if time_span.confidence < 2
       = " (#{confidence_string_for(time_span.confidence)})"
 
