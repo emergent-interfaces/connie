@@ -55,3 +55,7 @@
     At most
     = text_field_tag 'max_duration_str'
     = submit_tag 'Create'
+
+.section
+  %h2 Comments
+  = render :partial => 'comments/listing', :locals => {:commentable => @event}

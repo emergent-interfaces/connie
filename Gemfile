@@ -17,6 +17,7 @@ gem 'icalendar'
 gem 'sunspot_rails'
 gem 'sunspot_solr' #pre-packaged Solr distribution for development
 gem 'progress_bar'
+gem 'acts_as_commentable_with_threading'
 
 group :test do
   gem 'spork'

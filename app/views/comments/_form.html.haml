@@ -1,0 +1,12 @@
+= semantic_form_for comment do |f|
+  = f.inputs do
+    = f.input :subject
+    = f.input :body, :input_html => {:rows=>3}
+
+  = f.hidden_field :commentable_type
+  = f.hidden_field :commentable_id
+  = f.hidden_field :user_id
+  = f.hidden_field :parent_id
+
+  = f.actions do
+    = f.submit

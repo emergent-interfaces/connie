@@ -22,6 +22,7 @@ Connie::Application.routes.draw do
     resource :time_span
     resources :reservations
     post 'create_rule'
+    resources :comments
   end
   resources :spaces
 
@@ -38,6 +39,9 @@ Connie::Application.routes.draw do
   match 'reset_session' => 'application#reset_app_session'
 
   match 'search' => 'searches#show'
+
+  resources :comments
+  match 'comments/:parent_id/reply' => 'comments#new', :as => 'new_comment_reply'
 
   # Schedule routes
   match 'schedules' => 'schedules#index'

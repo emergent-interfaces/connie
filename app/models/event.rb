@@ -9,6 +9,8 @@ class Event < ActiveRecord::Base
   has_many :rules, :through => :rule_assignments
   has_many :be_scheduled_rules, :through => :rule_assignments, :source_type => 'BeScheduledRule'
 
+  acts_as_commentable
+
   def rules
     rule_assignments.collect {|rule_assignment| rule_assignment.rule}
   end

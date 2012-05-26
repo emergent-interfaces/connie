@@ -1,0 +1,19 @@
+-#Get all comments here
+- comments = commentable.comment_threads.order('lft ASC')
+.comments
+  = nested_li(comments) do |comment|
+    .comment
+      .subject
+        = "#{comment.subject} by #{comment.user.email}"
+        %span.comment_actions
+          [
+          = link_to "reply", new_comment_reply_path(comment)
+          = link_to "delete", comment, :method => :delete, :confirm => "Are you sure?"
+          ]
+
+      .body= comment.body
+
+
+.new_comment_entry
+  New Comment
+  = render :partial=>'comments/form', :locals => {:comment => [commentable, Comment.build_from(commentable, current_user.id, "")]}

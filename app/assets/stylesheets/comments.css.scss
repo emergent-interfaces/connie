@@ -1,0 +1,27 @@
+.comments li {
+  padding: 10px;
+
+}
+
+.comments ul ul li {
+  border-left: 1px solid #80A0FF;
+}
+
+.comments ul ul {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.comment .subject {
+  font-size: 0.8em;
+  padding-bottom: 4px;
+}
+
+.comment .comment_actions a, .comment .comment_actions a:visited {
+  text-decoration: none;
+  color: blue;
+}
+
+.comment .comment_actions a:hover, .comment .comment_actions a:active {
+  text-decoration: underline;
+}

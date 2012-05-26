@@ -1,0 +1,6 @@
+- if @comment.parent
+  %h1= "Reply to #{@comment.parent.subject}"
+- else
+  %h1 New Comment
+
+= render :partial => 'form', :locals => {:comment => @comment}

@@ -28,6 +28,10 @@ GEM
     activesupport (3.2.2)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    acts_as_commentable_with_threading (1.1.2)
+      activerecord (>= 3.0)
+      activesupport (~> 3.0)
+      awesome_nested_set (>= 2.0)
     ansi (1.4.2)
     arel (3.0.2)
     awesome_nested_set (2.1.3)
@@ -173,6 +177,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_commentable_with_threading
   awesome_nested_set
   best_in_place
   chronic_duration
