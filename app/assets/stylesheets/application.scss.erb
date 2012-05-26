@@ -75,7 +75,9 @@ h2 {
     float: right;
 }
 
+/* Left Pane */
 ul.main_nav a, ul.main_nav a:visited {
+    display: block;
     text-decoration: none;
     font-size: 18px;
     font-family: sans-serif;
@@ -93,6 +95,12 @@ ul.main_nav li {
     padding: 8px 0px;
 }
 
+ul.main_nav li img {
+    position: relative;
+    top: 9px;
+    padding-right: 10px;
+}
+
 .bar {
     display: block;
     height: 2px;
@@ -101,12 +109,15 @@ ul.main_nav li {
 }
 
 input.search {
-    width: 180px;
+    width: 160px;
     font-size: 18px;
     border: 1px solid #bdc4e0;
     margin-bottom: 8px;
+    background: white url('icons/magnifier.png') no-repeat right;
+    padding-right: 20px;
 }
 
+/* Best In Place */
 .best_in_place .nil {
     color: gray;
     font-size: 0.8em;

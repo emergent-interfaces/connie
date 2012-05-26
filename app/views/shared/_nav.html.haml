@@ -1,9 +1,9 @@
 %ul.main_nav
   %li
-    = link_to 'Dash', default_convention
+    = link_to "#{image_tag 'core_icons/dashboard_icon.png'}Dash".html_safe, default_convention
   %li
-    = link_to 'Events', session_filter(events_path)
+    = link_to "#{image_tag 'core_icons/events_icon.png'}Events".html_safe, session_filter(events_path)
   %li
-    = link_to 'Spaces', session_filter(spaces_path)
+    = link_to "#{image_tag 'core_icons/spaces_icon.png'}Spaces".html_safe, session_filter(spaces_path)
   %li
-    = link_to 'Tags', tag_groups_path
+    = link_to "#{image_tag 'core_icons/tag_icon.png'}Tags".html_safe, tag_groups_path
