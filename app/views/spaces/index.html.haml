@@ -6,7 +6,8 @@
 
 .section
   %h2 Spaces Tree
-  %ul
-    - Space.all.keep_if{|s| s.level.==0}.each do |root_space|
-      %ul.spaces_tree
-        = display_segment(root_space)
+  .spaces
+    - spaces = Space.order('lft ASC')
+    = nested_li(spaces) do |space|
+      .space
+        .body= link_to space.name, space
