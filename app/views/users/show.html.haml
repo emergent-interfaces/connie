@@ -1,0 +1,10 @@
+%h1#user_name
+  = @user.username if @user.username
+  = "User #{@user.id}" unless @user.username
+  .model_tools
+    = link_to image_tag("icons/pencil.png"), edit_user_path(@space)
+    = link_to image_tag("icons/cross.png"), @space, :method => :delete, :confirm => "Are you sure?"
+
+.section
+  %h2 Profile
+  = "Username: #{@user.username}"

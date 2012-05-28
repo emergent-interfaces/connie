@@ -4,7 +4,7 @@
   = nested_li(comments) do |comment|
     .comment
       .subject
-        = "#{comment.subject} by #{comment.user.email}"
+        = "#{comment.subject} by #{comment.user.username}"
         %span.comment_actions
           [
           = link_to "reply", new_comment_reply_path(comment)

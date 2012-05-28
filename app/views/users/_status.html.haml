@@ -1,2 +1,4 @@
 - if user_signed_in?
-  .status= link_to current_user.email, current_user
+  .status
+    = link_to current_user.username, current_user
+    = link_to 'Sign Out', destroy_user_session_path, :method => :delete
