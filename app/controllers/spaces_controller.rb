@@ -1,4 +1,6 @@
 class SpacesController < ApplicationController
+  respond_to :html, :json
+
   def index
     if params[:convention_id]
       @convention = Convention.find(params[:convention_id])
@@ -45,10 +47,14 @@ class SpacesController < ApplicationController
   def update
     @space = Space.find(params[:id])
 
-    if @space.update_attributes(params[:space])
-      redirect_to @space, :notice => "Space updated"
-    else
-      render :action => 'edit'
+    respond_to do |format|
+      if @space.update_attributes(params[:space])
+        format.html {redirect_to @space, :notice => "Space updated"}
+        format.json {respond_with_bip @space}
+      else
+        format.html {render :action => 'edit'}
+        format.json {respond_with_bip @space}
+      end
     end
   end
 
