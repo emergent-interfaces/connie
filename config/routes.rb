@@ -30,6 +30,8 @@ Connie::Application.routes.draw do
     resources :tags
   end
 
+  resources :profiles
+
   resources :time_spans
 
   resources :users

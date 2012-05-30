@@ -38,7 +38,10 @@ $(document).ready(function() {
         function() { $(this).find('.model_tools').show() },
         function() {$(this).find('.model_tools').hide() }
     );
-
+    $('#profile_name').hover(
+        function() { $(this).find('.model_tools').show() },
+        function() {$(this).find('.model_tools').hide() }
+    );
 
     // Add bindings for best_in_place
     jQuery(".best_in_place").best_in_place();

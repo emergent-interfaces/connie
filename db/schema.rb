@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528215341) do
+ActiveRecord::Schema.define(:version => 20120530001709) do
 
   create_table "be_scheduled_rules", :force => true do |t|
     t.datetime "created_at"
@@ -69,6 +69,12 @@ ActiveRecord::Schema.define(:version => 20120528215341) do
     t.string   "relation"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "reservations", :force => true do |t|
