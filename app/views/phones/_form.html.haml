@@ -1,0 +1,8 @@
+= semantic_form_for [@phoneable, @phone] do |f|
+  = f.inputs do
+    = f.input :number
+    = f.input :extension
+    = f.input :phone_type
+  = f.actions do
+    = f.action :submit, :as => :button
+    = f.action :cancel, :as => :link

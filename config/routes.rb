@@ -30,7 +30,9 @@ Connie::Application.routes.draw do
     resources :tags
   end
 
-  resources :profiles
+  resources :profiles do
+    resources :phones
+  end
 
   resources :time_spans
 
