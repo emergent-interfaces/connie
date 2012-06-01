@@ -1,7 +1,7 @@
 module TableDisplayHelper
 
   def table(collection, headers)
-    output = "<table>\n"
+    output = "<table class='table'>\n"
     output << "\t<thead><tr>"
     headers.each do |h|
       output << "<td>#{h}</td>"

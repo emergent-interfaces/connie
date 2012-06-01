@@ -1,12 +1,15 @@
 module SpacesHelper
   def space_breadcrumbs(space)
-    trail = [link_to("Spaces",spaces_path)]
+    trail = "<ul class='breadcrumb'>"
+
+    trail << "<li>#{link_to("Spaces",spaces_path)}</li>"
 
     space.ancestors.each do |ancestor|
-      trail << link_to(ancestor.name,ancestor)
+      trail << "<li><span class='divider'>/</span> #{link_to(ancestor.name,ancestor)}</li>"
     end
 
-    trail.join(" > ").html_safe
+    trail << "</ul>"
+    trail.html_safe
   end
 
   def ancestors_list(space)

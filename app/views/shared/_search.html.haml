@@ -1,2 +1,2 @@
-= form_tag '/search', :method => :get do
-  %input.search(name='text')
+= form_tag('/search', :method => :get, class: "navbar-search pull-right") do
+  %input.search(name='text' class='search-query' placeholder="Search")

@@ -1,4 +1,4 @@
-- if user_signed_in?
-  .status
-    = link_to current_user.username, current_user
-    = link_to 'Sign Out', destroy_user_session_path, :method => :delete
+%ul.nav
+  - if user_signed_in?
+    %li= link_to current_user.username, current_user
+    %li= link_to '<i class="icon-off"></i>'.html_safe, destroy_user_session_path, :method => :delete

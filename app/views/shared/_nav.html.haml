@@ -1,11 +1,9 @@
-%ul.main_nav
+%ul.nav
   %li
-    = link_to "#{image_tag 'core_icons/dashboard_icon.png'}Dash".html_safe, default_convention
+    = link_to "Events".html_safe, session_filter(events_path)
   %li
-    = link_to "#{image_tag 'core_icons/events_icon.png'}Events".html_safe, session_filter(events_path)
+    = link_to "Spaces".html_safe, session_filter(spaces_path)
   %li
-    = link_to "#{image_tag 'core_icons/spaces_icon.png'}Spaces".html_safe, session_filter(spaces_path)
+    = link_to "Profiles".html_safe, session_filter(profiles_path)
   %li
-    = link_to "#{image_tag 'core_icons/profiles_icon.png'}Profiles".html_safe, session_filter(profiles_path)
-  %li
-    = link_to "#{image_tag 'core_icons/tag_icon.png'}Tags".html_safe, tag_groups_path
+    = link_to "Tags".html_safe, tag_groups_path

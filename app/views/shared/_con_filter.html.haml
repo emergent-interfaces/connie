@@ -1,3 +1,3 @@
-= form_tag '/conventions/set_default', :method => :put, :id => "set_default_convention_form" do
+= form_tag('/conventions/set_default', :method => :put, :id => "set_default_convention_form", :class=> "navbar-form pull-left") do
   = select_tag "default_convention", conventions_for_select
   = submit_tag ">"

@@ -1,6 +1,6 @@
 %h1 Events Directory
 
-= link_to image_tag('icons/add.png')+"New Event", session_filter(new_event_path), {class:'button_link'}
+= link_to "<i class='icon-plus'></i> New Event".html_safe, session_filter(new_event_path), {class:'btn'}
 
 = table(@events,["Name","Schedule","Rules"]) do |event,klass|
   %tr(class=klass)

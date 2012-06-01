@@ -1,24 +1,41 @@
 !!! 5
-%html
+%html(lang='en')
   %head
-    %title Connie
-    = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
+    %meta(charset='utf-8')
+    %meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    %title= content_for?(:title) ? yield(:title) : "Connie"
     = csrf_meta_tags
 
-    - if content_for? :head
-      = yield :head
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    %script(src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript")
+    <![endif]-->
 
+    = stylesheet_link_tag "application", :media => "all"
+
+    %link(href="images/favicon.ico" rel="shortcut icon")
+    %link(href="images/apple-touch-icon.png" rel="apple-touch-icon")
+    %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72")
+    %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114")
   %body
-    #left-sidebar
-      #user
-        = render :partial => 'users/status'
 
-      = render 'shared/con_filter'
-      = render 'shared/search'
-      .bar
-      = render 'shared/nav'
-    #main
-      .notice= notice
-      .alert= alert
-      = yield
+    %div(class="navbar navbar-fixed-top")
+      .navbar-inner
+        .container-fluid
+          = render 'shared/con_filter'
+          = render 'shared/nav'
+          .pull-right= render 'users/status'
+          = render 'shared/search'
+
+    .container-fluid
+      .row-fluid
+        .span12
+          = yield
+
+      %footer
+        %p &copy; Connie 2012
+
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    = javascript_include_tag "application"
