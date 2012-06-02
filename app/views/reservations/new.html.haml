@@ -1,10 +1,9 @@
-- content_for :title do
-  = "Add reservation to #{@event.name}"
+%h1= "Add reservation to #{@event.name}"
 
 = semantic_form_for [@event, @reservation] do |form|
   = form.inputs do
     = form.input :reservable, :as => :select, :collection => Space.all
 
   = form.actions do
-    = form.submit
-    = link_to "Cancel", :back, :class => "back"
+    = form.action :submit, :as => :button
+    = form.action :cancel, :as => :link
