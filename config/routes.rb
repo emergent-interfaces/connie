@@ -16,6 +16,7 @@ Connie::Application.routes.draw do
 
     resources :events
     resources :spaces
+    resources :profiles
   end
 
   resources :events do

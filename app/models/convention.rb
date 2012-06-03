@@ -8,6 +8,8 @@ class Convention < ActiveRecord::Base
                     :source_type => "Event"
   has_many :spaces, :through => :convention_linkables, :source => :linkable,
                     :source_type => "Space"
+  has_many :profiles, :through => :convention_linkables, :source => :linkable,
+                    :source_type => "Profile"
 
   after_create :create_tag
   before_save :rename_tag

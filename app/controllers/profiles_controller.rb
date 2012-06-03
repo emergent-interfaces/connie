@@ -2,7 +2,12 @@ class ProfilesController < ApplicationController
   respond_to :html, :json
 
   def index
-    @profiles = Profile.all
+    if params[:convention_id]
+      @convention = Convention.find(params[:convention_id])
+      @profiles = @convention.profiles
+    else
+      @profiles = Profile.all
+    end
   end
 
   def show
@@ -11,6 +16,7 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
+    @profile.conventions << Convention.find(params[:convention_id]) if params[:convention_id]
   end
 
   def create
