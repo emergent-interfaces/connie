@@ -26,7 +26,31 @@ $(document).ready(function() {
     });*/
     $('#set_default_convention_form').hide();
     $('#js_con_filter').show();
-    $('.dropdown-toggle').dropdown();   // Add hook since we weren't visible when page loaded
+    $('.dropdown-toggle').dropdown();
+
+    var labels,mapped;
+
+    $('.search-query').typeahead({
+        source: function(query, process) {
+            $.get('/search.json',{utf8: "✓",text: query}, function(data){
+                labels = [];
+                mapped = {};
+
+                console.log(data);
+
+                _.each(data, function(item) {
+                   label = item.name+" <span class='label'>event</span>";
+                   mapped[label] = item.name;
+                   labels.push(label);
+                });
+
+                process(labels);
+            });
+        },
+        updater: function(item) {
+            return mapped[item];
+        }
+    });
 
     // Unobtrusive formatting of Events
     $('.model_tools').hide();
