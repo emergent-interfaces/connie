@@ -19,3 +19,6 @@
 
 # Ignore simplecov results, https://github.com/colszowka/simplecov
 /coverage
+
+# Ignore solr data, you may need to run `rake sunspot:reindex` to get a useful search index
+/solr/data
