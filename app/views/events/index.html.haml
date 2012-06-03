@@ -1,6 +1,8 @@
-%h1 Events Directory
-
-= link_to "<i class='icon-plus'></i> New Event".html_safe, session_filter(new_event_path), {class:'btn'}
+.page-header
+  %h1
+    Events
+    %small= "Directory of events for #{default_convention_name}"
+    = link_to "<i class='icon-plus'></i> New Event".html_safe, session_filter(new_event_path), {class:'btn pull-right'}
 
 = table(@events,["Name","Schedule","Rules"]) do |event,klass|
   %tr(class=klass)

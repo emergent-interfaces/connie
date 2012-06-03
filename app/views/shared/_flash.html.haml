@@ -1,0 +1,11 @@
+- if flash[:notice]
+  .row-fluid
+    .span12
+      .alert(class='alert-info')
+        = flash[:notice]
+
+- if flash[:alert]
+  .row-fluid
+    .span12
+      .alert(class='alert-error')
+        = flash[:alert]

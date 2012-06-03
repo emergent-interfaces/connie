@@ -1,6 +1,6 @@
 module ConventionsHelper
   def default_convention_name
-    return "All conventions" unless session[:default_convention_id]
+    return "All Conventions" unless session[:default_convention_id]
     Convention.find(session[:default_convention_id]).name
   end
 

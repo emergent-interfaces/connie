@@ -14,12 +14,9 @@
     = stylesheet_link_tag "application", :media => "all"
 
     %link(href="images/favicon.ico" rel="shortcut icon")
-    %link(href="images/apple-touch-icon.png" rel="apple-touch-icon")
-    %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72")
-    %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114")
   %body
 
-    %div(class="navbar navbar-fixed-top")
+    .navbar(class="navbar-fixed-top")
       .navbar-inner
         .container-fluid
           = render 'shared/con_filter'
@@ -28,12 +25,10 @@
           = render 'shared/search'
 
     .container-fluid
+      = render :partial => 'shared/flash', :locals => {:flash => flash}
       .row-fluid
         .span12
           = yield
-
-      %footer
-        %p &copy; Connie 2012
 
     <!-- Javascripts
     ================================================== -->

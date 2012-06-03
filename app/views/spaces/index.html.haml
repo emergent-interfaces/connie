@@ -1,13 +1,12 @@
-%h1 Spaces
+.page-header
+  %h1
+    Spaces
+    %small Where events happen
+    = link_to "<i class='icon-plus'></i> New Space".html_safe, session_filter(new_space_path), {class:'btn pull-right'}
 
-.section
-  = link_to image_tag('icons/add.png')+"New Space", session_filter(new_space_path), {class:'button_link'}
-  <br/>
-
-.section
-  %h2 Spaces Tree
-  .spaces
-    - spaces = Space.order('lft ASC')
-    = nested_li(spaces) do |space|
-      .space
-        .body= link_to space.name, space
+%h2 Spaces Tree
+.spaces
+  - spaces = Space.order('lft ASC')
+  = nested_li(spaces) do |space|
+    .space
+      .body= link_to space.name, space

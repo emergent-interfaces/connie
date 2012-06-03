@@ -1,6 +1,10 @@
-%h1 Profiles
-
-= link_to image_tag('icons/add.png')+"New Profile", session_filter(new_profile_path), {class:'button_link'}
+.page-header
+  %h1
+    Profiles
+    %small People involved with conventions
+    .btn-group(class='pull-right')
+      = link_to "<i class='icon-plus'></i> New Profile".html_safe, session_filter(new_profile_path), {class:'btn'}
+      = link_to "<i class='icon-plus'></i> New Party".html_safe, "#", {class:'btn'}
 
 = table(@profiles,["Name"]) do |profile,klass|
   %tr(class=klass)

@@ -1,23 +1,19 @@
-%h1#space_name
-  = best_in_place @space, :name
-  .model_tools
-    = link_to image_tag("icons/pencil.png"), edit_space_path(@space)
-    = link_to image_tag("icons/cross.png"), @space, :method => :delete, :confirm => "Are you sure you want to delete #{@space.name}?"
+.page-header
+  %h1#space_name
+    = best_in_place @space, :name
+    .model_tools
+      = link_to image_tag("icons/pencil.png"), edit_space_path(@space)
+      = link_to image_tag("icons/cross.png"), @space, :method => :delete, :confirm => "Are you sure you want to delete #{@space.name}?"
 
-.section
-  = space_breadcrumbs(@space)
+= space_breadcrumbs(@space)
+- if @space.children.count > 0
+  Contained Spaces:
+  = @space.children.collect {|child| link_to child.name, child}.join(", ").html_safe
 
-.section
-  %h2 Type
-  = best_in_place @space, :space_type, :type => :select, :collection => [['room','room'],['building','building'],['area','area'],['floor','floor']]
+%h2 Type
+= best_in_place @space, :space_type, :type => :select, :collection => [['room','room'],['building','building'],['area','area'],['floor','floor']]
 
-.section
-  %h2 Occupancy
-  = "Seated: #{best_in_place @space, :occupancy_seated}".html_safe
-  <br/>
-  = "Standing: #{best_in_place @space, :occupancy_standing}".html_safe
-
-.section
-  - if @space.children.count > 0
-    Contained Spaces:
-    = @space.children.collect {|child| link_to child.name, child}.join(", ").html_safe
+%h2 Occupancy
+= "Seated: #{best_in_place @space, :occupancy_seated}".html_safe
+<br/>
+= "Standing: #{best_in_place @space, :occupancy_standing}".html_safe

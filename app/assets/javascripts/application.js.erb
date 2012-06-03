@@ -20,10 +20,13 @@
 $(document).ready(function() {
 
     // Unobtrusive formatting of set_default_convention_form for browsers with Javascript
-    $('#set_default_convention_form input').hide();
+    /*$('#set_default_convention_form input').hide();
     $('#set_default_convention_form select').change(function(){
        $(this).closest("form").submit();
-    });
+    });*/
+    $('#set_default_convention_form').hide();
+    $('#js_con_filter').show();
+    $('.dropdown-toggle').dropdown();   // Add hook since we weren't visible when page loaded
 
     // Unobtrusive formatting of Events
     $('.model_tools').hide();
