@@ -1,4 +1,4 @@
 %ul.nav
   - if user_signed_in?
-    %li= link_to current_user.username, current_user
+    %li(class="#{active_menu_class("users")}")= link_to current_user.username, current_user
     %li= link_to '<i class="icon-off"></i>'.html_safe, destroy_user_session_path, :method => :delete

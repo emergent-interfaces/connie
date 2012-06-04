@@ -1,9 +1,9 @@
 %ul.nav
-  %li
+  %li(class="#{active_menu_class("events")}")
     = link_to "Events".html_safe, session_filter(events_path)
-  %li
+  %li(class="#{active_menu_class("spaces")}")
     = link_to "Spaces".html_safe, session_filter(spaces_path)
-  %li
+  %li(class="#{active_menu_class("profiles")}")
     = link_to "Profiles".html_safe, session_filter(profiles_path)
-  %li
+  %li(class="#{active_menu_class("tag_groups")}")
     = link_to "Tags".html_safe, tag_groups_path
