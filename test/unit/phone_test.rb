@@ -15,7 +15,7 @@ class PhoneTest < ActiveSupport::TestCase
 
   ["123-456-7890", "(123) 456-7890", "A12DB3-456.78#90"].each do |number|
     should "save only numeric digits of #{number}" do
-      phone = Phone.new(:number => number)
+      phone = Phone.new(:number => number, :phone_type => 'mobile')
       assert phone.save
       assert_equal "1234567890", phone.number
     end
