@@ -12,6 +12,11 @@ class UsersControllerTest < ActionController::TestCase
         @user = FactoryGirl.create(:user)
       end
 
+      should "get index" do
+        get :index
+        assert assigns :users
+      end
+
       should "get user" do
         get :show, {:id => @user.id}
 
@@ -19,9 +24,15 @@ class UsersControllerTest < ActionController::TestCase
         assert_equal @user, assigns(:user)
       end
 
-      should "get index" do
-        get :index
-        assert assigns :users
+      should "edit user" do
+        get :edit, {:id => @user.id}
+        assert assigns(:user)
+      end
+
+      should "update user" do
+        put :update, {:id => @user.id, :user=>{username: 'Bruce Lee'}}
+
+        assert_equal 'Bruce Lee', @user.username
       end
     end
   end

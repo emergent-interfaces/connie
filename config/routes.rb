@@ -37,7 +37,9 @@ Connie::Application.routes.draw do
 
   resources :time_spans
 
-  resources :users
+  resources :users do
+    resource :profile
+  end
 
   match 'rules/:rule_type/:rule_id' => 'rules#destroy', :via => :delete
 

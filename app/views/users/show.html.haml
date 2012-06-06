@@ -1,10 +1,20 @@
-%h1#user_name
-  = @user.username if @user.username
-  = "User #{@user.id}" unless @user.username
-  .model_tools
-    = link_to image_tag("icons/pencil.png"), edit_user_path(@space)
-    = link_to image_tag("icons/cross.png"), @space, :method => :delete, :confirm => "Are you sure?"
+.page-header
+  %h1#user_name
+    = @user.username ? @user.username : "User #{@user.id}"
+    .model_tools
+      = link_to image_tag("icons/pencil.png"), edit_user_path(@user)
+      = link_to image_tag("icons/cross.png"), @user, :method => :delete, :confirm => "Are you sure?"
 
-.section
-  %h2 Profile
-  = "Username: #{@user.username}"
+%h2 Details
+= "Username: #{@user.username}"
+
+%h2 Profile
+- if @user.profile
+  = "#{link_to @user.profile.name, @user.profile}".html_safe
+- else
+  .alert
+    No profile is assigned to your user.
+    A profile must be assigned to have full access to your conventions.
+  .btn-group
+    =link_to "<i class='icon-magnet'></i> Link Existing Profile".html_safe, edit_user_path(@user), :class => 'btn'
+    =link_to "<i class='icon-plus'></i> Create New Profile".html_safe, new_user_profile_path(@user), :class => 'btn'
