@@ -5,28 +5,29 @@
       = link_to image_tag("icons/pencil.png"), edit_event_path(@event)
       = link_to image_tag("icons/cross.png"), @event, :method => :delete, :confirm => "Are you sure you want to delete #{@event.name}?"
 
-.section.description
-  %h2 Description
-  = best_in_place @event, :description, :type => :textarea, :nil => "<span class=\"nil\">#{t(:please_set_description)}</span>"
+.row-fluid
+  .span4
+    %h2 Description
+    = best_in_place @event, :description, :type => :textarea, :nil => "<span class=\"nil\">#{t(:please_set_description)}</span>"
 
-.section
-  %h2 Scheduling
-  - if @event.time_span
-    = render :partial => "time_spans/inline", :locals => {:event => @event,
-                                                          :time_span => @event.time_span}
-    - else
-    This event has not been scheduled.
-    = link_to "Schedule this event", new_event_time_span_path(@event)
+  .span4
+    %h2 Scheduling
+    - if @event.time_span
+      = render :partial => "time_spans/inline", :locals => {:event => @event,
+                                                            :time_span => @event.time_span}
+      - else
+      This event has not been scheduled.
+      = link_to "Schedule this event", new_event_time_span_path(@event)
 
-.section
-  %h2 Reservations
-  = link_to "Create new reservation", new_event_reservation_path(@event), :class=>'btn'
+  .span4
+    %h2 Reservations
+    %ul
+      - @event.reservations.each do |reservation|
+        %li
+          = "#{reservation.reservable.class}: #{reservation.reservable.name}"
+          = link_to "<i class='icon-remove'></i>".html_safe, [@event, reservation], :method=>:delete, :confirm=>"Are you sure?"
 
-  %ul
-    - @event.reservations.each do |reservation|
-      %li
-        = "#{reservation.reservable.class}: #{reservation.reservable.name}"
-        = link_to "<i class='icon-remove'></i>".html_safe, [@event, reservation], :method=>:delete, :confirm=>"Are you sure?", :class=>'btn btn-danger'
+    = link_to "Create new reservation", new_event_reservation_path(@event), :class=>'btn'
 
 .section
   %h2 Rules
