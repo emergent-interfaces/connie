@@ -16,7 +16,9 @@ Connie::Application.routes.draw do
 
     resources :events
     resources :spaces
-    resources :profiles
+    resources :profiles do
+      resources :roles
+    end
   end
 
   resources :events do
@@ -33,9 +35,11 @@ Connie::Application.routes.draw do
 
   resources :profiles do
     resources :phones
+    resources :roles
   end
 
   resources :time_spans
+  resources :roles
 
   resources :users do
     resource :profile

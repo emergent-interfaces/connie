@@ -5,13 +5,26 @@
       = link_to image_tag("icons/pencil.png"), edit_profile_path(@profile)
       = link_to image_tag("icons/cross.png"), @profile, :method => :delete, :confirm => "Are you sure you want to delete #{@profile.name}?"
 
-.section
-  %h2 Phone Numbers
-  = table(@profile.phones,["Type", "Number",""]) do |phone,klass|
-    %tr(class=klass)
-      %td= phone.phone_type
-      %td= phone.number
-      %td
-        = link_to image_tag('icons/pencil.png'), edit_profile_phone_path(@profile,phone)
-        = link_to image_tag('icons/cross.png'), [@profile,phone], :method => :delete
-  = link_to image_tag('icons/add.png')+"New Phone Number", new_profile_phone_path(@profile), {class:'button_link'}
+%h2 Roles
+- @profile.roles.each do |role|
+  .role
+    = "#{role.name} (#{role.convention.name})" if role.department == ""
+    = "#{role.department}:#{role.name} (#{role.convention.name})" unless role.department == ""
+    = link_to "<i class='icon-remove'></i>".html_safe, role, :method => :delete
+
+<br/>
+
+- if default_convention_set?
+  = link_to "<i class='icon-plus'></i> New Role".html_safe, new_convention_profile_role_path(default_convention, @profile), :class=>'btn'
+- else
+  = link_to "<i class='icon-plus'></i> New Role".html_safe, new_profile_role_path(@profile), :class=>'btn'
+
+%h2 Phone Numbers
+= table(@profile.phones,["Type", "Number",""]) do |phone,klass|
+  %tr(class=klass)
+    %td= phone.phone_type
+    %td= phone.number
+    %td
+      = link_to image_tag('icons/pencil.png'), edit_profile_phone_path(@profile,phone)
+      = link_to image_tag('icons/cross.png'), [@profile,phone], :method => :delete
+= link_to image_tag('icons/add.png')+"New Phone Number", new_profile_phone_path(@profile), {class:'button_link'}

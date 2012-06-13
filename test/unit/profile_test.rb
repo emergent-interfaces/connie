@@ -4,6 +4,7 @@ class ProfileTest < ActiveSupport::TestCase
   should validate_presence_of :name
   should have_many :conventions
   should have_many :phones
+  should have_many :roles
 
   should have_one :user
 
