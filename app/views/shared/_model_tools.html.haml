@@ -1,0 +1,3 @@
+.model_tools
+  = link_to "<i class='icon-pencil'></i> edit".html_safe, ['edit', model], :class => 'btn'
+  = link_to "<i class='icon-remove'></i> delete".html_safe, model, :method => :delete, :confirm => "Are you sure you want to delete #{name}?", :class => 'btn btn-danger'

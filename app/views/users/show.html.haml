@@ -1,9 +1,7 @@
 .page-header
-  %h1#user_name
+  %h1
     = @user.username ? @user.username : "User #{@user.id}"
-    .model_tools
-      = link_to image_tag("icons/pencil.png"), edit_user_path(@user)
-      = link_to image_tag("icons/cross.png"), @user, :method => :delete, :confirm => "Are you sure?"
+    = render :partial => 'shared/model_tools', :locals => {model: @user, name: @user.username}
 
 .row-fluid
   .span8

@@ -54,21 +54,9 @@ $(document).ready(function() {
 
     // Unobtrusive formatting of Events
     $('.model_tools').hide();
-    $('#event_name').hover(
-        function() { $(this).find('.model_tools').show() },
-        function() {$(this).find('.model_tools').hide() }
-    );
-    $('#space_name').hover(
-        function() { $(this).find('.model_tools').show() },
-        function() {$(this).find('.model_tools').hide() }
-    );
-    $('#user_name').hover(
-        function() { $(this).find('.model_tools').show() },
-        function() {$(this).find('.model_tools').hide() }
-    );
-    $('#profile_name').hover(
-        function() { $(this).find('.model_tools').show() },
-        function() {$(this).find('.model_tools').hide() }
+    $('.page-header').hover(
+        function() { $(this).find('.model_tools').fadeIn(100) },
+        function() {$(this).find('.model_tools').fadeOut(100) }
     );
 
     // Add bindings for best_in_place

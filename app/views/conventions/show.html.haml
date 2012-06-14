@@ -1,3 +1,4 @@
-%h1= @convention.name
-
-= link_to "Edit", edit_convention_path
+.page-header
+  %h1
+    = @convention.name
+    = render :partial => 'shared/model_tools', :locals => {model: @convention, name: @convention.name}
