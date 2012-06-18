@@ -7,6 +7,7 @@ Connie::Application.routes.draw do
   resources :conventions do
     member do
       put 'set_as_default'
+      match 'roles/:role_department/profiles' => 'profiles#index'
     end
 
     collection do
@@ -37,6 +38,8 @@ Connie::Application.routes.draw do
     resources :phones
     resources :roles
   end
+
+  match 'roles/:role_department/profiles' => 'profiles#index'
 
   resources :time_spans
   resources :roles

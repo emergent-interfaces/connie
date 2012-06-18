@@ -6,6 +6,15 @@
       = link_to "<i class='icon-plus'></i> New Profile".html_safe, session_filter(new_profile_path), {class:'btn'}
       = link_to "<i class='icon-plus'></i> New Party".html_safe, "#", {class:'btn'}
 
-= table(@profiles,["Name"]) do |profile,klass|
-  %tr(class=klass)
-    %td= link_to profile.name, profile
+.row-fluid
+  .span4
+    %h2 Departments
+    %ul
+    - Role.all.collect{|role| role.department}.reject!{|s| s.empty?}.each do |department|
+      %li= link_to department, "/roles/#{h(department)}/profiles"
+
+  .span8
+    %h2 All Profiles
+    = table(@profiles,["Name"]) do |profile,klass|
+      %tr(class=klass)
+        %td= link_to profile.name, profile
