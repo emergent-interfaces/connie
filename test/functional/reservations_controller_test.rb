@@ -19,6 +19,21 @@ class ReservationsControllerTest < ActionController::TestCase
         assert assigns :reservation
       end
 
+      context "with a Profile" do
+        setup do
+          @profile = FactoryGirl.create(:profile)
+        end
+
+        should "create new Reservation with valid data" do
+          assert_difference('@event.reservations.count') do
+            post :create, {:event_id => @event.id,
+                           :reservation => {:reservable_id => @profile.id,
+                                            :reservable_type => @profile.class}
+                           }
+          end
+        end
+      end
+
       context "with a Space" do
         setup do
           @space = FactoryGirl.create(:space)
@@ -27,7 +42,9 @@ class ReservationsControllerTest < ActionController::TestCase
         should "create new Reservation with valid data" do
           assert_difference('@event.reservations.count') do
             post :create, {:event_id => @event.id,
-                           :reservation => {:reservable_id => @space.id}}
+                           :reservation => {:reservable_id => @space.id,
+                                            :reservable_type => @space.class}
+                           }
           end
 
           assert_redirected_to @event

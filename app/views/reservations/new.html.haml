@@ -2,7 +2,7 @@
 
 = semantic_form_for [@event, @reservation] do |form|
   = form.inputs do
-    = form.input :reservable, :as => :select, :collection => Space.all
+    = form.input :reservable, :as => :select, :collection => reservables_for_select
 
   = form.actions do
     = form.action :submit, :as => :button

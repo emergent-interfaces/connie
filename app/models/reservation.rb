@@ -5,6 +5,6 @@ class Reservation < ActiveRecord::Base
   validates_presence_of :reservable
 
   def reservable
-    Space.find(reservable_id) if reservable_id
+    reservable_type.constantize.find(reservable_id) if reservable_id
   end
 end

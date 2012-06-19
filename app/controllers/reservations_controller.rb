@@ -5,7 +5,9 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    params[:reservation][:reservable_type] = 'space'
+    reservable = params[:reservation][:reservable_id].split('-')
+    params[:reservation][:reservable_type] = reservable[0]
+    params[:reservation][:reservable_id] = reservable[1]
 
     @event = Event.find(params[:event_id])
     @reservation = @event.reservations.build(params[:reservation])
