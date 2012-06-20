@@ -20,6 +20,7 @@ Connie::Application.routes.draw do
     resources :profiles do
       resources :roles
     end
+    resources :jobs
   end
 
   resources :events do
@@ -43,6 +44,7 @@ Connie::Application.routes.draw do
 
   resources :time_spans
   resources :roles
+  resources :jobs
 
   resources :users do
     resource :profile

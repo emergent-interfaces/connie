@@ -5,5 +5,7 @@
     = link_to "Spaces".html_safe, session_filter(spaces_path)
   %li(class="#{active_menu_class("profiles")}")
     = link_to "Profiles".html_safe, session_filter(profiles_path)
+  %li(class="#{active_menu_class("jobs")}")
+    = link_to "Jobs".html_safe, session_filter(jobs_path)
   %li(class="#{active_menu_class("tag_groups")}")
     = link_to "Tags".html_safe, tag_groups_path

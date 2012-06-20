@@ -45,4 +45,8 @@ FactoryGirl.define do
   factory :profile do
     sequence(:name) {|n| "Profile #{n}"}
   end
+
+  factory :job do
+    sequence(:name) {|n| "Job #{n}"}
+  end
 end

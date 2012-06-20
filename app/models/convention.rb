@@ -10,6 +10,8 @@ class Convention < ActiveRecord::Base
                     :source_type => "Space"
   has_many :profiles, :through => :convention_linkables, :source => :linkable,
                     :source_type => "Profile"
+  has_many :jobs, :through => :convention_linkables, :source => :linkable,
+           :source_type => "Job"
 
   after_create :create_tag
   before_save :rename_tag
