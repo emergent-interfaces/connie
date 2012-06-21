@@ -5,3 +5,6 @@
 
 %h2 Description
 = best_in_place @job, :description, :type => :textarea, :nil => "<span class=\"nil\">#{t(:please_set_description)}</span>"
+
+%h2 Comments
+= render :partial => 'comments/listing', :locals => {:commentable => @job}

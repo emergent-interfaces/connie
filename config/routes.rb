@@ -44,7 +44,10 @@ Connie::Application.routes.draw do
 
   resources :time_spans
   resources :roles
-  resources :jobs
+  resources :jobs do
+    resources :comments
+  end
+
 
   resources :users do
     resource :profile

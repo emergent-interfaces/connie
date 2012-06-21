@@ -3,4 +3,6 @@ class Job < ActiveRecord::Base
 
   has_many :convention_linkables, :as => :linkable
   has_many :conventions, :through => :convention_linkables
+
+  acts_as_commentable
 end
