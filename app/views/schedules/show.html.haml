@@ -12,7 +12,7 @@
     #matrix_expander(style="width: #{matrix_width}px")
       .header
         - @hours.each do |hour|
-          .hour= hour.strftime("%l:%M %p")
+          .hour= l(hour, :format => :only_time)
       - @spaces.each do |space|
         .track{:class=>cycle("event","odd")}
           - reservations = Reservation.where("reservable_type = 'Space' and reservable_id = ?", space.id)

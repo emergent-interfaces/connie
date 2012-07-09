@@ -7,7 +7,7 @@ class SchedulesController < ApplicationController
     @start_time = DateTime.parse(params[:start])
     @end_time = DateTime.parse(params[:end])
 
-    @hours = hours(@start_time, @end_time)
+    @hours = hours(@start_time.in_time_zone, @end_time.in_time_zone)
 
     @spaces = params[:space_ids].split(',').collect {|id| Space.find(id)}
   end
