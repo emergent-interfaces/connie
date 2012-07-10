@@ -1,7 +1,13 @@
-%h1 Convention Listing
-
-= link_to 'Create new Convention', new_convention_path
+.page-header
+  %h1
+    Convention Listing
+    %small= "Manage conventions in the database"
+    = link_to "<i class='icon-plus'></i> New Convention".html_safe, new_convention_path, {class:'btn pull-right'}
 
 %ul
-- @conventions.each do |convention|
-  %li= link_to convention.name, convention
+
+- @conventions.each_slice(4) do |conventions|
+  .row-fluid
+    - conventions.each do |convention|
+      .span3
+        .well= render :partial=>'conventions/block', :locals => {:convention=>convention}

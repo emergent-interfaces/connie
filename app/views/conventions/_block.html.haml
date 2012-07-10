@@ -1,0 +1,12 @@
+%h2= link_to convention.name, convention
+
+%ul.unstyled
+  %li= "#{pluralize convention.events.count, 'Event'}"
+  %li= "#{pluralize convention.profiles.count, 'Profile'}"
+  %li= "#{pluralize convention.spaces.count, 'Space'}"
+  %li= "#{pluralize convention.jobs.count, 'Job'}"
+
+- if convention == default_convention
+  = link_to "<i class='icon-star'></i> Clear Default".html_safe, "/conventions/remove_default", :method => :put, :class => 'btn btn-mini'
+- else
+  = link_to "<i class='icon-star-empty'></i> Make Default".html_safe, "/conventions/#{convention.id}/set_as_default", :method => :put, :class => 'btn btn-mini'
