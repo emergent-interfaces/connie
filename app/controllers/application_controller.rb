@@ -13,4 +13,20 @@ class ApplicationController < ActionController::Base
   def set_timezone
     Time.zone = "EST"
   end
+
+  def index
+    redirect_to default_convention
+  end
+
+  helper_method :default_convention
+  def default_convention
+    return conventions_path unless session[:default_convention_id]
+    Convention.find(session[:default_convention_id])
+  end
+
+  helper_method :default_convention_set?
+  def default_convention_set?
+    session[:default_convention_id] ? true : false
+  end
+
 end

@@ -1,15 +1,18 @@
 -# Fallback for non-javascript enabled browsers
 = form_tag('/conventions/set_default', :method => :put, :id => "set_default_convention_form", :class=> "navbar-form pull-left") do
+  = link_to "<strong>#{default_convention_name}</strong>".html_safe, root_path, :class=>'btn btn-inverse inverse'
   = select_tag "default_convention", conventions_for_select
   = submit_tag ">"
 
 -# Standard dropdown selector
 %ul#js_con_filter.nav(style='display:none')
-  %li.dropdown
-    = link_to "<strong>#{default_convention_name}</strong> <b class='caret'></b>".html_safe, "#", :class=>'dropdown-toggle', "data-toggle"=>'dropdown'
-
-    %ul.dropdown-menu
-      - Convention.all.each do |convention|
-        %li= link_to "#{convention.name}", "/conventions/#{convention.id}/set_as_default", :method => :put
-      %li.divider
-      %li= link_to "All Conventions", "/conventions/remove_default", :method => :put
+  %li
+    .btn-group
+      = link_to "<strong>#{default_convention_name}</strong>".html_safe, root_path, :class=>'btn btn-inverse inverse'
+      %a.btn(class='btn-inverse dropdown-toggle' data-toggle='dropdown')
+        %span.caret
+      %ul.dropdown-menu
+        - Convention.all.each do |convention|
+          %li= link_to "#{convention.name}", "/conventions/#{convention.id}/set_as_default", :method => :put
+        %li.divider
+        %li= link_to "All Conventions", "/conventions/remove_default", :method => :put

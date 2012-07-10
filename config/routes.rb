@@ -67,7 +67,7 @@ Connie::Application.routes.draw do
   match 'schedules/:start/to/:end/spaces/:space_ids' => 'schedules#show'
 
   #todo Make this useful
-  root :to => 'conventions#index'
+  root :to => 'application#index'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
