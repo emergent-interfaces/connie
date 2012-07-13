@@ -13,4 +13,4 @@ the core models.  Then, run `db:test:clone` to mirror the dev database into the 
 You should then seed the examples into the dev database.  Or not, but it's your loss.
 
 To use/test with search functionality run `rake sunspot:solr:run` on the development and/or
-test environment.
+test environment.  If you don't do this you will see connection refused errors.
