@@ -1,10 +1,10 @@
 %h2= link_to convention.name, convention
 
 %ul.unstyled
-  %li= "#{pluralize convention.events.count, 'Event'}"
-  %li= "#{pluralize convention.profiles.count, 'Profile'}"
-  %li= "#{pluralize convention.spaces.count, 'Space'}"
-  %li= "#{pluralize convention.jobs.count, 'Job'}"
+  %li= link_to "#{pluralize convention.events.count, 'Event'}", convention_events_path(convention)
+  %li= link_to "#{pluralize convention.profiles.count, 'Profile'}", convention_profiles_path(convention)
+  %li= link_to "#{pluralize convention.spaces.count, 'Space'}", convention_spaces_path(convention)
+  %li= link_to "#{pluralize convention.jobs.count, 'Job'}", convention_jobs_path(convention)
 
 - if convention == default_convention
   = link_to "<i class='icon-star'></i> Clear Default".html_safe, "/conventions/remove_default", :method => :put, :class => 'btn btn-mini'
