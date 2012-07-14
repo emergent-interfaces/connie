@@ -13,7 +13,7 @@ class Reservation < ActiveRecord::Base
 
   def time_span
     if inherit_time_span
-      event.send(inherit_time_span)
+      event.time_span
     else
       model_time_span
     end

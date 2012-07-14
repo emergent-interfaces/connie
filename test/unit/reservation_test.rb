@@ -21,7 +21,7 @@ class ReservationTest < ActiveSupport::TestCase
 
     should "inherit reservation if specified" do
       @event = FactoryGirl.create(:event, :time_span => @time_span)
-      @reservation = @event.reservations.build(:reservable => @space, :inherit_time_span => :time_span)
+      @reservation = @event.reservations.build(:reservable => @space, :inherit_time_span => true)
       assert_equal @time_span, @reservation.time_span
     end
 
@@ -32,13 +32,13 @@ class ReservationTest < ActiveSupport::TestCase
 
     should "be scheduled when inherits a timespan" do
       @event = FactoryGirl.create(:event, :time_span => @time_span)
-      @reservation = @event.reservations.build(:reservable => @space, :inherit_time_span => :time_span)
+      @reservation = @event.reservations.build(:reservable => @space, :inherit_time_span => true)
       assert @reservation.scheduled?
     end
 
     should "not be scheduled when inherits from an unscheduled model" do
       @event = FactoryGirl.create(:event)
-      @reservation = @event.reservations.build(:reservable => @space, :inherit_time_span => :time_span)
+      @reservation = @event.reservations.build(:reservable => @space, :inherit_time_span => true)
       refute @reservation.scheduled?
     end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120712012826) do
+ActiveRecord::Schema.define(:version => 20120714004323) do
 
   create_table "be_scheduled_rules", :force => true do |t|
     t.datetime "created_at"
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(:version => 20120712012826) do
     t.integer  "reservable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "inherit_time_span"
+    t.boolean  "inherit_time_span", :limit => 255
   end
 
   create_table "roles", :force => true do |t|
