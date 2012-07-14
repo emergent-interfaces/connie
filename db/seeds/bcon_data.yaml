@@ -1,0 +1,8 @@
+convention:
+  name: Bureaucracon 2010
+events:
+  - {name: 'Legal-size Paper Distribution'}
+  - {name: 'On the Influence of #3 Pencils'}
+  - {name: 'Pre-registration'}
+  - {name: 'Post-pre-registration Presentation'}
+  - {name: 'Committee for Formation of Committees Meeting'}

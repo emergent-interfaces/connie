@@ -1,0 +1,173 @@
+convention:
+  name: AnimeNext 2010
+events:
+  - name: BlazBlue & King of Fighters 2002 Ultimate Match
+    start: June 18th 2010 7:00PM
+    end: June 18th 2010 9:00PM
+  - name: Tatsunoki vs. Capcom & Vampire Savior
+    start: June 18th 2010 9:00PM
+    end: June 18th 2010 10:30PM
+  - name: Dealers Room Friday
+    start: June 18th 2010 12:30PM
+    end: June 18th 2010 8:00PM
+  - name: Manga Library Friday
+    start: June 18th 2010 10:00AM
+    end: June 19th 2010 12:00AM
+  - name: Art Show
+    start: June 18th 2010 12:00PM
+    end: June 19th 2010 12:00AM
+  - name: Masquerade Rehearsal Part 1
+    start: June 18th 2010 1:00PM
+    end: June 18th 2010 3:30PM
+  - name: Launch Party
+    start: June 18th 2010 4:00PM
+    end: June 18th 2010 5:30PM
+  - name: Kenji Kamiyama
+    start: June 18th 2010 6:00PM
+    end: June 18th 2010 7:00PM
+  - name: Concert Seating
+    start: June 18th 2010 8:00PM
+    end: June 18th 2010 9:00PM
+  - name: Stereopony Concert
+    start: June 18th 2010 9:00PM
+    end: June 18th 2010 10:00PM
+  - name: Uncle Yo
+    start: June 18th 2010 10:30PM
+    end: June 18th 2010 11:30PM
+  - name: Cosplay Burlesque
+    start: June 19th 2010 12:00AM
+    end: June 19th 2010 2:00AM
+  - name: AMV Screening
+    start: June 18th 2010 2:30PM
+    end: June 18th 2010 4:00PM
+  - name: Kenji Kamiyama Autograph Session
+    start: June 18th 2010 4:30PM
+    end: June 18th 2010 5:30PM
+  - name: Anime Parliament
+    start: June 18th 2010 6:00PM
+    end: June 18th 2010 8:00PM
+  - name: Stereopony Green Room
+    start: June 18th 2010 7:00PM
+    end: June 18th 2010 10:00PM
+  - name: Sleeping Samurai
+    start: June 18th 2010 12:00PM
+    end: June 18th 2010 10:00PM
+  - name: Big Bald Broadcast
+    start: June 18th 2010 1:00PM
+    end: June 18th 2010 2:00PM
+  - name: Crossplay for Girls
+    start: June 18th 2010 2:00PM
+    end: June 18th 2010 3:30PM
+  - name: 'Baron Munchausen - Charity Drive'
+    start: June 18th 2010 4:00PM
+    end: June 18th 2010 5:00PM
+  - name: 'Hetalia: 2010 World Summit'
+    start: June 18th 2010 5:30PM
+    end: June 18th 2010 7:00PM
+  - name: 'Robotech: Goes to the Movies'
+    start: June 18th 2010 7:00PM
+    end: June 18th 2010 8:00PM
+  - name: 'Greg Ayres: From Host Club to Hospital'
+    start: June 18th 2010 8:30PM
+    end: June 18th 2010 10:00PM
+  - name: These are a Few of my Favorite Scenes
+    start: June 18th 2010 10:00PM
+    end: June 19th 2010 12:00AM
+  - name: Convention Ettiquete
+    start: June 18th 2010 1:00PM
+    end: June 18th 2010 2:00PM
+  - name: How to Spot Bootleg Merchandise
+    start: June 18th 2010 2:00PM
+    end: June 18th 2010 3:00PM
+  - name: Soul Eater Fan Panel
+    start: June 18th 2010 4:00PM
+    end: June 18th 2010 5:00PM
+  - name: "Elrik Blackwolf's Storyline Writina"
+    start: June 18th 2010 5:30PM
+    end: June 18th 2010 6:30PM
+  - name: "Dead Like Us: Shinigami"
+    start: June 18th 2010 7:00PM
+    end: June 18th 2010 8:00PM
+  - name: "Ask the Organization"
+    start: June 18th 2010 8:00PM
+    end: June 18th 2010 9:00PM
+  - name: "Restricted Rock, Paper, Scissors"
+    start: June 18th 2010  9:00PM
+    end: June 18th 2010 10:00PM
+  - name: "18+ Anime Uncensored"
+    start: June 18th 2010 11:00PM
+    end: June 19th 2010 12:00AM
+spaces:
+  - name: Holiday Inn Hotel
+    space_type: building
+  - name: Ground Floor
+    parent: Holiday Inn Hotel
+    space_type: floor
+  - name: Video Gaming
+    parent: Ground Floor
+    space_type: room
+  - name: Double Tree Hotel
+    space_type: building
+  - name: 1st Floor
+    parent: Double Tree Hotel
+    space_type: floor
+  - name: 2nd Floor
+    parent: Double Tree Hotel
+    space_type: floor
+  - name: Garden State Expo Center
+    space_type: building
+  - name: Dealer's Room
+    parent: Garden State Expo Center
+    space_type: room
+  - name: Manga Library
+    parent: 1st Floor
+    space_type: room
+  - name: Artist's Alley
+    parent: 1st Floor
+    space_type: area
+  - name: Main Events
+    parent: Garden State Expo Center
+    space_type: area
+  - {name: Main Events B, parent: Garden State Expo Center, space_type: area}
+  - {name: Main Events C, parent: Garden State Expo Center, space_type: area}
+  - {name: Arena, parent: Garden State Expo Center, space_type: area}
+  - {name: Panel 1, parent: 1st Floor, space_type: room}
+  - {name: Panel 2, parent: 2nd Floor, space_type: room}
+
+reservations:
+  - {event: BlazBlue & King of Fighters 2002 Ultimate Match, reservable_type: Space, reservable: Video Gaming}
+  - {event: Tatsunoki vs. Capcom & Vampire Savior, reservable_type: Space, reservable: Video Gaming}
+  - {event: Dealers Room Friday, reservable_type: Space, reservable: Dealer's Room}
+  - {event: Manga Library Friday, reservable_type: Space, reservable: Manga Library}
+  - {event: Art Show, reservable_type: Space, reservable: Artist's Alley}
+  - {event: Masquerade Rehearsal Part 1, reservable_type: Space, reservable: Main Events}
+  - {event: Launch Party, reservable_type: Space, reservable: Main Events}
+  - {event: Kenji Kamiyama, reservable_type: Space, reservable: Main Events}
+  - {event: Concert Seating, reservable_type: Space, reservable: Main Events}
+  - {event: Stereopony Concert, reservable_type: Space, reservable: Main Events}
+  - {event: Uncle Yo, reservable_type: Space, reservable: Main Events}
+  - {event: Cosplay Burlesque, reservable_type: Space, reservable: Main Events}
+  - {event: AMV Screening, reservable_type: Space, reservable: Main Events B}
+  - {event: Kenji Kamiyama Autograph Session, reservable_type: Space, reservable: Main Events B}
+  - {event: Anime Parliament, reservable_type: Space, reservable: Main Events B}
+  - {event: Stereopony Green Room, reservable_type: Space, reservable: Main Events C}
+  - {event: Sleeping Samurai, reservable_type: Space, reservable: Arena}
+  - {event: Big Bald Broadcast, reservable_type: Space, reservable: Panel 1}
+  - {event: Crossplay for Girls, reservable_type: Space, reservable: Panel 1}
+  - {event: 'Baron Munchausen - Charity Drive', reservable_type: Space, reservable: Panel 1}
+  - {event: 'Hetalia: 2010 World Summit', reservable_type: Space, reservable: Panel 1}
+  - {event: 'Robotech: Goes to the Movies', reservable_type: Space, reservable: Panel 1}
+  - {event: 'Greg Ayres: From Host Club to Hospital', reservable_type: Space, reservable: Panel 1}
+  - {event: These are a Few of my Favorite Scenes, reservable_type: Space, reservable: Panel 2}
+  - {event: Convention Ettiquete, reservable_type: Space, reservable: Panel 2}
+  - {event: How to Spot Bootleg Merchandise, reservable_type: Space, reservable: Panel 2}
+  - {event: Soul Eater Fan Panel, reservable_type: Space, reservable: Panel 2}
+  - {event: "Elrik Blackwolf's Storyline Writina", reservable_type: Space, reservable: Panel 2}
+  - {event: "Dead Like Us: Shinigami", reservable_type: Space, reservable: Panel 2}
+  - {event: "Ask the Organization", reservable_type: Space, reservable: Panel 2}
+  - {event: "Restricted Rock, Paper, Scissors", reservable_type: Space, reservable: Panel 2}
+  - {event: "18+ Anime Uncensored", reservable_type: Space, reservable: Panel 2}
+
+rules:
+  - {type: IsRelatedRule, event: Concert Seating, relation: before, related_event: Stereopony Concert}
+  - {type: IsRelatedRule, event: Stereopony Concert,relation: after,  related_event: Concert Seating}
