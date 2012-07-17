@@ -1,7 +1,10 @@
+- text_only ||= false
+
 %span.inline_time_span
   = condensed_time_span(time_span)
   - if time_span.confidence < 2
     = " (#{confidence_string_for(time_span.confidence)})"
 
-  = link_to "<i class='icon-pencil'></i> Shift".html_safe, edit_event_time_span_path(event)
-  = link_to "<i class='icon-remove'></i> Clear".html_safe, event_time_span_path(event), :method=>:delete, :confirm=>"Are you sure?"
+  - unless text_only
+    = link_to "<i class='icon-pencil'></i> Shift".html_safe, edit_event_time_span_path(event)
+    = link_to "<i class='icon-remove'></i> Clear".html_safe, event_time_span_path(event), :method=>:delete, :confirm=>"Are you sure?"

@@ -1,26 +1,11 @@
-= form_for [@event, @time_span], :url => event_time_span_path(@event), :html => {:class=>"formtastic"} do |f|
-  - if @time_span.errors.present?
-    %ul.errors
-      - @time_span.errors.full_messages.each do |msg|
-        %li= msg
-    
-  %fieldset.inputs
-    %ol
-      %li.datetime.required
-        = f.label :start_time, "Start time*"
-        = f.datetime_select :start_time, :default => 1.day.from_now, :minute_step => 5
+= semantic_form_for [@event, @time_span], :url => event_time_span_path(@event) do |f|
+  = f.inputs do
+    - start_val = @time_span.start_time ? l(@time_span.start_time) : @time_span.start_time
+    - end_val = @time_span.end_time ? l(@time_span.end_time) : @time_span.end_time
+    = f.input :start_time, :as => :string, :input_html => {:value => start_val}
+    = f.input :end_time, :as => :string, :input_html => {:value => end_val}
+    = f.input :confidence, :as => :select, :collection => TimeSpan::CONFIDENCES
 
-      %li.datetime.required
-        = f.label :start_time, "End time*"
-        = f.datetime_select :end_time, :default => 2.day.from_now, :minute_step => 5
-
-      %li.string.required
-        = f.label :confidence, "Confidence*"
-        = f.select :confidence, TimeSpan::CONFIDENCES
-        %p.inline-hints= t "formtastic.hints.time_span.confidence"
-
-  %fieldset.buttons
-    %ol
-      %li.commit
-        = f.submit
-      %li= link_to "Cancel", :back, :class => "back"
+  = f.actions do
+    = f.action :submit, :as => :button
+    = f.action :cancel, :as => :link

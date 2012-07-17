@@ -16,7 +16,7 @@
       - @spaces.each do |space|
         .track{:class=>cycle("event","odd")}
           - reservations = Reservation.where("reservable_type = 'Space' and reservable_id = ?", space.id)
-          - reservations.keep_if {|r| r.event.time_span.end_time > @start_time && r.event.time_span.start_time < @end_time}
+          - reservations.keep_if {|r| r.time_span.end_time > @start_time && r.time_span.start_time < @end_time}
 
           - reservations.each do |r|
             - width = reservation_width(r,hour_width,reservation_border)

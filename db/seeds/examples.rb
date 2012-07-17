@@ -59,7 +59,8 @@ def load_convention(file_name)
       e = Event.find_by_name(reservation["event"])
       reservable_class = reservation["reservable_type"].constantize
       reservable = reservation["reservable"]
-      r = e.reservations.create(:reservable => reservable_class.find_by_name(reservable))
+      r = e.reservations.create(:reservable => reservable_class.find_by_name(reservable),
+                                :inherit_time_span => true)
 
       puts "- #{e.name} reserves #{r.reservable.name}"
     end

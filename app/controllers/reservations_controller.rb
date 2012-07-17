@@ -2,6 +2,9 @@ class ReservationsController < ApplicationController
   def new
     @event = Event.find(params[:event_id])
     @reservation = @event.reservations.build
+
+    @reservation.inherit_time_span = true
+    @reservation.build_own_time_span
   end
 
   def create
@@ -15,6 +18,8 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to @event, :notice => "Reservation created"
     else
+      @reservable_compound_id = "#{reservable[0]}-#{reservable[1]}"
+      @reservation.build_own_time_span unless @reservation.own_time_span
       render :new
     end
   end

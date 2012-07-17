@@ -60,6 +60,19 @@ class TimeSpansControllerTest < ActionController::TestCase
       sign_in @user
     end
 
+    should "create new TimeSpan with natural language" do
+      @event = FactoryGirl.create(:event)
+      assert_difference('TimeSpan.count') do
+        post :create, {:time_span => {:start_time => "Jan 1st 2001 at 2PM",
+                                      :end_time => "Jan 1st 2001 at 3:30PM",
+                                      :confidence => 1},
+                       :event_id => @event.id}
+      end
+
+      assert_equal Time.parse("2001-01-01 14:00:00"), @event.time_span.start_time
+      assert_equal Time.parse("2001-01-01 15:30:00"), @event.time_span.end_time
+    end
+
     context "for an Event" do
       setup do
         @event = FactoryGirl.create(:event)

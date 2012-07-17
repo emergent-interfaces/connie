@@ -1,8 +1,17 @@
 %h1= "Add reservation to #{@event.name}"
 
 = semantic_form_for [@event, @reservation] do |form|
+
   = form.inputs do
-    = form.input :reservable, :as => :select, :collection => reservables_for_select
+    = form.input :reservable_id, :as => :select, :collection => reservables_for_select, :selected=>@reservable_compound_id
+    = form.input :inherit_time_span
+
+  - disabled = true if @reservation.inherit_time_span
+
+  = form.semantic_fields_for :own_time_span do |time_span|
+    = time_span.input :start_time, :as => :string, :input_html => { :disabled => disabled }
+    = time_span.input :end_time, :as => :string, :input_html => { :disabled => disabled }
+    = time_span.input :confidence, :as => :select, :collection => TimeSpan::CONFIDENCES, :input_html => { :disabled => disabled }
 
   = form.actions do
     = form.action :submit, :as => :button

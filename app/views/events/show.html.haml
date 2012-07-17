@@ -22,7 +22,10 @@
     %ul.unstyled
       - @event.reservations.each do |reservation|
         %li
-          = "<span class='label'>#{reservation.reservable.class}</span> #{link_to reservation.reservable.name,reservation.reservable}".html_safe
+          = "<span class='label'>#{reservation.reservable.class}</span>".html_safe
+          = "#{link_to reservation.reservable.name,reservation.reservable}".html_safe
+          = "(during event)" if reservation.inherit_time_span
+          = render :partial=>'time_spans/inline', :locals=>{:time_span => reservation.time_span, :event => @event, :text_only => true} unless reservation.inherit_time_span || !reservation.scheduled?
           = link_to "<i class='icon-remove'></i>".html_safe, [@event, reservation], :method=>:delete, :confirm=>"Are you sure?"
 
     = link_to "Create new reservation", new_event_reservation_path(@event), :class=>'btn'

@@ -66,7 +66,11 @@ Connie::Application.routes.draw do
   match 'schedules' => 'schedules#index'
   match 'schedules/:start/to/:end/spaces/:space_ids' => 'schedules#show'
 
-  #todo Make this useful
+  # Helper for Chronic parsing
+  # Constraints to deal with periods per http://stackoverflow.com/questions/6719797/need-a-rails-route-with-a-possible-period-in-the-id-but-also-retain-the-option
+  match 'chronic/:text' => 'time_spans#chronic_parse', :constraints => {
+      :text => /[\w\d.,%:\-']+?/, :format => /json/}
+
   root :to => 'application#index'
 
   # Sample of regular route:

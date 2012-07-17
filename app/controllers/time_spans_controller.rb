@@ -7,6 +7,9 @@ class TimeSpansController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
 
+    params[:time_span][:start_time] = Chronic.parse(params[:time_span][:start_time])
+    params[:time_span][:end_time] = Chronic.parse(params[:time_span][:end_time])
+
     @time_span = @event.build_time_span(params[:time_span])
 
     if @time_span.save
@@ -36,6 +39,23 @@ class TimeSpansController < ApplicationController
     @event = Event.find(params[:event_id])
     @event.time_span.destroy
     redirect_to @event, :notice => "Removed date"
+  end
+
+  def chronic_parse
+    data = {}
+    data[:source] = params[:text]
+    data[:result] = Chronic.parse(data[:source])
+
+    # Attempt to fall back to basic parser
+    begin
+      data[:result] = DateTime.parse(data[:source]) unless data[:result]
+    rescue
+      data[:result] = nil
+    end
+
+    respond_to do |format|
+      format.json { render :json => data.to_json }
+    end
   end
 end
 

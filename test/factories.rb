@@ -33,6 +33,7 @@ FactoryGirl.define do
   factory :reservation do
     association :event
     association :reservable, :factory => :space
+    inherit_time_span true
   end
 
   factory :user do
