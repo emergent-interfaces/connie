@@ -19,9 +19,11 @@ test:
   username: connie
   password: connie
 
-# Handled by Heroku
+# Handled by Heroku by needed for assets:precompile
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  host: localhost
+  database: db
+  encoding: unicode
+  username: user
+  password: ''
