@@ -1,5 +1,5 @@
-require 'factory_girl'
-require File.dirname(__FILE__) + '/../../test/factories.rb'
+#require './factory_girl'
+#require File.dirname(__FILE__) + '/../../test/factories.rb'
 require 'yaml'
 
 puts "== Add Example Data =="
@@ -19,7 +19,8 @@ def load_convention(file_name)
   data = YAML::load(File.open(file_name))
 
   puts "Creating example convention"
-  convention = FactoryGirl.create :convention, name: data["convention"]["name"]
+  # convention = FactoryGirl.create :convention, name: data["convention"]["name"]
+  convention = Convention.create(:name => data["convention"]["name"])
   puts "- #{convention.name}"
 
   convention_events = data["events"]
