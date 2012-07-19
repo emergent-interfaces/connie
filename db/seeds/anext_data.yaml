@@ -170,4 +170,4 @@ reservations:
 
 rules:
   - {type: IsRelatedRule, event: Concert Seating, relation: before, related_event: Stereopony Concert}
-  - {type: IsRelatedRule, event: Stereopony Concert,relation: after,  related_event: Concert Seating}
+  - {type: IsRelatedRule, event: Stereopony Concert, relation: after,  related_event: Concert Seating}
