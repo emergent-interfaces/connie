@@ -22,3 +22,6 @@
 
 # Ignore solr data, you may need to run `rake sunspot:reindex` to get a useful search index
 /solr/data
+
+# Ignore assets to avoid bloating Git for now
+/public/assets
