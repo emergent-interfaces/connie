@@ -19,11 +19,11 @@ test:
   username: connie
   password: connie
 
-# Handled by Heroku by needed for assets:precompile
 production:
   adapter: postgresql
-  host: localhost
-  database: db
   encoding: unicode
-  username: user
-  password: ''
+  database: connie_production
+  host: localhost
+  pool: 5
+  username: connie
+  password: connie
