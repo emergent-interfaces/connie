@@ -1,8 +1,11 @@
+# Note memory restriction on production for VPS limitations
 production:
   solr:
     hostname: localhost
     port: 8983
     log_level: WARNING
+    min_memory: 64M
+    max_memory: 128M
 
 development:
   solr:
