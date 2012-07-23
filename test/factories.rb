@@ -50,4 +50,9 @@ FactoryGirl.define do
   factory :job do
     sequence(:name) {|n| "Job #{n}"}
   end
+
+  factory :phone do
+    number "555-555-5555"
+    phone_type "mobile"
+  end
 end

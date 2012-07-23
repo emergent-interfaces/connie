@@ -30,9 +30,9 @@ class UsersControllerTest < ActionController::TestCase
       end
 
       should "update user" do
-        put :update, {:id => @user.id, :user=>{username: 'Bruce Lee'}}
+        put :update, :id => @user.id, :user=>{}
 
-        assert_equal 'Bruce Lee', @user.username
+        assert_redirected_to @user
       end
     end
   end

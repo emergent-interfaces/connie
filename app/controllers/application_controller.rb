@@ -18,15 +18,15 @@ class ApplicationController < ActionController::Base
     redirect_to default_convention
   end
 
-  helper_method :default_convention
   def default_convention
     return conventions_path unless session[:default_convention_id]
     Convention.find(session[:default_convention_id])
   end
+  helper_method :default_convention
 
-  helper_method :default_convention_set?
   def default_convention_set?
     session[:default_convention_id] ? true : false
   end
+  helper_method :default_convention_set?
 
 end

@@ -15,7 +15,7 @@ class ReservationTest < ActiveSupport::TestCase
     end
 
     should "be able to specify a TimeSpan" do
-      @reservation = @event.reservations.build(:reservable => @space, :time_span => @time_span)
+      @reservation = @event.reservations.build(:reservable => @space, :own_time_span => @time_span)
       assert_equal @time_span, @reservation.time_span
     end
 
@@ -26,7 +26,7 @@ class ReservationTest < ActiveSupport::TestCase
     end
 
     should "be scheduled when has its timespan set" do
-      @reservation = @event.reservations.build(:reservable => @space, :time_span => @time_span)
+      @reservation = @event.reservations.build(:reservable => @space, :own_time_span => @time_span)
       assert @reservation.scheduled?
     end
 

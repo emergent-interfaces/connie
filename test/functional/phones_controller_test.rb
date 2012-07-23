@@ -20,7 +20,7 @@ class PhonesControllerTest < ActionController::TestCase
       should "create a phone with good data" do
         assert_difference('Phone.count') do
           post :create, {:profile_id => @profile.id,
-                         :phone=> {:number => '1234567890'}}
+                         :phone=> {:number => '1234567890', :phone_type => 'mobile'}}
         end
 
         assert_redirected_to assigns :phoneable
@@ -28,7 +28,7 @@ class PhonesControllerTest < ActionController::TestCase
 
       context "with a Phone" do
         setup do
-          @phone = @profile.phones.create!(:number=>'1234567890')
+          @phone = FactoryGirl.create(:phone)
         end
 
         should "edit a Phone" do
