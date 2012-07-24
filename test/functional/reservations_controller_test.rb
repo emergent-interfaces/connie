@@ -83,8 +83,8 @@ class ReservationsControllerTest < ActionController::TestCase
           end
 
           assert_redirected_to @event
-          assert_equal Time.parse('Jan 1st 1PM'), assigns(:event).reservations[0].time_span.start_time
-          assert_equal Time.parse('Jan 1st 2PM'), assigns(:event).reservations[0].time_span.end_time
+          assert_equal Time.parse('Jan 1st 1PM'), @event.reservations[0].time_span.start_time
+          assert_equal Time.parse('Jan 1st 2PM'), @event.reservations[0].time_span.end_time
         end
 
         should "fail to create new Reservation with no reservable" do

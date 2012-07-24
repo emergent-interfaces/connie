@@ -1,6 +1,6 @@
-%h1= "Add reservation to #{@event.name}"
+%h1= "Add reservation to #{@reservee.name}"
 
-= semantic_form_for [@event, @reservation] do |form|
+= semantic_form_for [@reservee, @reservation] do |form|
 
   = form.inputs do
     = form.input :reservable_id, :as => :select, :collection => reservables_for_select, :selected=>@reservable_compound_id
