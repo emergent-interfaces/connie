@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718003644) do
+ActiveRecord::Schema.define(:version => 20120724015600) do
 
   create_table "be_scheduled_rules", :force => true do |t|
     t.datetime "created_at"
@@ -97,12 +97,13 @@ ActiveRecord::Schema.define(:version => 20120718003644) do
   end
 
   create_table "reservations", :force => true do |t|
-    t.integer  "event_id"
     t.string   "reservable_type"
     t.integer  "reservable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "inherit_time_span"
+    t.integer  "reservee_id"
+    t.string   "reservee_type"
   end
 
   create_table "roles", :force => true do |t|

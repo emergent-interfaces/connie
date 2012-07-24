@@ -25,9 +25,9 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:event_id])
     @reservation = Reservation.find(params[:id])
+    @reservee = @reservation.reservee
     @reservation.destroy
-    redirect_to @event
+    redirect_to @reservee
   end
 end

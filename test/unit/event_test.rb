@@ -3,6 +3,7 @@ require 'test_helper'
 class EventTest < ActiveSupport::TestCase
   should have_many(:conventions).through(:convention_linkables)
   should have_one(:time_span)
+  should have_many(:reservations)
 
   should "know if scheduled" do
     event = FactoryGirl.create(:event)

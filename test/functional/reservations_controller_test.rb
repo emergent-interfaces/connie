@@ -98,7 +98,7 @@ class ReservationsControllerTest < ActionController::TestCase
 
         context "with a Reservation" do
           setup do
-            @reservation = FactoryGirl.create(:reservation)
+            @reservation = FactoryGirl.create(:reservation, reservee: @event)
           end
 
           should "destroy Reservation" do

@@ -1,6 +1,6 @@
 class Reservation < ActiveRecord::Base
   belongs_to :reservable, :polymorphic => true
-  belongs_to :event
+  belongs_to :reservee, :polymorphic => true
 
   has_one :own_time_span, :as => :time_spanable, :class_name => "TimeSpan"
   accepts_nested_attributes_for :own_time_span, :reject_if => proc{|attrs| attrs['start_time'].blank?}
@@ -14,7 +14,7 @@ class Reservation < ActiveRecord::Base
 
   def time_span
     if inherit_time_span
-      event.time_span
+      reservee.time_span
     else
       own_time_span
     end

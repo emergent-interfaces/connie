@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
   has_many :conventions, :through => :convention_linkables
   has_one :time_span, :as => :time_spanable
 
-  has_many :reservations, :dependent => :destroy
+  has_many :reservations, :as => :reservee, :dependent => :destroy
 
   has_many :rule_assignments, :dependent => :destroy
   has_many :rules, :through => :rule_assignments
