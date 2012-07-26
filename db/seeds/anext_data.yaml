@@ -171,3 +171,19 @@ reservations:
 rules:
   - {type: IsRelatedRule, event: Concert Seating, relation: before, related_event: Stereopony Concert}
   - {type: IsRelatedRule, event: Stereopony Concert, relation: after,  related_event: Concert Seating}
+
+schedules:
+  - name: Friday Events
+    start: "June 18th 2010 10am"
+    end: "June 19th 2010 2am"
+    reservables:
+      - Video Gaming
+      - Dealer's Room
+      - Manga Library
+      - Artist's Alley
+      - Main Events
+      - Main Events B
+      - Main Events C
+      - Arena
+      - Panel 1
+      - Panel 2

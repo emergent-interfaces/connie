@@ -84,6 +84,31 @@ def load_convention(file_name)
       end
     end
   end
+
+  convention_schedules = data["schedules"]
+  if convention_schedules
+    puts "Creating example schedules"
+
+    data["schedules"].each do |schedule_data|
+      start_time = DateTime.parse("#{schedule_data["start"]} EST")
+      end_time = DateTime.parse("#{schedule_data["end"]} EST")
+
+      schedule = convention.schedules.create(:name => schedule_data["name"], :time_span_attributes => {
+          :start_time => start_time,
+          :end_time => end_time,
+          :confidence => 0
+      })
+
+      schedule_data["reservables"].each do |reservable_name|
+        reservable = Space.find_by_name(reservable_name)
+        reservable = Profile.find_by_name(reservable_name) unless reservable
+
+        schedule.schedule_reservables.create!(:reservable => reservable)
+      end
+
+      puts "- #{schedule.name} in #{schedule.convention.name}"
+    end
+  end
 end
 
 load_convention("#{Rails.root}/db/seeds/anext_data.yaml")
