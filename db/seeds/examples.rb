@@ -14,6 +14,8 @@ BeScheduledRule.delete_all
 IsRelatedRule.delete_all
 DurationRule.delete_all
 RuleAssignment.delete_all
+Schedule.delete_all
+ScheduleReservable.delete_all
 
 def load_convention(file_name)
   data = YAML::load(File.open(file_name))
