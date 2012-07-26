@@ -2,3 +2,16 @@
   %h1
     = @convention.name
     = render :partial => 'shared/model_tools', :locals => {model: @convention, name: @convention.name}
+
+.row-fluid
+  .span4
+  .span4
+  .span4
+    %h2 Schedules
+    %ul.unstyled
+      - @convention.schedules.each do |schedule|
+        %li
+          = link_to schedule.name, [@convention, schedule]
+          = link_to "<i class='icon-pencil'></i>".html_safe, edit_convention_schedule_path(@convention, schedule)
+          = link_to "<i class='icon-remove'></i>".html_safe, [@convention, schedule], :method => :delete, :confirm => "Are you sure you want to delete #{schedule.name}?"
+    = link_to "Create new schedule", new_convention_schedule_path(@convention), :class=>'btn'

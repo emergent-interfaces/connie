@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120724015600) do
+ActiveRecord::Schema.define(:version => 20120725232940) do
 
   create_table "be_scheduled_rules", :force => true do |t|
     t.datetime "created_at"
@@ -122,6 +122,22 @@ ActiveRecord::Schema.define(:version => 20120724015600) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "removable"
+  end
+
+  create_table "schedule_reservables", :force => true do |t|
+    t.string   "reservable_type"
+    t.integer  "reservable_id"
+    t.integer  "schedule_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "schedules", :force => true do |t|
+    t.string   "name"
+    t.integer  "time_span_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "convention_id"
   end
 
   create_table "spaces", :force => true do |t|

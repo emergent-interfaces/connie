@@ -55,4 +55,10 @@ FactoryGirl.define do
     number "555-555-5555"
     phone_type "mobile"
   end
+
+  factory :schedule do
+    sequence(:name) {|n| "Schedule #{n}"}
+    association :convention
+    association :time_span
+  end
 end

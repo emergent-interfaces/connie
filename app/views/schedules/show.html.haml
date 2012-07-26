@@ -1,25 +1,26 @@
 - hour_width = 100;
 - reservation_border = 1;
-- matrix_width = hour_width*@hours.size
+- matrix_width = hour_width*@schedule.hours.size
 
 #schedule
   #locations
     .header
-    - @spaces.each do |space|
+    - @schedule.reservables.each do |reservable|
       .location{:class=>cycle("even","odd")}
-        .name= link_to space.name, space
+        .name= link_to reservable.name, reservable
   #matrix
     #matrix_expander(style="width: #{matrix_width}px")
       .header
-        - @hours.each do |hour|
+        - @schedule.hours.each do |hour|
           .hour= l(hour, :format => :only_time)
-      - @spaces.each do |space|
+      - @schedule.reservables.each do |reservable|
         .track{:class=>cycle("event","odd")}
-          - reservations = Reservation.where("reservable_type = 'Space' and reservable_id = ?", space.id)
-          - reservations.keep_if {|r| r.time_span.end_time > @start_time && r.time_span.start_time < @end_time}
+          - reservations = Reservation.where("(reservable_type = 'Space' or reservable_type ='Profile') and reservable_id = ?", reservable.id)
+          - reservations = reservations.keep_if {|r| r.scheduled? }
+          - reservations = reservations.keep_if {|r| r.time_span.end_time > @schedule.time_span.start_time && r.time_span.start_time < @schedule.time_span.end_time}
 
           - reservations.each do |r|
             - width = reservation_width(r,hour_width,reservation_border)
-            - left = reservation_left(r,@start_time,hour_width,reservation_border)
-            %a.reservation(href="#{event_path(r.event)}" style="width: #{width}px; left: #{left}px;")
-              .name= r.event.name
+            - left = reservation_left(r,@schedule.time_span.start_time,hour_width,reservation_border)
+            %a.reservation(href="#{event_path(r.reservee)}" style="width: #{width}px; left: #{left}px;")
+              .name= r.reservee.name

@@ -3,28 +3,51 @@ class SchedulesController < ApplicationController
 
   end
 
-  def show
-    @start_time = DateTime.parse(params[:start])
-    @end_time = DateTime.parse(params[:end])
-
-    @hours = hours(@start_time.in_time_zone, @end_time.in_time_zone)
-
-    @spaces = params[:space_ids].split(',').collect {|id| Space.find(id)}
+  def new
+    @convention = Convention.find(params[:convention_id])
+    @schedule = @convention.schedules.build
+    @schedule.build_time_span
   end
 
-  def hours(start_time, end_time)
-    hour = start_time.change(:sec => 0, :min => 0)
+  def create
+    @convention = Convention.find(params[:convention_id])
+    @schedule = @convention.schedules.build(params[:schedule])
 
-    hours = []
-
-    while hour < end_time
-      hours << hour
-      hour += 1.hour
+    if @schedule.save
+      redirect_to [@convention, @schedule], :notice => "Schedule was successfully created"
+    else
+      render :action => "new"
     end
-
-    hours << hour
-
-    hours
   end
 
+  def show
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def edit
+    @convention = Convention.find(params[:convention_id])
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def update
+    @convention = Convention.find(params[:convention_id])
+    @schedule = Schedule.find(params[:id])
+
+    respond_to do |format|
+      if @schedule.update_attributes(params[:schedule])
+        format.html { redirect_to [@convention, @schedule], :notice => 'Schedule was successfully updated' }
+        format.json { respond_with_bip @event }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip @event }
+      end
+    end
+  end
+
+  def destroy
+    @convention = Convention.find(params[:convention_id])
+    @schedule = Schedule.find(params[:id])
+    @schedule.destroy
+    redirect_to @convention, :notice => 'Schedule deleted'
+  end
 end

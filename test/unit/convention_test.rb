@@ -7,4 +7,5 @@ class ConventionTest < ActiveSupport::TestCase
   should validate_uniqueness_of :name
 
   should have_many(:linkables).through(:convention_linkables)
+  should have_many(:schedules)
 end
