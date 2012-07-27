@@ -17,6 +17,12 @@ RuleAssignment.delete_all
 Schedule.delete_all
 ScheduleReservable.delete_all
 
+def find_reservable_by_name(name)
+  reservable = Space.find_by_name(name)
+  reservable = Profile.find_by_name(name) unless reservable
+  reservable
+end
+
 def load_convention(file_name)
   data = YAML::load(File.open(file_name))
 
@@ -24,21 +30,6 @@ def load_convention(file_name)
   # convention = FactoryGirl.create :convention, name: data["convention"]["name"]
   convention = Convention.create(:name => data["convention"]["name"])
   puts "- #{convention.name}"
-
-  convention_events = data["events"]
-  if convention_events
-    puts "Creating example events"
-
-    convention_events.each do |event|
-      puts "- #{event["name"]}"
-      e = Event.create name: event["name"], description: event["description"], conventions: [convention]
-      if event["start"] and event["end"]
-        start_time = DateTime.parse("#{event["start"]} EST")
-        end_time = DateTime.parse("#{event["end"]} EST")
-        e.create_time_span(:start_time => start_time, :end_time => end_time, :confidence => 2)
-      end
-    end
-  end
 
   convention_spaces = data["spaces"]
   if convention_spaces
@@ -53,6 +44,24 @@ def load_convention(file_name)
     end
   end
 
+  convention_events = data["events"]
+  if convention_events
+    puts "Creating example events"
+
+    convention_events.each do |event|
+      puts "- #{event["name"]}"
+      e = Event.create name: event["name"], description: event["description"], conventions: [convention]
+      if event["start"] and event["end"]
+        start_time = DateTime.parse("#{event["start"]} EST")
+        end_time = DateTime.parse("#{event["end"]} EST")
+        e.create_time_span(:start_time => start_time, :end_time => end_time, :confidence => 2)
+      end
+
+      if event["reserves"]
+        e.reservations.create!(:reservable => find_reservable_by_name(event["reserves"]), :inherit_time_span => true)
+      end
+    end
+  end
 
   convention_reservations = data["reservations"]
   if convention_reservations
@@ -102,8 +111,7 @@ def load_convention(file_name)
       })
 
       schedule_data["reservables"].each do |reservable_name|
-        reservable = Space.find_by_name(reservable_name)
-        reservable = Profile.find_by_name(reservable_name) unless reservable
+        reservable = find_reservable_by_name(reservable_name)
 
         schedule.schedule_reservables.create!(:reservable => reservable)
       end

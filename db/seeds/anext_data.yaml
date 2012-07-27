@@ -97,6 +97,114 @@ events:
   - name: "18+ Anime Uncensored"
     start: June 18th 2010 11:00PM
     end: June 19th 2010 12:00AM
+  - name: Rando-me!
+    start: June 18th 2010 12PM
+    end: June 18th 2010 1PM
+    reserves: Panel 3
+  - name: Shugo Chara Party
+    start: June 18th 2010 1pm
+    end: June 18th 2010 2:30pm
+    reserves: Panel 3
+  - name: I Make You Miku Miku
+    start: June 18th 2010 3:00pm
+    end: June 18th 2010 4:00pm
+    reserves: Panel 3
+  - name: "Kimono: Alure, Fashion & History"
+    start: June 18th 2010 4pm
+    end: June 18th 2010 5pm
+    reserves: Panel 3
+  - name: "Magical Worlds of Hayao Miyazaki"
+    start: June 18th 2010 5pm
+    end: June 18th 2010 6pm
+    reserves: Panel 3
+  - name: "Anime/Manga Influence on the US"
+    start: June 18th 2010 6:30pm
+    end: June 18th 2010 7:30pm
+    reserves: Panel 3
+  - name: Princess Poofy Dress
+    start: June 18th 2010 8pm
+    end: June 18th 2010 9pm
+    reserves: Panel 3
+  - name: Sailor Moon Abridged Panel
+    start: June 18th 2010 9pm
+    end: June 18th 2010 10pm
+    reserves: Panel 3
+  - name: Baccano!
+    start: June 18th 2010 10pm
+    end: June 18th 2010 11pm
+    reserves: Panel 3
+  - name: Dating Game 18+
+    start: June 18th 2010 11pm
+    end: June 18th 2010 12:30pm
+    reserves: Panel 3
+  - name: A Workshop in Manga Storytelling
+    start: June 18th 2010 2pm
+    end: June 18th 2010 3:30pm
+    reserves: Panel 4
+  - name: History of Mecha
+    start: June 18th 2010 5:30pm
+    end: June 18th 2010 6:30pm
+    reserves: Panel 4
+  - name: The Science of Anime
+    start: June 18th 2010 8pm
+    end: June 18th 2010 9pm
+    reserves: Panel 4
+  - name: "Hetalia: Draw a Circle, There's a Panel"
+    start: June 18th 2010 1pm
+    end: June 18th 2010 2pm
+    reserves: Panel 5
+  - name: Hello! Project Idol Madness
+    start: June 18th 2010 2pm
+    end: June 18th 2010 3pm
+    reserves: Panel 5
+  - name: The Best of Martial Arts Fight Scenes
+    start: June 18th 2010 3pm
+    end: June 18th 2010 4:30pm
+    reserves: Panel 5
+  - name: AniMyu (Anime Musical)
+    start: June 18th 2010 5pm
+    end: June 18th 2010 6pm
+    resrves: Panel 5
+  - name: Super Mario Super Panel
+    start: June 18th 2010 6:30pm
+    end: June 18th 2010 7:30pm
+    reserves: Panel 5
+  - name: VOCALOID Panel
+    start: June 18th 2010 8pm
+    end: June 18th 2010 9:30pm
+    reserves: Panel 5
+  - name: Con & Cosplay Etiquette (uncensored) (18+)
+    start: June 18th 2010 10pm
+    end: June 18th 2010 11:30pm
+    reserves: Panel 5
+  - name: Cosplay Modeling
+    start: June 18th 2010 2pm
+    end: June 18th 2010 3pm
+    reserves: Panel 6
+  - name: "Fandom & Criticism: Art of Active Viewing"
+    start: June 18th 2010 3pm
+    end: June 18th 2010 4pm
+    reserves: Panel 6
+  - name: "King of Fighters: Past to Present"
+    start: June 18th 2010 4:30pm
+    end: June 18th 2010 5:30pm
+    reserves: Panel 6
+  - name: Cosplay Electronics 101
+    start: June 18th 2010 6pm
+    end: June 18th 2010 8pm
+    reserves: Panel 6
+  - name: Cosplay Randomness
+    start: June 18th 2010 8pm
+    end: June 18th 2010 9pm
+    reserves: Panel 6
+  - name: "The D.Gray-Man Panel"
+    start: June 18th 2010 9pm
+    end: June 18th 2010 10pm
+    reserves: Panel 6
+  - name: Why We Love to Hate Video Games
+    start: June 18th 2010 10pm
+    end: June 18th 2010 11:30pm
+    reserves: Panel 6
 spaces:
   - name: Holiday Inn Hotel
     space_type: building
@@ -132,7 +240,11 @@ spaces:
   - {name: Main Events C, parent: Garden State Expo Center, space_type: area}
   - {name: Arena, parent: Garden State Expo Center, space_type: area}
   - {name: Panel 1, parent: 1st Floor, space_type: room}
-  - {name: Panel 2, parent: 2nd Floor, space_type: room}
+  - {name: Panel 2, parent: 1st Floor, space_type: room}
+  - {name: Panel 3, parent: 2nd Floor, space_type: room}
+  - {name: Panel 4, parent: 2nd Floor, space_type: room}
+  - {name: Panel 5, parent: 2nd Floor, space_type: room}
+  - {name: Panel 6, parent: 2nd Floor, space_type: room}
 
 reservations:
   - {event: BlazBlue & King of Fighters 2002 Ultimate Match, reservable_type: Space, reservable: Video Gaming}
@@ -187,3 +299,7 @@ schedules:
       - Arena
       - Panel 1
       - Panel 2
+      - Panel 3
+      - Panel 4
+      - Panel 5
+      - Panel 6
