@@ -13,4 +13,12 @@ class ProfileTest < ActiveSupport::TestCase
       Profile.create(:name => 'Tanabe Ai')
     end
   end
+
+  should "make array of departments" do
+    profile = FactoryGirl.create(:profile)
+    role1 = FactoryGirl.create(:role, :profile => profile, :department => "Dept A")
+    role2 = FactoryGirl.create(:role, :profile => profile, :department => "Dept A")
+    role3 = FactoryGirl.create(:role, :profile => profile, :department => "Dept B")
+    assert_equal ["Dept A", "Dept B"], profile.departments
+  end
 end

@@ -7,4 +7,8 @@ class Profile < ActiveRecord::Base
   has_many :roles
 
   has_one :user
+
+  def departments
+    roles.collect {|role| role.department}.uniq
+  end
 end

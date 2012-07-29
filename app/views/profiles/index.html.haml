@@ -7,16 +7,23 @@
       = link_to add_link_text("New Party"), "#", {class:'btn'}
 
 .row-fluid
-  .span4
-    %h2 Departments
-    %ul
-    - roles = Role.all.collect{|role| role.department}.reject!{|s| s.empty?}
-    - if roles
-      - roles.each do |department|
-        %li= link_to department, "/roles/#{h(department)}/profiles"
+  .span2
+    %ul.nav(class="nav-list")
+      %li.nav-header Departments
+      - depts = Role.all.collect{|role| role.department}.uniq
 
-  .span8
-    %h2 All Profiles
+      - item_class = (@department_filter == nil) ? "active" : ""
+      %li(class=item_class)= link_to "all", session_filter(profiles_path())
+
+      - if depts
+        - depts.each do |department|
+          - item_class = (department == @department_filter) ? "active" : ""
+          %li(class=item_class)= link_to department, session_filter(profiles_path(:department=>department))
+
+  .span10
+    %h2
+      = @department_filter ? "Department: #{@department_filter}" : "All Profiles"
+
     = table(@profiles,["Name"]) do |profile,klass|
       %tr(class=klass)
         %td= link_to profile.name, profile

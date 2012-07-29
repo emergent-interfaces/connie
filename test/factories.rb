@@ -61,4 +61,10 @@ FactoryGirl.define do
     association :convention
     association :time_span
   end
+
+  factory :role do
+    name "Test Dept Staff"
+    department "Test Dept"
+    association :convention
+  end
 end

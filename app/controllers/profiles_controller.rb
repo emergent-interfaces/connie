@@ -8,6 +8,9 @@ class ProfilesController < ApplicationController
     else
       @profiles = Profile.all
     end
+
+    @department_filter = params[:department]
+    @profiles.select!{|profile| profile.departments.include?(@department_filter)} if @department_filter
   end
 
   def show
