@@ -13,4 +13,9 @@ the core models.  Then, run `db:test:clone` to mirror the dev database into the 
 You should then seed the examples into the dev database.  Or not, but it's your loss.
 
 To use/test with search functionality run `rake sunspot:solr:run` on the development and/or
-test environment.  If you don't do this you will see connection refused errors.
+test environment.  If you don't do this you will see connection refused errors.  There is a helper
+in the repository root for setting up a screen instance on a linux system.  Run `./rails-dev-screen.sh`
+to start up screen with webrick, Solr for dev, and Solr for test.
+
+Big deal: don't run `bundle update`.  Performing `bundle install` with the current `gemfile.lock`
+should be fine but some irritating gem is breaking the ability to run tests in its latest version.
