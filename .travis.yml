@@ -1,3 +1,6 @@
 language: ruby
 rvm:
   - 1.9.3
+before_script:
+  - psql -c 'create user connie with password 'connie';' -U postgres
+  - psql -c 'create database connie_test owner connie;' -U postgres
