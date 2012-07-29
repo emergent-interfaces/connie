@@ -4,4 +4,4 @@ rvm:
 before_script:
   - psql -c "create user connie with password 'connie';" -U postgres
   - psql -c 'create database connie_test owner connie;' -U postgres
-  - rake db:test:prepare
+  - rake db:schema:load
