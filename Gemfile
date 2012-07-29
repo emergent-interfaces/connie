@@ -1,25 +1,24 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'heroku'
 gem 'pg'
 gem 'haml'
-gem 'formtastic'
+gem 'formtastic', '2.2.1'
 gem 'formtastic-bootstrap', :git => 'https://github.com/niedfelj/formtastic-bootstrap', :branch => 'bootstrap2-rails3-2-formtastic-2-2'
+gem 'twitter-bootstrap-rails', '2.1.0'
 gem 'awesome_nested_set'
 gem 'chronic'
 gem 'chronic_duration'
 gem 'best_in_place'
 gem 'devise'
 gem 'icalendar'
-gem 'twitter-bootstrap-rails'
 
 gem 'sunspot_rails'
-gem 'sunspot_solr' #pre-packaged Solr distribution for development
+gem 'sunspot_solr'   #pre-packaged Solr distribution for development
 gem 'progress_bar'
 gem 'acts_as_commentable_with_threading'
 
@@ -27,7 +26,8 @@ group :test do
   gem 'spork'
   gem 'spork-minitest'
   gem 'mocha', :require => false  # Prevent mocha from loading until after test framework
-  gem 'minitest'
+  gem 'minitest', '3.2.0'         # Allowing minitest to update prevents tests from running
+                                  # See https://github.com/seattlerb/minitest/issues
   gem 'minitest-reporters'
   gem 'shoulda'
   gem 'factory_girl_rails'

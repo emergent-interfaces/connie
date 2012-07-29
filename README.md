@@ -16,6 +16,3 @@ To use/test with search functionality run `rake sunspot:solr:run` on the develop
 test environment.  If you don't do this you will see connection refused errors.  There is a helper
 in the repository root for setting up a screen instance on a linux system.  Run `./rails-dev-screen.sh`
 to start up screen with webrick, Solr for dev, and Solr for test.
-
-Big deal: don't run `bundle update`.  Performing `bundle install` with the current `gemfile.lock`
-should be fine but some irritating gem is breaking the ability to run tests in its latest version.
