@@ -6,5 +6,5 @@
     = " (#{confidence_string_for(time_span.confidence)})"
 
   - unless text_only
-    = link_to "<i class='icon-pencil'></i> Shift".html_safe, edit_event_time_span_path(event)
-    = link_to "<i class='icon-remove'></i> Clear".html_safe, event_time_span_path(event), :method=>:delete, :confirm=>"Are you sure?"
+    = link_to edit_link_text("Shift"), edit_event_time_span_path(event)
+    = link_to delete_link_text("Clear"), event_time_span_path(event), :method=>:delete, :confirm=>"Are you sure?"

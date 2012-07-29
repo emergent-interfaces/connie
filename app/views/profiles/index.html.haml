@@ -3,8 +3,8 @@
     Profiles
     %small= "People involved with #{default_convention_name}"
     .btn-group(class='pull-right')
-      = link_to "<i class='icon-plus'></i> New Profile".html_safe, session_filter(new_profile_path), {class:'btn'}
-      = link_to "<i class='icon-plus'></i> New Party".html_safe, "#", {class:'btn'}
+      = link_to add_link_text("New Profile"), session_filter(new_profile_path), {class:'btn'}
+      = link_to add_link_text("New Party"), "#", {class:'btn'}
 
 .row-fluid
   .span4
