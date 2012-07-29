@@ -8,6 +8,9 @@
   Contained Spaces:
   = @space.children.collect {|child| link_to child.name, child}.join(", ").html_safe
 
+%h2 Venue Designated Name
+= best_in_place @space, :venue_designated_name
+
 %h2 Type
 = best_in_place @space, :space_type, :type => :select, :collection => [['room','room'],['building','building'],['area','area'],['floor','floor']]
 
