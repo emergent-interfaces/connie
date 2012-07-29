@@ -1,7 +1,8 @@
 language: ruby
 rvm:
   - 1.9.3
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:schema:load test
 before_script:
   - psql -c "create user connie with password 'connie';" -U postgres
   - psql -c 'create database connie_test owner connie;' -U postgres
-  - rake db:schema:load
