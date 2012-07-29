@@ -16,6 +16,8 @@ DurationRule.delete_all
 RuleAssignment.delete_all
 Schedule.delete_all
 ScheduleReservable.delete_all
+Profile.delete_all
+Role.delete_all
 
 def find_reservable_by_name(name)
   reservable = Space.find_by_name(name)
@@ -31,12 +33,25 @@ def load_convention(file_name)
   convention = Convention.create(:name => data["convention"]["name"])
   puts "- #{convention.name}"
 
+  convention_profiles = data["profiles"]
+  if convention_profiles
+    puts "Creating example profiles"
+
+    convention_profiles.each do |profile|
+      p = convention.profiles.create(:name => profile["name"])
+      role_data = profile["role"].split(":")
+      p.roles.create(:department => role_data[0], :name => role_data[1], :convention => convention)
+      puts "- #{p.name}, #{p.roles[0].department}:#{p.roles[0].name}"
+    end
+  end
+
   convention_spaces = data["spaces"]
   if convention_spaces
     puts "Creating example spaces"
 
     convention_spaces.each do |space|
       s = Space.create!(:name => space["name"],
+                        :venue_designated_name => space["venue_designated_name"],
                         :parent => Space.find_by_name(space["parent"]),
                         :space_type => space["space_type"],
                         :conventions => [convention])

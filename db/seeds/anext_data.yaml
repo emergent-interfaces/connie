@@ -206,45 +206,61 @@ events:
     end: June 18th 2010 11:30pm
     reserves: Panel 6
 spaces:
-  - name: Holiday Inn Hotel
-    space_type: building
-  - name: Ground Floor
-    parent: Holiday Inn Hotel
-    space_type: floor
-  - name: Video Gaming
-    parent: Ground Floor
-    space_type: room
-  - name: Double Tree Hotel
-    space_type: building
-  - name: 1st Floor
-    parent: Double Tree Hotel
-    space_type: floor
-  - name: 2nd Floor
-    parent: Double Tree Hotel
-    space_type: floor
-  - name: Garden State Expo Center
-    space_type: building
-  - name: Dealer's Room
-    parent: Garden State Expo Center
-    space_type: room
-  - name: Manga Library
-    parent: 1st Floor
-    space_type: room
-  - name: Artist's Alley
-    parent: 1st Floor
-    space_type: area
-  - name: Main Events
-    parent: Garden State Expo Center
-    space_type: area
+  - {name: Holiday Inn Hotel, space_type: building}
+  - {name: Ground Floor, parent: Holiday Inn Hotel, space_type: floor}
+  - {name: Video Gaming, venue_designated_name: Salon, parent: Ground Floor, space_type: area}
+  - {name: "Video Games: Classic Focus", venue_designated_name: Salon A, space_type: room, parent: Video Gaming}
+  - {name: "Video Games: Multiplayer Focus", venue_designated_name: Salon B, space_type: room, parent: Video Gaming}
+  - {name: "Video Games: Current Focus", venue_designated_name: Salon C, space_type: room, parent: Video Gaming}
+  - {name: "Video Games: Tournaments", venue_designated_name: Salon D, space_type: room, parent: Video Gaming}
+  - {name: "Rockband Room", venue_designated_name: Concord, space_type: room, parent: Video Gaming}
+  - {name: "Gaming Video Room 1", venue_designated_name: Bennington, space_type: room, parent: Video Gaming}
+  - {name: "Gaming Video Room 2", venue_designated_name: Ambrose, space_type: room, parent: Video Gaming}
+
+
+  - {name: Double Tree Hotel, space_type: building}
+  - {name: 1st Floor, parent: Double Tree Hotel, space_type: floor}
+  - {name: Artist's Alley, venue_designated_name: Somerset Ballroom, parent: 1st Floor, space_type: area}
+  - {name: Panel 1, parent: 1st Floor, space_type: room}
+  - {name: Manga Library, parent: 1st Floor, space_type: room}
+  - {name: Table Top Gaming, parent: 1st Floor, space_type: room}
+  - {name: Masquerade HQ, parent: 1st Floor, space_type: room}
+  - {name: Hall Cosplay HQ, parent: 1st Floor, space_type: room}
+  - {name: Workshop 1, parent: 1st Floor, space_type: room}
+  - {name: Workshop 2, parent: 1st Floor, space_type: room}
+  - {name: Karaoke/Dance, venue_designated_name: Mirabelle, parent: 1st Floor, space_type: room}
+  - {name: Photo Suite, parent: 1st Floor, space_type: area}
+  - {name: Double Tree Info Desk, parent: 1st Floor, space_type: area}
+
+  - {name: 2nd Floor, parent: Double Tree Hotel, space_type: floor}
+  - {name: Panel 2, venue_designated_name: Bridgewater, parent: 1st Floor, space_type: room}
+  - {name: Panel 3, venue_designated_name: Bedminster, parent: 2nd Floor, space_type: room}
+  - {name: Panel 4, venue_designated_name: Tewksbury, parent: 2nd Floor, space_type: room}
+  - {name: Panel 5, venue_designated_name: Princeton, parent: 2nd Floor, space_type: room}
+  - {name: Panel 6, venue_designated_name: Westfield, parent: 2nd Floor, space_type: room}
+  - {name: Workshop 3, venue_designated_name: Bernardsville, parent: 2nd Floor, space_type: room}
+  - {name: Workshop 4, venue_designated_name: Hillsboroug, parent: 2nd Floor, space_type: room}
+  - {name: LARP, parent: 2nd Floor, space_type: room}
+
+  - {name: Garden State Expo Center, space_type: building}
+  - {name: Dealer's Room, parent: Garden State Expo Center, space_type: room}
+  - {name: Main Events, parent: Garden State Expo Center, space_type: area}
   - {name: Main Events B, parent: Garden State Expo Center, space_type: area}
   - {name: Main Events C, parent: Garden State Expo Center, space_type: area}
   - {name: Arena, parent: Garden State Expo Center, space_type: area}
-  - {name: Panel 1, parent: 1st Floor, space_type: room}
-  - {name: Panel 2, parent: 1st Floor, space_type: room}
-  - {name: Panel 3, parent: 2nd Floor, space_type: room}
-  - {name: Panel 4, parent: 2nd Floor, space_type: room}
-  - {name: Panel 5, parent: 2nd Floor, space_type: room}
-  - {name: Panel 6, parent: 2nd Floor, space_type: room}
+  - {name: GSEC Info Desk, parent: Garden State Expo Center, space_type: area}
+  - {name: Registration, parent: Garden State Expo Center, space_type: area}
+  - {name: Volunteers, parent: Garden State Expo Center, space_type: room}
+  - {name: Con Ops, parent: Garden State Expo Center, space_type: area}
+  - {name: Con Safety and Lost & Found, parent: Garden State Expo Center, space_type: room}
+
+  - {name: Training Center, space_type: building}
+  - {name: Video Ops, venue_designated_name: Dogwood, space_type: room, parent: Training Center}
+  - {name: Video 1, venue_designated_name: Maple, space_type: room, parent: Training Center}
+  - {name: Video 2, venue_designated_name: Magnolia, space_type: room, parent: Training Center}
+  - {name: Video 3, venue_designated_name: Elm, space_type: room, parent: Training Center}
+  - {name: Video 4, venue_designated_name: Red Oak, space_type: room, parent: Training Center}
+  - {name: Video 5, venue_designated_name: Sycamore, space_type: room, parent: Training Center}
 
 reservations:
   - {event: BlazBlue & King of Fighters 2002 Ultimate Match, reservable_type: Space, reservable: Video Gaming}
@@ -303,3 +319,78 @@ schedules:
       - Panel 4
       - Panel 5
       - Panel 6
+
+profiles:
+  - {name: Robert Rustay, role: "executive board:chairman"}
+  - {name: Annerys Alba, role: "executive board:vice-chair"}
+  - {name: James Chun, role: "executive board:vice-chair"}
+  - {name: Andrew Green, role: "executive board:vice-chair"}
+
+  - {name: Tommy Callahan, role: "anime music videos:head"}
+  - {name: Heather Boyd, role: "anime music videos:staff"}
+
+  - {name: Kara 'Inyx' Sewall, role: "artist alley:head" }
+  - {name: Jay Chang, role: "artist alley:staff"}
+  - {name: Satsuki Fujimoto, role: "artist alley:staff"}
+  - {name: Chris Seeselberg, role: "artist alley:staff"}
+  - {name: Loan Kim Tran, role: "artist alley:staff"}
+  - {name: Allison Smith, role: "artist alley:staff"}
+
+  - {name: Andrew Johnson, role: "av tech:head"}
+  - {name: Albert Alonso, role: "av tech:staff"}
+  - {name: Eric Barbosa, role: "av tech:staff"}
+  - {name: Melissa Choyce, role: "av tech:staff"}
+  - {name: Gabriel Fequiere Jr., role: "av tech:staff"}
+  - {name: Michael Ferrador, role: "av tech:staff"}
+  - {name: Matthew Keyser, role: "av tech:staff"}
+  - {name: James Maguire, role: "av tech:staff"}
+  - {name: Fred Ng, role: "av tech:staff"}
+  - {name: Xavier Rios, role: "av tech:staff"}
+  - {name: Louis Simons, role: "av tech:staff"}
+  - {name: Lucky Singh, role: "av tech:staff"}
+  - {name: Eric Torgersen, role: "av tech:vice-head"}
+  - {name: Gordon Virasawmi, role: "av tech:staff"}
+  - {name: Danny Virasawmi, role: "av tech:staff"}
+
+  - {name: Joshua Berit, role: "con safety:head"}
+  - {name: Christopher Adragna, role: "con safety:staff"}
+  - {name: Jason Breeden, role: "con safety:staff"}
+  - {name: Alex Cajuste, role: "con safety:staff"}
+  - {name: Jamar Covington, role: "con safety:staff"}
+  - {name: Kyle Cumberbatch, role: "con safety:staff"}
+  - {name: Maggie DeSantis, role: "con safety:staff"}
+  - {name: Adam Dutra, role: "con safety:staff"}
+  - {name: Amaris Febus, role: "con safety:staff"}
+  - {name: Meghan Feeney, role: "con safety:staff"}
+  - {name: John Gervasoni, role: "con safety:staff"}
+  - {name: Barbara Green, role: "con safety:staff"}
+  - {name: Liana Grey, role: "con safety:staff"}
+  - {name: Amanda Fazio, role: "con safety:staff"}
+  - {name: Nicole Jabour, role: "con safety:staff"}
+  - {name: Nicholas Jabour, role: "con safety:staff"}
+  - {name: Joshua Jackson, role: "con safety:staff"}
+  - {name: Kenneth Hunt, role: "con safety:staff"}
+  - {name: Michael Kashner, role: "con safety:staff"}
+  - {name: Mallory Keese, role: "con safety:staff"}
+  - {name: Angela Minton, role: "con safety:staff"}
+  - {name: Frank Natal, role: "con safety:staff"}
+  - {name: Matthew Natal, role: "con safety:staff"}
+  - {name: Jesus Nieves, role: "con safety:staff"}
+  - {name: Isa Pagani, role: "con safety:staff"}
+  - {name: Jasen Paird, role: "con safety:staff"}
+  - {name: Nelson Rodriguez, role: "con safety:staff"}
+  - {name: Gwen Ruhl, role: "con safety:staff"}
+  - {name: Matt Rusen, role: "con safety:staff"}
+  - {name: Kamil Sada, role: "con safety:staff"}
+  - {name: Benjamin Schoedel, role: "con safety:staff"}
+  - {name: Kennya Seeney, role: "con safety:staff"}
+  - {name: Mark Silvetti, role: "con safety:staff"}
+  - {name: Maryellen Sloan, role: "con safety:staff"}
+  - {name: Ashley Stephenson, role: "con safety:staff"}
+  - {name: Jose Torres, role: "con safety:staff"}
+  - {name: Andrew Varga, role: "con safety:staff"}
+  - {name: Christina Velez, role: "con safety:staff"}
+
+
+
+
