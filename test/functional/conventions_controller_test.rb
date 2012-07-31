@@ -7,6 +7,16 @@ class ConventionsControllerTest < ActionController::TestCase
       sign_in @user
     end
 
+    should "reset session if default convention missing" do
+      @convention = FactoryGirl.create(:convention)
+      put :set_as_default, :id => @convention.id
+      assert session[:default_convention_id]
+
+      @convention.delete
+      get :index
+      refute session[:default_convention_id]
+    end
+
     context "with a TagGroup called 'Conventions'" do
       setup do
         FactoryGirl.create :tag_group, :name => "Conventions"
