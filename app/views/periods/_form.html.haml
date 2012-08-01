@@ -1,0 +1,11 @@
+= semantic_form_for [@convention, @period] do |form|
+  = form.inputs
+
+  = form.semantic_fields_for :time_span do |time_span|
+    = time_span.input :start_time, :as => :string
+    = time_span.input :end_time, :as => :string
+    = time_span.input :confidence, :as => :select, :collection => TimeSpan::CONFIDENCES
+
+  = form.actions do
+    = form.action :submit, :as => :button
+    = form.action :cancel, :as => :link

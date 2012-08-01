@@ -6,6 +6,15 @@
 .row-fluid
   .span4
   .span4
+    %h2 Periods
+    %ul.unstyled
+      - @convention.periods.each do |period|
+        %li
+          = period.name
+          = render :partial=>'time_spans/inline', :locals=>{:time_span => period.time_span, :text_only => true}
+          = link_to edit_link_text, edit_convention_period_path(@convention, period)
+          = link_to delete_link_text, [@convention, period], :method => :delete, :confirm => "Are you sure you want to delete #{period.name}?"
+    = link_to "Create new period", new_convention_period_path(@convention), :class=>'btn'
   .span4
     %h2 Schedules
     %ul.unstyled

@@ -17,6 +17,7 @@ class Convention < ActiveRecord::Base
   before_save :rename_tag
 
   has_many :schedules
+  has_many :periods
 
   def create_tag
     tag = Tag.new(:name => self.name, :tag_group => TagGroup.find_by_name('Conventions'))
