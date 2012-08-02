@@ -1,5 +1,8 @@
 = semantic_form_for [@convention, @period] do |form|
-  = form.inputs
+  = form.inputs do
+    = form.input :convention
+    = form.input :name
+    = form.input :special, :as => :select, :collection => Period::SPECIAL_PERIODS
 
   = form.semantic_fields_for :time_span do |time_span|
     = time_span.input :start_time, :as => :string

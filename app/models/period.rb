@@ -8,4 +8,7 @@ class Period < ActiveRecord::Base
   belongs_to :convention
 
   validates_presence_of :name
+
+  SPECIAL_PERIODS = ["planning", "running", "wrap-up"]
+  validates_inclusion_of :special, :in => [nil, "", "planning","running","wrap-up"]
 end
