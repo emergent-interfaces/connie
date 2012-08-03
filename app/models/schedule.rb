@@ -1,4 +1,6 @@
 class Schedule < ActiveRecord::Base
+  extend ActiveSupport::Memoizable
+
   belongs_to :convention
   validates_presence_of :convention
 
@@ -29,5 +31,29 @@ class Schedule < ActiveRecord::Base
     hours << hour
 
     hours
+  end
+
+  def reservations(reservable=nil)
+    if reservable
+      reservations = Reservation.find_all_by_reservable_id(reservable.id)
+    else
+      reservations = Reservation.all
+    end
+
+    reservations = reservations.keep_if {|r| r.scheduled? }
+    reservations = reservations.keep_if {|r| r.time_span.end_time > time_span.start_time && r.time_span.start_time < time_span.end_time}
+    reservations
+  end
+  memoize :reservations
+
+  def critical_times
+    critical_times = reservations.collect{|r| r.time_span.start_time} + reservations.collect{|r| r.time_span.end_time}
+    critical_times.uniq!.sort!
+  end
+
+  def happenings_at(time, type)
+    collection = reservations.find_all{|r| r.time_span.start_time == time} if type == :starts
+    collection = reservations.find_all{|r| r.time_span.end_time == time} if type == :ends
+    collection
   end
 end

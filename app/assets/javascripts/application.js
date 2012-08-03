@@ -20,7 +20,7 @@
 
 $(document).ready(function() {
 
-    // Unobtrusive formatting of set_default_convention_form for browsers with Javascript
+     // Unobtrusive formatting of set_default_convention_form for browsers with Javascript
     /*$('#set_default_convention_form input').hide();
     $('#set_default_convention_form select').change(function(){
        $(this).closest("form").submit();
@@ -36,8 +36,6 @@ $(document).ready(function() {
             $.get('/search.json',{utf8: "✓",text: query}, function(data){
                 labels = [];
                 mapped = {};
-
-                console.log(data);
 
                 _.each(data, function(item) {
                    label = item.name+" <span class='label'>event</span>";
