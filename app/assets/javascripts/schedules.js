@@ -2,7 +2,10 @@
 // All this logic will automatically be available in application.js.
 $(document).ready(function() {
 
-    console.log('test');
+    $('a.reservation').popover({
+        placement: 'top'
+    });
+
     $('.nav-tabs a').click(function(e) {
         e.preventDefault();
         $(this).tab('show');

@@ -52,5 +52,5 @@
               - @schedule.reservations(reservable).each do |r|
                 - width = reservation_width(r,hour_width,reservation_border)
                 - left = reservation_left(r,@schedule.time_span.start_time,hour_width,reservation_border)
-                %a.reservation(href="#{event_path(r.reservee)}" class="btn" style="width: #{width}px; left: #{left}px;")
+                %a.reservation(href="#{event_path(r.reservee)}" class="btn" style="width: #{width}px; left: #{left}px;" title="#{r.reservee.name}" data-content="#{reservation_popup_content(r)}")
                   .name= r.reservee.name
