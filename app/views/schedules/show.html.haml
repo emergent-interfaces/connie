@@ -7,50 +7,7 @@
 
 .tab-content
   #rundown.tab-pane(class="active")
-    %table.table(class="table-striped")
-      %thead
-        %th
-        %th Starting
-        %th Ending
-      %tbody
-      - @schedule.critical_times.each do |time|
-        %tr
-          %td= l(time)
-          %td
-            %ul
-              - @schedule.happenings_at(time,:starts).each do |reservation|
-                %li
-                  = link_to reservation.reservee.name, reservation.reservee
-                  in
-                  = link_to reservation.reservable.name, reservation.reservable
-          %td
-            %ul
-              - @schedule.happenings_at(time,:ends).each do |reservation|
-                %li
-                  = link_to reservation.reservee.name, reservation.reservee
-                  in
-                  = link_to reservation.reservable.name, reservation.reservable
+    = render "rundown"
 
   #timeline.tab-pane
-    - hour_width = 100;
-    - reservation_border = 1;
-    - matrix_width = hour_width*@schedule.hours.size
-
-    #schedule
-      #locations
-        .header
-        - @schedule.reservables.each do |reservable|
-          .location{:class=>cycle("odd","even")}
-            .name= link_to reservable.name, reservable
-      #matrix
-        #matrix_expander(style="width: #{matrix_width}px")
-          .header
-            - @schedule.hours.each do |hour|
-              .hour= l(hour, :format => :only_time)
-          - @schedule.reservables.each do |reservable|
-            .track{:class=>cycle("odd","even")}
-              - @schedule.reservations(reservable).each do |r|
-                - width = reservation_width(r,hour_width,reservation_border)
-                - left = reservation_left(r,@schedule.time_span.start_time,hour_width,reservation_border)
-                %a.reservation(href="#{event_path(r.reservee)}" class="btn" style="width: #{width}px; left: #{left}px;" title="#{r.reservee.name}" data-content="#{reservation_popup_content(r)}")
-                  .name= r.reservee.name
+    = render "timeline"
