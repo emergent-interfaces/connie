@@ -40,7 +40,7 @@
       #locations
         .header
         - @schedule.reservables.each do |reservable|
-          .location{:class=>cycle("even","odd")}
+          .location{:class=>cycle("odd","even")}
             .name= link_to reservable.name, reservable
       #matrix
         #matrix_expander(style="width: #{matrix_width}px")
@@ -48,9 +48,9 @@
             - @schedule.hours.each do |hour|
               .hour= l(hour, :format => :only_time)
           - @schedule.reservables.each do |reservable|
-            .track{:class=>cycle("event","odd")}
+            .track{:class=>cycle("odd","even")}
               - @schedule.reservations(reservable).each do |r|
                 - width = reservation_width(r,hour_width,reservation_border)
                 - left = reservation_left(r,@schedule.time_span.start_time,hour_width,reservation_border)
-                %a.reservation(href="#{event_path(r.reservee)}" style="width: #{width}px; left: #{left}px;")
+                %a.reservation(href="#{event_path(r.reservee)}" class="btn" style="width: #{width}px; left: #{left}px;")
                   .name= r.reservee.name

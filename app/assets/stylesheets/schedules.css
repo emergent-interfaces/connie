@@ -7,20 +7,23 @@
     margin: 1em 0em;
     position: relative;
 
-    background: #F0F0F0;
+    background: transparent;
 }
 
 /* Locations */
 
 #schedule #locations {
     width: 200px;
+    padding-right: 1px;
     float: left;
 }
 
 #schedule #locations .header {
     width: 100%;
-    height: 20px;
-    background: #F8F8F8;
+    height: 25px;
+    background: white;
+    border-bottom: 2px solid #DDD;
+    border-right: 1px solid #ddd;
 }
 
 #schedule #locations .location {
@@ -28,11 +31,13 @@
     height: 50px;
     text-align: center;
 
-    background: #E0E0E0;
+    background: transparent;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 }
 
 #schedule #locations .odd {
-    background: #E8E8E8;
+    background: #f9f9f9;
 }
 
 .location .name {
@@ -40,9 +45,9 @@
 }
 
 .location .name a, .location .name a:visited {
-    text-decoration: none;
-    color: #808080;
-    text-shadow: 0px 2px 2px rgba(255,255,255,1);
+    font-size: 13px;
+    color: #333;
+    font-weight: bold;
 }
 
 .location .name a:hover, .location .name a:active {
@@ -57,8 +62,6 @@
 
 #schedule #matrix .header {
     position: relative;
-
-    background: #E0E0E0;
 }
 
 #schedule #matrix .header .hour {
@@ -67,47 +70,46 @@
     float: left;
     padding-top: 3px;
     padding-left: 4px;
+    padding-bottom: 5px;
     width: 95px;
 
     font-size: 0.8em;
     height: 17px;
 
-    border-left:  1px solid #C0C0C0;
+    border-left:  1px solid #DDD;
+    border-bottom: 2px solid #DDD;
+
+    color: #333;
+    font-weight: bold;
+    background: transparent;
 }
 
 .track {
     width: 100%;
     height: 50px;
-    background: #F5F5F5;
+    background: transparent;
     float: left;
+    border-bottom: 1px solid #ddd;
 }
 
 .odd {
-    background: #FAFAFA;
+    background: #F9F9F9;
 }
 
 a.reservation, a.reservation:visited {
     float: left;
     height: 48px;
-    border: 1px solid #D0D0D0;
     display: block;
     position: absolute;
     overflow: hidden;
 
     text-decoration: none;
+    padding: 0px;
 
-    border-radius: 4px;
-    background: url('scheduler_reservation_bg.png');
-}
-
-a.reservation:hover, a.reservation:active {
-    background: #FFFFFF;
-    background: url('scheduler_reservation_bg_hover.png')
+    font-size: 10px;
+    line-height: 12px;
 }
 
 .reservation .name {
-    font-size: 0.7em;
-    padding: 2px;
-    color: #808080;
-    text-shadow: 0px 2px 2px rgba(255,255,255,1);
+    padding: 4px 0px;
 }
