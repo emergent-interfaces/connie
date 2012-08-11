@@ -158,7 +158,7 @@ ActiveRecord::Schema.define(:version => 20120809005452) do
     t.integer  "convention_id"
   end
 
-  create_table "maps", :force => true do |t|
+  create_table "spaces", :force => true do |t|
     t.string   "name"
     t.string   "venue_designated_name"
     t.integer  "parent_id"
