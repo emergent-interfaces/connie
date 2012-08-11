@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120731233451) do
+ActiveRecord::Schema.define(:version => 20120809005452) do
 
   create_table "be_scheduled_rules", :force => true do |t|
     t.datetime "created_at"
@@ -78,6 +78,16 @@ ActiveRecord::Schema.define(:version => 20120731233451) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.datetime "deadline"
+  end
+
+  create_table "maps", :force => true do |t|
+    t.integer  "space_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "periods", :force => true do |t|
@@ -148,7 +158,7 @@ ActiveRecord::Schema.define(:version => 20120731233451) do
     t.integer  "convention_id"
   end
 
-  create_table "spaces", :force => true do |t|
+  create_table "maps", :force => true do |t|
     t.string   "name"
     t.string   "venue_designated_name"
     t.integer  "parent_id"

@@ -73,4 +73,8 @@ FactoryGirl.define do
     association :time_span
     association :convention
   end
+
+  factory :map do
+    association :space
+  end
 end

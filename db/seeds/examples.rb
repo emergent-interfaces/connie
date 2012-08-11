@@ -1,12 +1,14 @@
 #require './factory_girl'
 #require File.dirname(__FILE__) + '/../../test/factories.rb'
 require 'yaml'
+require 'open-uri'
 
 puts "== Add Example Data =="
 puts "Deleting existing data"
 Convention.delete_all
 Event.delete_all
 Space.delete_all
+Map.delete_all
 Reservation.delete_all
 TimeSpan.delete_all
 ConventionLinkable.delete_all
@@ -55,6 +57,9 @@ def load_convention(file_name)
                         :parent => Space.find_by_name(space["parent"]),
                         :space_type => space["space_type"],
                         :conventions => [convention])
+
+
+      m = s.maps.create!(:image => open("db/seeds/images/"+space["map_image"])) if space["map_image"]
       puts "- #{s.name}"
     end
   end

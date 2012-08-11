@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class SpacesHelperTest < ActionView::TestCase
-  context "with a set of spaces" do
+  context "with a set of maps" do
     setup do
       @s1 = Space.create(name: 'Stevens Campus', space_type: 'area')
       @s2 = Space.create(name: 'Babbio Center', space_type: 'building', parent: @s1)

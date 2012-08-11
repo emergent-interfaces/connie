@@ -15,11 +15,12 @@ Connie::Application.routes.draw do
       put 'set_default'
     end
 
-    resources :events
-    resources :spaces
     resources :profiles do
       resources :roles
     end
+
+    resources :events
+    resources :spaces
     resources :jobs
     resources :schedules
     resources :periods
@@ -28,10 +29,13 @@ Connie::Application.routes.draw do
   resources :events do
     resource :time_span
     resources :reservations
-    post 'create_rule'
     resources :comments
+    post 'create_rule'
   end
-  resources :spaces
+
+  resources :spaces do
+    resources :maps
+  end
 
   resources :tag_groups do
     resources :tags
@@ -66,7 +70,7 @@ Connie::Application.routes.draw do
 
   # Schedule routes
   match 'schedules' => 'schedules#index'
-  match 'schedules/:start/to/:end/spaces/:space_ids' => 'schedules#show'
+  match 'schedules/:start/to/:end/maps/:space_ids' => 'schedules#show'
 
   # Helper for Chronic parsing
   # Constraints to deal with periods per http://stackoverflow.com/questions/6719797/need-a-rails-route-with-a-possible-period-in-the-id-but-also-retain-the-option

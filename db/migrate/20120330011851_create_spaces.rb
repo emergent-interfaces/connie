@@ -1,6 +1,6 @@
 class CreateSpaces < ActiveRecord::Migration
   def change
-    create_table :spaces do |t|
+    create_table :maps do |t|
       t.string :name
       t.string :venue_designated_name
       t.integer :parent_id

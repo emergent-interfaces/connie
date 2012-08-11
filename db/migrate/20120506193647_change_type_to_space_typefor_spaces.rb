@@ -1,6 +1,6 @@
 class ChangeTypeToSpaceTypeforSpaces < ActiveRecord::Migration
   def change
-    remove_column :spaces, :type
-    add_column :spaces, :space_type, :string
+    remove_column :maps, :type
+    add_column :maps, :space_type, :string
   end
 end

@@ -3,18 +3,29 @@
     = best_in_place @space, :name
     = render :partial => 'shared/model_tools', :locals => {model: @space, name: @space.name}
 
-= space_breadcrumbs(@space)
-- if @space.children.count > 0
-  Contained Spaces:
-  = @space.children.collect {|child| link_to child.name, child}.join(", ").html_safe
+.row-fluid
+  .span9
+    = space_breadcrumbs(@space)
+    - if @space.children.count > 0
+      Contained Spaces:
+      = @space.children.collect {|child| link_to child.name, child}.join(", ").html_safe
 
-%h2 Venue Designated Name
-= best_in_place @space, :venue_designated_name
+    %h2 Venue Designated Name
+    = best_in_place @space, :venue_designated_name
 
-%h2 Type
-= best_in_place @space, :space_type, :type => :select, :collection => [['room','room'],['building','building'],['area','area'],['floor','floor']]
+    %h2 Type
+    = best_in_place @space, :space_type, :type => :select, :collection => [['room','room'],['building','building'],['area','area'],['floor','floor']]
 
-%h2 Occupancy
-= "Seated: #{best_in_place @space, :occupancy_seated}".html_safe
-<br/>
-= "Standing: #{best_in_place @space, :occupancy_standing}".html_safe
+    %h2 Occupancy
+    = "Seated: #{best_in_place @space, :occupancy_seated}".html_safe
+    <br/>
+    = "Standing: #{best_in_place @space, :occupancy_standing}".html_safe
+
+  .span3
+    %h2 Maps
+    %ul.thumbnails
+      - @space.maps.each do |map|
+        %li.span12
+          = link_to image_tag(map.image.url(:thumb)), [@space, map], :class => "thumbnail"
+
+    = link_to "Add map", new_space_map_path(@space), :class => "btn"

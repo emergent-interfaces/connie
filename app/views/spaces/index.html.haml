@@ -9,4 +9,7 @@
   - spaces = Space.order('lft ASC')
   = nested_li(spaces) do |space|
     .space
-      .body= link_to space.name, space
+      .body
+        = link_to space.name, space
+        - if space.maps.count > 0
+          <i class='icon-map-marker'></i>

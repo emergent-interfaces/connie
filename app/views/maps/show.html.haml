@@ -1,0 +1,9 @@
+= link_to "#{@space.name}", @space
+
+.image
+  = image_tag @map.image.url
+
+= link_to "edit", edit_space_map_path(@space,@map), :class => "btn"
+= link_to "delete", [@space, @map], :method => :delete,
+                    :confirm => "Are you sure you want to delete this map?",
+                    :class => "btn btn-danger"

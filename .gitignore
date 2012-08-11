@@ -25,3 +25,4 @@
 
 # Ignore assets to avoid bloating Git for now
 /public/assets
+/public/system

@@ -53,6 +53,7 @@ GEM
     chronic (0.6.7)
     chronic_duration (0.9.6)
       numerizer (~> 0.1.1)
+    cocaine (0.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -114,6 +115,12 @@ GEM
     options (2.3.0)
       fattr
     orm_adapter (0.4.0)
+    paperclip (3.1.4)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (>= 0.0.2)
+      mime-types
     pg (0.14.0)
     polyglot (0.3.3)
     powerbar (1.0.7)
@@ -218,6 +225,7 @@ DEPENDENCIES
   minitest (= 3.2.0)
   minitest-reporters
   mocha
+  paperclip
   pg
   progress_bar
   rails

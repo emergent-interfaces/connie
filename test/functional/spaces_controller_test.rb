@@ -22,7 +22,7 @@ class SpacesControllerTest < ActionController::TestCase
       should "get index" do
         get :index
         assert_response :success
-        assert assigns :spaces
+        assert assigns :maps
       end
 
       should "get show" do

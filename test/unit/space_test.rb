@@ -5,6 +5,7 @@ class SpaceTest < ActiveSupport::TestCase
   should belong_to :parent
 
   should have_many :reservations
+  should have_many :maps
 
   should have_db_column(:parent_id).of_type(:integer)
   should have_db_column(:lft).of_type(:integer)

@@ -16,6 +16,7 @@ gem 'chronic_duration'
 gem 'best_in_place'
 gem 'devise'
 gem 'icalendar'
+gem 'paperclip'
 
 gem 'sunspot_rails'
 gem 'sunspot_solr'   #pre-packaged Solr distribution for development

@@ -14,7 +14,7 @@ Tagging.delete_all
 TagGroup.delete_all
 Space.delete_all
 
-puts "Creating core spaces"
+puts "Creating core maps"
 
 puts "Creating core tags"
 # Core data required for the app

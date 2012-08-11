@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'spork'
+require 'paperclip/matchers'
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
@@ -83,6 +84,7 @@ end
 require 'mocha'
 
 class ActiveSupport::TestCase
+  extend Paperclip::Shoulda::Matchers
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #
   # Note: You'll currently still have to declare fixtures explicitly in integration tests

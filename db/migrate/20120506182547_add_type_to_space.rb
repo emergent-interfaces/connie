@@ -1,5 +1,5 @@
 class AddTypeToSpace < ActiveRecord::Migration
   def change
-    add_column :spaces, :type, :string
+    add_column :maps, :type, :string
   end
 end
