@@ -27,12 +27,12 @@ class TimeSpan < ActiveRecord::Base
   end
 
   def before?(time_span)
-    return true if end_time < time_span.start_time
+    return true if end_time <= time_span.start_time
     false
   end
 
   def after?(time_span)
-    return true if start_time > time_span.end_time
+    return true if start_time >= time_span.end_time
     false
   end
 

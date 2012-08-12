@@ -55,6 +55,24 @@ class IsRelatedRuleTest < ActiveSupport::TestCase
       assert_equal true, @rule.satisfied?
     end
 
+    should "be satisfied if 'after' relation on edge case is ok" do
+      @rule.relation = 'after'
+      @rule.save
+
+      ts1 = FactoryGirl.create(:time_span,
+                               :start_time => Time.parse('Jan 1 2pm'),
+                               :end_time => Time.parse('Jan 1 3pm'))
+      ts2 = FactoryGirl.create(:time_span,
+                               :start_time => Time.parse('Jan 1 3pm'),
+                               :end_time => Time.parse('Jan 1 4pm'))
+      @event.time_span = ts2
+      @event.save
+      @related_event.time_span = ts1
+      @related_event.save
+
+      assert_equal true, @rule.satisfied?
+    end
+
     should "be satisfied if 'before' relation is ok" do
       @rule.relation = 'before'
       @rule.save
@@ -65,6 +83,24 @@ class IsRelatedRuleTest < ActiveSupport::TestCase
       ts2 = FactoryGirl.create(:time_span,
                                :start_time => Time.parse('Jan 5'),
                                :end_time => Time.parse('Jan 6'))
+      @event.time_span = ts1
+      @event.save
+      @related_event.time_span = ts2
+      @related_event.save
+
+      assert_equal true, @rule.satisfied?
+    end
+
+    should "be satisfied if 'before' relation on edge case is ok" do
+      @rule.relation = 'before'
+      @rule.save
+
+      ts1 = FactoryGirl.create(:time_span,
+                               :start_time => Time.parse('Jan 1 2pm'),
+                               :end_time => Time.parse('Jan 1 3pm'))
+      ts2 = FactoryGirl.create(:time_span,
+                               :start_time => Time.parse('Jan 1 3pm'),
+                               :end_time => Time.parse('Jan 1 4pm'))
       @event.time_span = ts1
       @event.save
       @related_event.time_span = ts2
