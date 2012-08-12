@@ -42,6 +42,10 @@ class ConventionsController < ApplicationController
     redirect_to conventions_path
   end
 
+  def settings
+    @convention = Convention.find(params[:id])
+  end
+
   def set_as_default
     @convention = Convention.find(params[:id])
     session[:default_convention_id] = @convention.id

@@ -8,6 +8,7 @@ Connie::Application.routes.draw do
     member do
       put 'set_as_default'
       match 'roles/:role_department/profiles' => 'profiles#index'
+      get 'settings'
     end
 
     collection do

@@ -31,7 +31,7 @@ class PeriodsControllerTest < ActionController::TestCase
           }
         end
 
-        assert_redirected_to @convention
+        assert_redirected_to settings_convention_path(@convention)
       end
 
       should "not be able to create Period with bad data" do
@@ -58,7 +58,7 @@ class PeriodsControllerTest < ActionController::TestCase
           put :update, :convention_id => @convention.id, :id => @period.id,
                        :period => {:name => "New Name"}
 
-          assert redirect_to @convention
+          assert redirect_to settings_convention_path(@convention)
         end
 
         should "be able to delete Period" do
@@ -66,7 +66,7 @@ class PeriodsControllerTest < ActionController::TestCase
             delete :destroy, :convention_id => @convention.id, :id => @period.id
           end
 
-          assert redirect_to @convention
+          assert redirect_to settings_convention_path(@convention)
         end
       end
     end
