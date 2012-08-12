@@ -1,0 +1,23 @@
+.page-header
+  %h1= "Add a rule to #{@event.name}"
+
+= form_tag event_create_rule_path(@event), :method => :post do |f|
+  Create a BeScheduledRule
+  = hidden_field_tag 'rule_type', 'BeScheduledRule'
+  = submit_tag 'Create'
+
+= form_tag event_create_rule_path(@event), :method => :post do |f|
+  Create an IsRelatedRule
+  = hidden_field_tag 'rule_type', 'IsRelatedRule'
+  = select_tag 'relation', options_for_select(['before','after'])
+  = select_tag 'related_event_id', options_from_collection_for_select(Event.all, "id", "name")
+  = submit_tag 'Create'
+
+= form_tag event_create_rule_path(@event), :method => :post do |f|
+  Create a DurationRule
+  = hidden_field_tag 'rule_type', 'DurationRule'
+  At least
+  = text_field_tag 'min_duration_str'
+  At most
+  = text_field_tag 'max_duration_str'
+  = submit_tag 'Create'

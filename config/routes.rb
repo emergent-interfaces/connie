@@ -32,6 +32,7 @@ Connie::Application.routes.draw do
     resources :reservations
     resources :comments
     post 'create_rule'
+    get 'rules/new' => 'rules#new'
   end
 
   resources :spaces do
