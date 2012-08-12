@@ -1,3 +1,5 @@
+include ActionDispatch::TestProcess
+
 FactoryGirl.define do
   factory :event do
     sequence(:name) {|n| "Event #{n}"}
@@ -76,5 +78,6 @@ FactoryGirl.define do
 
   factory :map do
     association :space
+    image { fixture_file_upload(Rails.root.to_s+'/test/fixtures/test.png', 'image/png') }
   end
 end

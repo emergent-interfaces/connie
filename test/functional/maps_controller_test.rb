@@ -16,7 +16,7 @@ class MapsControllerTest < ActionController::TestCase
 
     should "create Map" do
       assert_difference("Map.count") do
-        post :create, :space_id => @space.id, :map => {}
+        post :create, :space_id => @space.id, :map => {:image => fixture_file_upload('test.png')}
       end
       assert redirect_to(assigns :space)
     end
