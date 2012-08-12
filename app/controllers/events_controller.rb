@@ -68,7 +68,7 @@ class EventsController < ApplicationController
         @rule = DurationRule.create(:min_duration => min_duration, :max_duration => max_duration)
     end
 
-    if @rule
+    if @rule and !@rule.new_record?
       @event.rule_assignments << RuleAssignment.new(:rule => @rule)
     end
 
