@@ -31,7 +31,7 @@ Connie::Application.routes.draw do
     resource :time_span
     resources :reservations
     resources :comments
-    post 'create_rule'
+    post 'rules/create' => 'rules#create'
     get 'rules/new' => 'rules#new'
   end
 
