@@ -34,6 +34,16 @@ en:
     be_scheduled_rule:
       satisfied: "This event is scheduled"
       not_satisfied: "This event needs to be scheduled"
+      description:
+        Checks only that an event is scheduled.
+    is_related_rule:
+      description:
+        Checks that that scheduling for a rule comes either before or after another
+        related event.  This is especially useful for setup and clean-up events.
+    duration_rule:
+      description:
+        Checks that the event is scheduled over a time period of minimum and/or
+        maximum duration.
     be_during_event_rule:
       satisfied: "Rule satisfied"
       schedule_event: "The event for this activity is not scheduled"
