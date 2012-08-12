@@ -1,0 +1,6 @@
+= table(rules,["Class","Status","Message",""],"No rules assigned") do |rule,klass|
+  %tr(class=klass)
+    %td= "#{rule.class}"
+    %td= rule_status_icon(rule)
+    %td= rule_message(rule)
+    %td= link_to delete_link_text("Remove"), "/rules/#{rule.class}/#{rule.id}", :method => "delete"

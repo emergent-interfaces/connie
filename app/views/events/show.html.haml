@@ -25,10 +25,7 @@
 .section
   %h2 Rules
 
-  %ul
-    - @event.rules.each do |rule|
-      %li
-        = render :partial => "rules/rule_in_list", :locals => {:rule => rule}
+  = render :partial => "rules/rules_table", :locals => {:rules => @event.rules}
 
   = form_tag event_create_rule_path(@event), :method => :post do |f|
     Create a BeScheduledRule

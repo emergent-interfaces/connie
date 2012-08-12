@@ -1,6 +1,8 @@
 module TableDisplayHelper
 
-  def table(collection, headers)
+  def table(collection, headers, empty_message=nil)
+    empty_message ||= "No records in database"
+
     output = "<table class='table'>\n"
     output << "\t<thead><tr>"
     headers.each do |h|
@@ -17,7 +19,7 @@ module TableDisplayHelper
         output << str
       end
     else
-      output << "\t<tr><td colspan=#{headers.count}>No records in database</td></tr>\n"
+      output << "\t<tr><td class='odd' colspan=#{headers.count}>#{empty_message}</td></tr>\n"
     end
     output << "</tbody>"
 
