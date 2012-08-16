@@ -18,6 +18,7 @@ class Convention < ActiveRecord::Base
 
   has_many :schedules
   has_many :periods
+  has_many :auth_requirements
 
   def create_tag
     tag = Tag.new(:name => self.name, :tag_group => TagGroup.find_by_name('Conventions'))
@@ -30,5 +31,15 @@ class Convention < ActiveRecord::Base
       tag.name = self.name
       tag.save
     end
+  end
+
+  after_create :add_auth_requirements
+  def add_auth_requirements
+    auth_requirements.create(:action => "view", :model => "convention")
+    auth_requirements.create(:action => "manage", :model => "convention")
+    auth_requirements.create(:action => "view", :model => "event")
+    auth_requirements.create(:action => "edit", :model => "event")
+    auth_requirements.create(:action => "add", :model => "event")
+    auth_requirements.create(:action => "delete", :model => "event")
   end
 end

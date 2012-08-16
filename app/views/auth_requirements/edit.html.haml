@@ -1,0 +1,6 @@
+%h1= "Set Roles to #{@auth_requirement.action} #{@auth_requirement.model} for #{@convention.name}"
+
+= semantic_form_for [@convention, @auth_requirement] do |f|
+  = f.inputs do
+    = f.input :requirement
+  = f.actions

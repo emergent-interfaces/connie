@@ -50,6 +50,7 @@ GEM
       jquery-rails
       rails (~> 3.1)
     builder (3.0.0)
+    cancan (1.6.8)
     chronic (0.6.7)
     chronic_duration (0.9.6)
       numerizer (~> 0.1.1)
@@ -212,6 +213,7 @@ DEPENDENCIES
   acts_as_commentable_with_threading
   awesome_nested_set
   best_in_place
+  cancan
   chronic
   chronic_duration
   coffee-rails (~> 3.2.1)

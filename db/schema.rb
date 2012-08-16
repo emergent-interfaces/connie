@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120809005452) do
+ActiveRecord::Schema.define(:version => 20120815011847) do
+
+  create_table "auth_requirements", :force => true do |t|
+    t.integer  "convention_id"
+    t.string   "requirement"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "action"
+    t.string   "model"
+  end
 
   create_table "be_scheduled_rules", :force => true do |t|
     t.datetime "created_at"

@@ -25,6 +25,7 @@ Connie::Application.routes.draw do
     resources :jobs
     resources :schedules
     resources :periods
+    resources :auth_requirements
   end
 
   resources :events do

@@ -2,7 +2,8 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  please_set_description: "No description provided. Please add one."
+  please_set_description: No description provided. Please add one.
+  no_requirement_set: No requirement set
 
   date:
     formats:
@@ -24,11 +25,17 @@ en:
 
   formtastic:
     hints:
-      event:
+      convention:
         name: "Unique identifier for this event"
-        tag_line: "Marketing blurb that typically follows the event name"
       time_span:
         confidence: "How confident you are that these will be the actual times"
+      auth_requirement:
+        requirement:
+          A comma seperated list of the roles that can perform the action on the object
+          in this convention.  A role is specified in the form "department:role-name".
+          These should match roles you have assigned to profiles for this convention.
+          The "*" character can be used to match all (or none-specified).  The requirement
+          "*:*" matches all roles in all departments in the convention.
 
   rule:
     be_scheduled_rule:

@@ -15,6 +15,7 @@ gem 'chronic'
 gem 'chronic_duration'
 gem 'best_in_place'
 gem 'devise'
+gem 'cancan'
 gem 'icalendar'
 gem 'paperclip'
 
