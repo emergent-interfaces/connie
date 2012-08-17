@@ -35,11 +35,15 @@ class Convention < ActiveRecord::Base
 
   after_create :add_auth_requirements
   def add_auth_requirements
-    auth_requirements.create(:action => "view", :model => "convention")
-    auth_requirements.create(:action => "manage", :model => "convention")
-    auth_requirements.create(:action => "view", :model => "event")
-    auth_requirements.create(:action => "edit", :model => "event")
-    auth_requirements.create(:action => "add", :model => "event")
-    auth_requirements.create(:action => "delete", :model => "event")
+    auth_requirements.create(:action => "read", :model => "Convention")
+    auth_requirements.create(:action => "update", :model => "Convention")
+
+    classes = ["Event", "Space", "Profile", "Job"]
+    classes.each do |klass|
+      auth_requirements.create(:action => "read", :model => klass)
+      auth_requirements.create(:action => "update", :model => klass)
+      auth_requirements.create(:action => "create", :model => klass)
+      auth_requirements.create(:action => "destroy", :model => klass)
+    end
   end
 end

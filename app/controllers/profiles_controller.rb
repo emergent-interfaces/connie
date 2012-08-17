@@ -1,12 +1,15 @@
 class ProfilesController < ApplicationController
   respond_to :html, :json
 
+  load_and_authorize_resource
+  skip_authorize_resource :only => [:new, :index]
+
   def index
     if params[:convention_id]
       @convention = Convention.find(params[:convention_id])
-      @profiles = @convention.profiles
+      @profiles = @convention.profiles.accessible_by(current_ability)
     else
-      @profiles = Profile.all
+      @profiles = Profile.accessible_by(current_ability)
     end
 
     @department_filter = params[:department]

@@ -10,4 +10,17 @@ class User < ActiveRecord::Base
   validates_presence_of :username
 
   belongs_to :profile
+
+  def permissions
+    auth_requirements_satisfied = []
+
+    cons_involved_in = profile.roles.collect {|role| role.convention}
+    cons_involved_in.each do |con|
+      con.auth_requirements.each do |ar|
+        auth_requirements_satisfied << ar if ar.met_by_any_of(profile.roles)
+      end
+    end
+
+    auth_requirements_satisfied
+  end
 end

@@ -1,12 +1,15 @@
 class JobsController < ApplicationController
   respond_to :html, :json
 
+  load_and_authorize_resource
+  skip_authorize_resource :only => [:new, :index]
+
   def index
     if params[:convention_id]
       @convention = Convention.find(params[:convention_id])
-      @jobs = @convention.jobs
+      @jobs = @convention.jobs.accessible_by(current_ability)
     else
-      @jobs = Job.all
+      @jobs = Job.accessible_by(current_ability)
     end
   end
 

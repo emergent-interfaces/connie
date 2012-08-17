@@ -1,13 +1,17 @@
 class EventsController < ApplicationController
   respond_to :html, :json
 
+  load_and_authorize_resource
+  skip_authorize_resource :only => [:new, :index]
+
   def index
     if params[:convention_id]
       @convention = Convention.find(params[:convention_id])
-      @events = @convention.events
+      @events = @convention.events.accessible_by(current_ability)
     else
-      @events = Event.all
+      @events = Event.accessible_by(current_ability)
     end
+
   end
 
   def show

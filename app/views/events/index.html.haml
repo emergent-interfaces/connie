@@ -2,7 +2,8 @@
   %h1
     Events
     %small= "Directory of events for #{default_convention_name}"
-    = link_to add_link_text("New Event"), session_filter(new_event_path), {class:'btn pull-right'}
+    - if can? :create, Event
+      = link_to add_link_text("New Event"), session_filter(new_event_path), {class:'btn pull-right'}
 
 = table(@events,["Name","Schedule","Rules"]) do |event,klass|
   %tr(class=klass)

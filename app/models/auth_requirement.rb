@@ -9,6 +9,7 @@ class AuthRequirement < ActiveRecord::Base
 
   def requirements
     req_array = []
+    return req_array unless requirement
 
     requirement.split(",").each do |req|
       pieces = req.split(":")
@@ -18,5 +19,21 @@ class AuthRequirement < ActiveRecord::Base
     end
 
     req_array
+  end
+
+  def met_by(role)
+    requirements.each do |req|
+      next if convention != role.convention
+      next if req[:dept] != "*" and role.department != req[:dept]
+      next if req[:name] != "*" and role.name != req[:name]
+      return true
+    end
+
+    false
+  end
+
+  def met_by_any_of(roles)
+    roles.each { |role| return true if met_by(role) }
+    false
   end
 end

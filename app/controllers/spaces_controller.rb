@@ -1,12 +1,15 @@
 class SpacesController < ApplicationController
   respond_to :html, :json
 
+  load_and_authorize_resource
+  skip_authorize_resource :only => [:new, :index]
+
   def index
     if params[:convention_id]
       @convention = Convention.find(params[:convention_id])
-      @spaces = @convention.spaces
+      @spaces = @convention.spaces.accessible_by(current_ability)
     else
-      @spaces = Space.all
+      @spaces = Space.accessible_by(current_ability)
     end
   end
 

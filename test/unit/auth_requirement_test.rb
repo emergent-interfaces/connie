@@ -11,6 +11,14 @@ class AuthRequirementTest < ActiveSupport::TestCase
       @con = FactoryGirl.create(:convention)
     end
 
+    should "return empty array if no requirements" do
+      @ar = @con.auth_requirements.create(:requirement=>"")
+      assert_equal [], @ar.requirements
+
+      @ar = @con.auth_requirements.create(:requirement=>nil)
+      assert_equal [], @ar.requirements
+    end
+
     should "break up requirements" do
       @ar = @con.auth_requirements.create(:requirement=>"*:*, board:co-chair,a/v tech:head")
       reqs = [{:dept=>"*",:name=>"*"},{:dept=>"board",:name=>"co-chair"},{:dept=>"a/v tech",:name=>"head"}]
@@ -21,6 +29,52 @@ class AuthRequirementTest < ActiveSupport::TestCase
       @ar = @con.auth_requirements.create(:requirement=>"*:*, catbert,a/v tech:head")
       reqs = [{:dept=>"*",:name=>"*"},{:dept=>"a/v tech",:name=>"head"}]
       assert_equal reqs, @ar.requirements
+    end
+
+    should "know if is met by a role" do
+      @ar = @con.auth_requirements.create(:requirement=>"*:*, a/v tech:head")
+      @role = FactoryGirl.create(:role, :convention => @con, :department => "concert", :name => "staff")
+      assert @ar.met_by(@role)
+
+      @ar = @con.auth_requirements.create(:requirement=>"a/v tech:head")
+      @role = FactoryGirl.create(:role, :convention => @con, :department => "a/v tech", :name => "head")
+      assert @ar.met_by(@role)
+
+      @ar = @con.auth_requirements.create(:requirement=>"a/v tech:head")
+      @role = FactoryGirl.create(:role, :convention => @con, :department => "a/v tech", :name => "staff")
+      refute @ar.met_by(@role)
+
+      @ar = @con.auth_requirements.create(:requirement=>"a/v tech:*")
+      @role = FactoryGirl.create(:role, :convention => @con, :department => "a/v tech", :name => "staff")
+      assert @ar.met_by(@role)
+
+      @ar = @con.auth_requirements.create(:requirement=>"a/v tech:staff")
+      @role = FactoryGirl.create(:role, :convention => @con, :department => "", :name => "staff")
+      refute @ar.met_by(@role)
+    end
+
+    should "know if it is met by at least one in a group of roles" do
+      @role_z = FactoryGirl.create(:role, :convention => @con, :department => "undead", :name => "shambler")
+
+      @ar = @con.auth_requirements.create(:requirement=>"*:*, a/v tech:head")
+      @role = FactoryGirl.create(:role, :convention => @con, :department => "concert", :name => "staff")
+      assert @ar.met_by_any_of([@role_z,@role])
+
+      @ar = @con.auth_requirements.create(:requirement=>"a/v tech:head")
+      @role = FactoryGirl.create(:role, :convention => @con, :department => "a/v tech", :name => "head")
+      assert @ar.met_by_any_of([@role_z,@role])
+
+      @ar = @con.auth_requirements.create(:requirement=>"a/v tech:head")
+      @role = FactoryGirl.create(:role, :convention => @con, :department => "a/v tech", :name => "staff")
+      refute @ar.met_by_any_of([@role_z,@role])
+
+      @ar = @con.auth_requirements.create(:requirement=>"a/v tech:*")
+      @role = FactoryGirl.create(:role, :convention => @con, :department => "a/v tech", :name => "staff")
+      assert @ar.met_by_any_of([@role_z,@role])
+
+      @ar = @con.auth_requirements.create(:requirement=>"a/v tech:staff")
+      @role = FactoryGirl.create(:role, :convention => @con, :department => "", :name => "staff")
+      refute @ar.met_by_any_of([@role_z,@role])
     end
 
     should "not allow editing action" do

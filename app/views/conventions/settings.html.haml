@@ -14,8 +14,7 @@
 
 .page-header
   %h2 Convention Authorizations
-The following set up the blasted authorizations.
-
+%p The following set up the blasted authorizations.
 
 %table.table
   - @convention.auth_requirements.group_by(&:model).each do |model, ars|
@@ -30,3 +29,5 @@ The following set up the blasted authorizations.
           %td= ar.action
           %td= best_in_place [@convention, ar], :requirement, :nil => t("no_requirement_set")
           %td= link_to edit_link_text("edit"), edit_convention_auth_requirement_path(@convention,ar)
+
+%p= t("formtastic.hints.auth_requirement.requirement")

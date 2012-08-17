@@ -68,6 +68,7 @@ FactoryGirl.define do
     name "Test Dept Staff"
     department "Test Dept"
     association :convention
+    association :profile
   end
 
   factory :period do
