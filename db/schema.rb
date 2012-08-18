@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120815011847) do
+ActiveRecord::Schema.define(:version => 20120817222437) do
 
   create_table "auth_requirements", :force => true do |t|
     t.integer  "convention_id"
@@ -235,6 +235,7 @@ ActiveRecord::Schema.define(:version => 20120815011847) do
     t.datetime "updated_at",                             :null => false
     t.string   "username"
     t.integer  "profile_id"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

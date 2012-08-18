@@ -17,14 +17,14 @@
 %p The following set up the blasted authorizations.
 
 %table.table
-  - @convention.auth_requirements.group_by(&:model).each do |model, ars|
+  - @convention.auth_requirements.sort_by(&:created_at).group_by(&:model).each do |model, ars|
     %thead
       %tr
         %th(width="200px")= "#{model.capitalize} Actions"
         %th(width="*") Authorized Roles
         %th(width="200px")
     %tbody
-      - ars.each do |ar|
+      - ars.sort_by(&:created_at).each do |ar|
         %tr
           %td= ar.action
           %td= best_in_place [@convention, ar], :requirement, :nil => t("no_requirement_set")

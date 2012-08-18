@@ -3,6 +3,11 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
   should belong_to :profile
 
+  should "default to not admin" do
+    @user = User.create
+    refute @user.admin
+  end
+
   context "with a User and Profile" do
     setup do
       @profile = FactoryGirl.create(:profile)

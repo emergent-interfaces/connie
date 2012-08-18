@@ -3,7 +3,7 @@ require 'test_helper'
 class JobsControllerTest < ActionController::TestCase
   context "with a logged in user" do
     setup do
-      @user = FactoryGirl.create(:user)
+      @user = FactoryGirl.create(:admin_user)
       sign_in @user
     end
 

@@ -38,6 +38,14 @@ FactoryGirl.define do
     inherit_time_span true
   end
 
+  factory :admin_user, :class => :user do
+    sequence(:email) {|n| "user#{n}@fakemail.net"}
+    sequence(:username) {|n| "user#{n}"}
+    password 'password'
+    password_confirmation 'password'
+    admin true
+  end
+
   factory :user do
     sequence(:email) {|n| "user#{n}@fakemail.net"}
     sequence(:username) {|n| "user#{n}"}

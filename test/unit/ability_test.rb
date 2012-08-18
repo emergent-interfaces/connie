@@ -24,6 +24,12 @@ class AbilityTest < ActiveSupport::TestCase
       @event2 = Event.new(:conventions => [@con2])
       assert ability.cannot?(:clean, @event2)
     end
+
+    should "give do anything as admin" do
+      @user.admin = true
+      ability = Ability.new(@user)
+      assert ability.can?(:do_anything, Event.new)
+    end
   end
 
   context "with a Profile-less User" do
@@ -34,6 +40,12 @@ class AbilityTest < ActiveSupport::TestCase
     should "not have abilities" do
       ability = Ability.new(@user)
       assert ability.cannot?(:clean, Event.new)
+    end
+
+    should "give do anything as admin" do
+      @user.admin = true
+      ability = Ability.new(@user)
+      assert ability.can?(:do_anything, Event.new)
     end
   end
 end

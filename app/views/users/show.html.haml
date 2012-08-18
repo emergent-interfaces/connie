@@ -6,7 +6,8 @@
 .row-fluid
   .span8
     %h2 Details
-    = "Username: #{@user.username}"
+    %p= "Username: #{@user.username}"
+    %p= "Admin: #{@user.admin?}"
 
   .span4
     %h2 Profile

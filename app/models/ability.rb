@@ -2,6 +2,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    can :manage, :all if user.admin?
+
     return unless user.profile
 
     user.permissions.each do |permission|
@@ -9,5 +11,6 @@ class Ability
           permission.model.constantize,
           :conventions => {:id => permission.convention_id}
     end
+
   end
 end
