@@ -206,7 +206,7 @@ events:
     end: June 18th 2010 11:30pm
     reserves: Panel 6
 spaces:
-  - {name: GSEC Campus 2011, space_type: area, map_image: gsec_campus.png}
+  - {name: GSEC Campus 2010, space_type: area, map_image: gsec_campus.png}
 
   - {name: Holiday Inn Hotel, parent: GSEC Campus, space_type: building, map_image: holiday_inn.png}
   - {name: Ground Floor, parent: Holiday Inn Hotel, space_type: floor}
