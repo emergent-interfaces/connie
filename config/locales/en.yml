@@ -26,7 +26,7 @@ en:
   formtastic:
     hints:
       convention:
-        name: "Unique identifier for this event"
+        name: "Unique identifier for this convention"
       time_span:
         confidence: "How confident you are that these will be the actual times"
       auth_requirement:
