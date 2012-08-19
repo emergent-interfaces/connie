@@ -14,10 +14,11 @@
 
 .page-header
   %h2 Convention Authorizations
-%p The following set up the blasted authorizations.
+%p= t("convention_authorization.description")
+%p= t("formtastic.hints.auth_requirement.requirement")
 
-%table.table
-  - @convention.auth_requirements.sort_by(&:created_at).group_by(&:model).each do |model, ars|
+- @convention.auth_requirements.sort_by(&:created_at).group_by(&:model).each do |model, ars|
+  %table.table(class='auth_requirements')
     %thead
       %tr
         %th(width="200px")= "#{model.capitalize} Actions"
@@ -29,5 +30,3 @@
           %td= ar.action
           %td= best_in_place [@convention, ar], :requirement, :nil => t("no_requirement_set")
           %td= link_to edit_link_text("edit"), edit_convention_auth_requirement_path(@convention,ar)
-
-%p= t("formtastic.hints.auth_requirement.requirement")

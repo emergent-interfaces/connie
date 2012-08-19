@@ -23,6 +23,13 @@ en:
       Having dates is very important for identifying requirements for your event.
       Please add some dates.  Tentative is OK!
 
+  convention_authorization:
+    description: |
+      Authorizations restrict access of sensitive data based on roles in a convention.  Every user is linked to a
+      a profile, and this profile can have various roles in any number of conventions.  Each role that a profile
+      has in a convention can give him or her rights to view, create, or manipulate data for the convention.  The
+      rights that each role provides are set specifying authorized roles in the following manner:
+
   formtastic:
     hints:
       convention:
