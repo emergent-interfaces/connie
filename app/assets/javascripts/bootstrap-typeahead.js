@@ -37,7 +37,6 @@
     this.source = this.options.source
     this.shown = false
     this.listen()
-    console.log(this.options)
   }
 
   Typeahead.prototype = {
