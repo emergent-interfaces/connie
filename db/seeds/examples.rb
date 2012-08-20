@@ -60,6 +60,13 @@ def load_convention(file_name)
 
 
       m = s.maps.create!(:image => open("db/seeds/images/"+space["map_image"])) if space["map_image"]
+
+      if space["address"]
+        s.create_own_address!(:text => space["address"])
+        s.inherit_address = false
+        s.save
+      end
+
       puts "- #{s.name}"
     end
   end

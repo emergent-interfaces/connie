@@ -26,6 +26,7 @@ class SpacesController < ApplicationController
   def new
     @space = Space.new
     @space.conventions << Convention.find(params[:convention_id]) if params[:convention_id]
+    @space.build_own_address
   end
 
   def create
@@ -45,6 +46,7 @@ class SpacesController < ApplicationController
 
   def edit
     @space = Space.find(params[:id])
+    @space.build_own_address unless @space.address
   end
 
   def update

@@ -206,9 +206,9 @@ events:
     end: June 18th 2010 11:30pm
     reserves: Panel 6
 spaces:
-  - {name: GSEC Campus 2010, space_type: area, map_image: gsec_campus.png}
+  - {name: GSEC Campus 2010, space_type: area, map_image: gsec_campus.png, address: "50 Atrium Drive\nSomerset, NJ 08873"}
 
-  - {name: Holiday Inn Hotel, parent: GSEC Campus, space_type: building, map_image: holiday_inn.png}
+  - {name: Holiday Inn Hotel, parent: GSEC Campus 2010, space_type: building, map_image: holiday_inn.png, address: "195 Davidson Avenue\nSomerset, NJ 08873"}
   - {name: Ground Floor, parent: Holiday Inn Hotel, space_type: floor}
   - {name: Video Gaming, venue_designated_name: Salon, parent: Ground Floor, space_type: area}
   - {name: "Video Games: Classic Focus", venue_designated_name: Salon A, space_type: room, parent: Video Gaming}
@@ -219,7 +219,7 @@ spaces:
   - {name: "Gaming Video Room 1", venue_designated_name: Bennington, space_type: room, parent: Video Gaming}
   - {name: "Gaming Video Room 2", venue_designated_name: Ambrose, space_type: room, parent: Video Gaming}
 
-  - {name: Double Tree Hotel, parent: GSEC Campus, space_type: building}
+  - {name: Double Tree Hotel, parent: GSEC Campus 2010, space_type: building, address: "200 Atrium Drive\nSomerset, NJ 08773"}
   - {name: 1st Floor, parent: Double Tree Hotel, space_type: floor, map_image: dt_1st_floor.png}
   - {name: Artist's Alley, venue_designated_name: Somerset Ballroom, parent: 1st Floor, space_type: area, map_image: artist_alley.png}
   - {name: Panel 1, parent: 1st Floor, space_type: room}
@@ -243,7 +243,7 @@ spaces:
   - {name: Workshop 4, venue_designated_name: Hillsboroug, parent: 2nd Floor, space_type: room}
   - {name: LARP, parent: 2nd Floor, space_type: room}
 
-  - {name: Garden State Expo Center, parent: GSEC Campus, space_type: building, map_image: gsec.png}
+  - {name: Garden State Expo Center, parent: GSEC Campus 2010, space_type: building, map_image: gsec.png}
   - {name: Dealer's Room, parent: Garden State Expo Center, space_type: room}
   - {name: Main Events, parent: Garden State Expo Center, space_type: area}
   - {name: Main Events B, parent: Garden State Expo Center, space_type: area}
@@ -255,7 +255,7 @@ spaces:
   - {name: Con Ops, parent: Garden State Expo Center, space_type: area}
   - {name: Con Safety and Lost & Found, parent: Garden State Expo Center, space_type: room}
 
-  - {name: Training Center, parent: GSEC Campus, space_type: building, map_image: training_center.png}
+  - {name: Training Center, parent: GSEC Campus 2010, space_type: building, map_image: training_center.png, address: "9-27 Atrium Drive\nSomerset, NJ 08773"}
   - {name: Video Ops, venue_designated_name: Dogwood, space_type: room, parent: Training Center}
   - {name: Video 1, venue_designated_name: Maple, space_type: room, parent: Training Center}
   - {name: Video 2, venue_designated_name: Magnolia, space_type: room, parent: Training Center}

@@ -21,6 +21,11 @@
     <br/>
     = "Standing: #{best_in_place @space, :occupancy_standing}".html_safe
 
+    %h2 Address
+    = render :partial => 'addresses/block', :locals => {:address => @space.address} if @space.address
+    -  if @space.inherit_address?
+      = "Inherited from #{link_to @space.inherited_address_space.name, @space.inherited_address_space}".html_safe
+
   .span3
     %h2 Maps
     %ul.thumbnails

@@ -14,6 +14,22 @@ class Space < ActiveRecord::Base
   validates_presence_of :space_type
   validates_inclusion_of :space_type, :in => %w{building floor area room}
 
+  has_one :own_address, :as => :addressable, :class_name => "Address"
+  accepts_nested_attributes_for :own_address, :reject_if => proc {|attrs| attrs["text"].blank?}
+
+  def address
+    inherit_address? ? inherited_address_space.own_address : own_address
+  end
+
+  def inherited_address_space(s=self)
+    if s.inherit_address? and s.parent
+      return inherited_address_space(s.parent)
+    else
+      puts "Found"
+      return s
+    end
+  end
+
   def icalendar
     cal = Icalendar::Calendar.new
 

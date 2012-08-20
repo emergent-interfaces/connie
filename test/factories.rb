@@ -89,4 +89,8 @@ FactoryGirl.define do
     association :space
     image { fixture_file_upload(Rails.root.to_s+'/test/fixtures/test.png', 'image/png') }
   end
+
+  factory :address do
+    text "612 Wharf Avenue, Red Bank, NJ"
+  end
 end

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120817222437) do
+ActiveRecord::Schema.define(:version => 20120820001006) do
+
+  create_table "addresses", :force => true do |t|
+    t.text     "text"
+    t.integer  "addressable_id"
+    t.string   "addressable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "auth_requirements", :force => true do |t|
     t.integer  "convention_id"
@@ -174,11 +182,12 @@ ActiveRecord::Schema.define(:version => 20120817222437) do
     t.integer  "lft"
     t.integer  "rgt"
     t.integer  "depth"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
     t.string   "space_type"
     t.integer  "occupancy_seated"
     t.integer  "occupancy_standing"
+    t.boolean  "inherit_address",       :default => true
   end
 
   create_table "tag_groups", :force => true do |t|

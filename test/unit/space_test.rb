@@ -20,8 +20,37 @@ class SpaceTest < ActiveSupport::TestCase
   should_not allow_value("hurkburjurgur").for(:space_type)
   should_not allow_value("bajizzlestein").for(:space_type)
 
+  should have_one :own_address
+
   should "build icalendar of reservations" do
     @space = FactoryGirl.create(:space)
     assert @space.respond_to? :icalendar
+  end
+
+  should "be able to have address" do
+    @address = FactoryGirl.create(:address)
+    @space = FactoryGirl.create(:space, :own_address => @address, :inherit_address => false)
+    assert_equal @address, @space.address
+  end
+
+  should "be able to inherit address" do
+    @address = FactoryGirl.create(:address)
+    @parent = FactoryGirl.create(:space, :own_address => @address, :inherit_address => false)
+    @space = FactoryGirl.create(:space, :inherit_address => true, :parent => @parent)
+    puts @space.name
+    assert_equal @address, @space.address
+  end
+
+  should "be able to inherit address through multiple parents" do
+    @address = FactoryGirl.create(:address)
+    @grandparent = FactoryGirl.create(:space, :own_address => @address, :inherit_address => false)
+    @parent = FactoryGirl.create(:space, :inherit_address => true, :parent => @grandparent)
+    @space = FactoryGirl.create(:space, :inherit_address => true, :parent => @parent)
+    assert_equal @address, @space.address
+  end
+
+  should "inherit address by default" do
+    @space = FactoryGirl.create(:space)
+    assert @space.inherit_address?
   end
 end
