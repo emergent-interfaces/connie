@@ -1,5 +1,24 @@
 convention:
   name: AnimeNext 2010
+  auth_requirements:
+    - {model: Convention, action: read, requirement: "*:*"}
+    - {model: Convention, action: update, requirement: "*:*"}
+    - {model: Event, action: read, requirement: "*:*"}
+    - {model: Event, action: update, requirement: "*:*"}
+    - {model: Event, action: create, requirement: "*:*"}
+    - {model: Event, action: destroy, requirement: "*:*"}
+    - {model: Space, action: read, requirement: "*:*"}
+    - {model: Space, action: update, requirement: "*:*"}
+    - {model: Space, action: create, requirement: "*:*"}
+    - {model: Space, action: destroy, requirement: "*:*"}
+    - {model: Profile, action: read, requirement: "*:*"}
+    - {model: Profile, action: update, requirement: "*:*"}
+    - {model: Profile, action: create, requirement: "*:*"}
+    - {model: Profile, action: destroy, requirement: "*:*"}
+    - {model: Job, action: read, requirement: "*:*"}
+    - {model: Job, action: update, requirement: "*:*"}
+    - {model: Job, action: create, requirement: "*:*"}
+    - {model: Job, action: destroy, requirement: "*:*"}
 events:
   - name: BlazBlue & King of Fighters 2002 Ultimate Match
     start: June 18th 2010 7:00PM

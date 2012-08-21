@@ -6,6 +6,7 @@ require 'open-uri'
 puts "== Add Example Data =="
 puts "Deleting existing data"
 Convention.delete_all
+AuthRequirement.delete_all
 Event.delete_all
 Space.delete_all
 Map.delete_all
@@ -31,9 +32,18 @@ def load_convention(file_name)
   data = YAML::load(File.open(file_name))
 
   puts "Creating example convention"
-  # convention = FactoryGirl.create :convention, name: data["convention"]["name"]
   convention = Convention.create(:name => data["convention"]["name"])
   puts "- #{convention.name}"
+
+  if data["convention"]["auth_requirements"]
+    puts "Setting AuthRequirements"
+    data["convention"]["auth_requirements"].each do |auth_req|
+      ar = convention.auth_requirements.find_by_model_and_action(auth_req["model"],auth_req["action"])
+      ar.requirement = auth_req["requirement"]
+      ar.save!
+      puts "- #{ar.model}, #{ar.action}, #{ar.requirement}"
+    end
+  end
 
   convention_profiles = data["profiles"]
   if convention_profiles
