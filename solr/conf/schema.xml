@@ -68,7 +68,7 @@
         <filter class="solr.ISOLatin1AccentFilterFactory"/>
         <filter class="solr.TrimFilterFactory" />
         <filter class="solr.EdgeNGramFilterFactory"
-                minGramSize="3"
+                minGramSize="1"
                 maxGramSize="30"/>
       </analyzer>
       <analyzer type="query">

@@ -1,11 +1,9 @@
 class Search
+  attr_reader :solr_search
+
   def initialize(text)
-    @solr_search = Event.search do
+    @solr_search = Sunspot.search Event, Space, Profile do
       fulltext text
     end
-  end
-
-  def results
-    @solr_search.results
   end
 end

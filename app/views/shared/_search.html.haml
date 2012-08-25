@@ -1,2 +1,3 @@
 = form_tag('/search', :method => :get, class: "navbar-search pull-right") do
-  %input.search(name='text' class='search-query' placeholder="Search" autocomplete="off")
+  %input.search(name='text' class='search-query' placeholder="Search  ctrl+i" autocomplete="off")
+  = hidden_field_tag 'jump_to_match', false

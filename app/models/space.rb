@@ -17,6 +17,10 @@ class Space < ActiveRecord::Base
   has_one :own_address, :as => :addressable, :class_name => "Address"
   accepts_nested_attributes_for :own_address, :reject_if => proc {|attrs| attrs["text"].blank?}
 
+  searchable :auto_index => true, :auto_remove => true do
+    text :name, :venue_designated_name
+  end
+
   def address
     inherit_address? ? inherited_address_space.own_address : own_address
   end

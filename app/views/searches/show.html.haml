@@ -1,8 +1,9 @@
 %h1 Search Results
-
 - if @search.results.count > 0
-  - @search.results.each do |result|
+  - @search.each_hit_with_result do |hit, result|
     %ul
-      %li= link_to result.name, result
+      %li
+        = link_to result.name, result
+        = hit.score
 - else
   No results found.

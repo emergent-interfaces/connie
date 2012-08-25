@@ -8,6 +8,10 @@ class Profile < ActiveRecord::Base
 
   has_one :user
 
+  searchable :auto_index => true, :auto_remove => true do
+    text :name
+  end
+
   def departments
     roles.collect {|role| role.department}.uniq
   end

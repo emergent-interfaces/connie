@@ -5,4 +5,8 @@ class Job < ActiveRecord::Base
   has_many :conventions, :through => :convention_linkables
 
   acts_as_commentable
+
+  searchable :auto_index => true, :auto_remove => true do
+    text :name, :description
+  end
 end

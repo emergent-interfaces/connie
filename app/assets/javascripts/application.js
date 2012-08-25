@@ -31,14 +31,30 @@ $(document).ready(function() {
 
     var labels,mapped;
 
+    // Search box typeahead
     $('.search-query').typeahead({
+        items: 20,
         source: function(query, process) {
             $.get('/search.json',{utf8: "✓",text: query}, function(data){
                 labels = [];
                 mapped = {};
 
                 _.each(data, function(item) {
-                   label = item.name+" <span class='label'>event</span>";
+                   switch (item.class_name) {
+                       case "Event":
+                           icon = "<i class='icon-calendar'></i>";
+                           break;
+                       case "Space":
+                           icon = "<i class='icon-globe'></i>";
+                           break;
+                       case "Profile":
+                           icon = "<i class='icon-user'></i>";
+                           break;
+                       default:
+                           icon = "";
+                   }
+
+                   label = icon + " " + item.name;
                    mapped[label] = item.name;
                    labels.push(label);
                 });
@@ -47,8 +63,17 @@ $(document).ready(function() {
             });
         },
         updater: function(item) {
+            $('.search-query').parent().find('#jump_to_match').val(true);
+            $('.search-query').val(mapped[item]);
+            $('.search-query').parent().submit();
             return mapped[item];
         }
+    });
+
+    // Search box hotkey
+    // https://github.com/tzuryby/jquery.hotkeys
+    $(document).bind('keydown.ctrl_i', function() {
+        $('.search-query').focus();
     });
 
     // Unobtrusive formatting of Events
