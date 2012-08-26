@@ -20,6 +20,10 @@ class Convention < ActiveRecord::Base
   has_many :periods
   has_many :auth_requirements
 
+  searchable :auto_index => true, :auto_remove => true do
+    text :name
+  end
+
   def create_tag
     tag = Tag.new(:name => self.name, :tag_group => TagGroup.find_by_name('Conventions'))
     tag.save
