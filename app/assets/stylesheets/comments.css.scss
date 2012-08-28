@@ -1,10 +1,14 @@
+.comments ul {
+  list-style-type: none;
+  margin: 0px;
+}
+
 .comments li {
   padding: 10px;
-
 }
 
 .comments ul ul li {
-  border-left: 1px solid #80A0FF;
+  border-left: 1px solid #08C;
 }
 
 .comments ul ul {
@@ -19,7 +23,6 @@
 
 .comment .comment_actions a, .comment .comment_actions a:visited {
   text-decoration: none;
-  color: blue;
 }
 
 .comment .comment_actions a:hover, .comment .comment_actions a:active {

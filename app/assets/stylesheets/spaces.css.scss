@@ -1,26 +1,3 @@
 // Place all the styles related to the spaces controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.spaces li {
-  padding: 5px;
-  padding-left: 10px;
-}
-
-.spaces ul ul li {
-  border-left: 1px solid #80A0FF;
-}
-
-.spaces ul ul {
-  padding-left: 10px;
-  padding-top: 5px;
-}
-
-.space a, .space a:visited {
-  text-decoration: none;
-  color: #6090C0;
-}
-
-.space a:hover, .space a:active {
-  color: #3060A0;
-}
