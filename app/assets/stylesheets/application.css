@@ -18,6 +18,16 @@
     background: #9DF;
 }
 
+h1 .best_in_place input {
+    font-size: 30px;
+    height: 30px;
+    width: 80%;
+    margin: 0px;
+    font-family: inherit;
+    font-weight: bold;
+    margin: -10px -6px;
+}
+
 .subtle {
     color: #909090;
     font-size: 0.9em;
