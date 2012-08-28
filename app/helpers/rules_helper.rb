@@ -49,6 +49,29 @@ module RulesHelper
     msg
   end
 
+  def message_for_meets_occupancy_rule(rule)
+    msg = ""
+
+    arrangement = rule.arrangement
+    capacity = rule.capacity
+
+    msg << "The event requires #{arrangement} occupancy for at least #{capacity} people."
+
+    case rule.message
+      when :meets_occupancy
+        msg << " This rule is satisfied by "
+        msg << rule.met_by.collect {|space| link_to space.name, space }.to_sentence
+        msg << "."
+      when :no_spaces_reserved
+        msg << " This event does not reserve any spaces.  It must reserve at least one space"
+        msg << " that meets the occupancy rule."
+      when :no_satisfactory_space_reserved
+        msg << " None of the reserved spaces meet this occupancy rule."
+    end
+
+    msg
+  end
+
   def rule_status_icon(rule)
     if rule.satisfied?
       rule_satisfied_icon

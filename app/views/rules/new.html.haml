@@ -44,3 +44,20 @@ Design a rule from one of the following types.
       = text_field_tag 'max_duration_str'
       <br/>
       = submit_tag 'Create', :class=>'btn'
+
+.page-header
+  %h2 Location Rules
+%h3 Create a MeetOccupancyRule
+.row-fluid
+  .span3
+    = t "rule.meet_occupancy_rule.description"
+  .span9
+    = form_tag event_rules_create_path(@event), :method => :post do |f|
+      = hidden_field_tag 'rule_type', 'MeetOccupancyRule'
+      Arrangement
+      = select_tag 'arrangement', options_for_select(['standing','seated'])
+      <br/>
+      Capacity
+      = text_field_tag 'capacity'
+      <br/>
+      = submit_tag 'Create', :class=>'btn'

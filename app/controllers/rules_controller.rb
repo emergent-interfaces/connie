@@ -16,6 +16,10 @@ class RulesController < ApplicationController
         min_duration = ChronicDuration.parse(params[:min_duration_str])
         max_duration = ChronicDuration.parse(params[:max_duration_str])
         @rule = DurationRule.create(:min_duration => min_duration, :max_duration => max_duration)
+
+      when 'MeetOccupancyRule'
+        @rule = MeetsOccupancyRule.create(:arrangement => params[:arrangement],
+                                        :capacity => params[:capacity])
     end
 
     if @rule and !@rule.new_record?

@@ -68,3 +68,7 @@ en:
     be_located_in_rule:
       satisfied: "Rule satisfied"
       violated: "This activity must reserve %{space} or one of its sub-spaces"
+    meet_occupancy_rule:
+      description:
+        Checks that the event reservees a space that can provide enough seating
+        or standing capacity for the expected number of attendees.
