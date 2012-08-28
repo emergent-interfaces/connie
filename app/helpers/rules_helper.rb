@@ -81,10 +81,10 @@ module RulesHelper
   end
 
   def rule_violated_icon
-    image_tag "icons/error.png"#, :style => "position: relative; top: 1px; padding: 0px 3px;"
+    image_tag "icons/error.png"#, :class => 'rule-icon'
   end
 
   def rule_satisfied_icon
-    image_tag "icons/accept.png"#, :style => "position: relative; top: 1px; padding: 0px 3px;"
+    image_tag "icons/accept.png"#, :class => 'rule-icon'
   end
 end

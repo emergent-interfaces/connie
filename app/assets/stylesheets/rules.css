@@ -5,7 +5,7 @@
 
 .rule-icon {
   position: relative;
-  top: 2px;
+  top: -2px;
 }
 
 .rule-class {
@@ -16,14 +16,12 @@
 
 .violated_rules_indicator {
   color: #ca9510;
-  position: absolute;
 }
 
 .violated_rules_indicator img {
   position: relative;
-  top: 2px;
   margin-top: -5px;
-  padding-right: 2px;
+  padding: 0px 2px;
 }
 
 .satisfied_rules_indicator {
@@ -32,7 +30,6 @@
 
 .satisfied_rules_indicator img {
   position: relative;
-  top: 2px;
   margin-top: -5px;
-  padding-right: 2px;
+  padding: 0px 2px;
 }

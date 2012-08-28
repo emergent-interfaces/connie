@@ -5,6 +5,7 @@
  *= require bootstrap_and_overrides
  *= require_self
  *= require schedules
+ *= require rules
  * require_tree .
 */
 
