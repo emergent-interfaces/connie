@@ -1,7 +1,7 @@
 = semantic_form_for [@profile, @role] do |f|
   = f.inputs do
-    = f.input :name
     = f.input :department
+    = f.input :name
     = f.input :convention
     = f.input :profile_id, :as => :hidden, :input_html => {value: @profile.id}
   = f.actions do

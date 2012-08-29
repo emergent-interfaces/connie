@@ -32,6 +32,10 @@ en:
 
   formtastic:
     hints:
+      role:
+        department: Optional department that this role belongs to.  For example, "tech support" or "food service"
+        name: Name of the role.  For example, "staff" or "chef"
+        convention: Convention this role applies to.
       convention:
         name: "Unique identifier for this convention"
       time_span:
