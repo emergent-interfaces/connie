@@ -42,6 +42,7 @@ $(document).ready(function() {
 
         var options = {'title':'Running Events',
             'legend': {position: 'none'},
+            'pointSize': 3,
             'width':'100%',
             'height':180};
 
