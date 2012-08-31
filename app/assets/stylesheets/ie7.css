@@ -1,7 +1,8 @@
 /*
  *= require formtastic_ie7
  */
-# app/views/layouts/application.html.erb
+/*# app/views/layouts/application.html.erb
 <%= stylesheet_link_tag 'application' %>
 <!--[if IE 6]><%= stylesheet_link_tag 'ie6' %><![endif]-->
 <!--[if IE 7]><%= stylesheet_link_tag 'ie7' %><![endif]-->
+  NOT SURE WHY THIS IS HERE? */
