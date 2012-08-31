@@ -1,4 +1,6 @@
 class SchedulesController < ApplicationController
+  respond_to :html, :json
+
   def index
 
   end
@@ -22,6 +24,7 @@ class SchedulesController < ApplicationController
 
   def show
     @schedule = Schedule.find(params[:id])
+    respond_with(@schedule)
   end
 
   def edit

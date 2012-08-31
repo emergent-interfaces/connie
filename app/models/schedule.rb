@@ -56,4 +56,26 @@ class Schedule < ActiveRecord::Base
     collection = reservations.find_all{|r| r.time_span.end_time == time} if type == :ends
     collection
   end
+
+  def summary
+    running = 0
+
+    critical_times.collect do |time|
+      running += happenings_at(time,:starts).count - happenings_at(time,:ends).count
+
+      {:time => time,
+       :starts => happenings_at(time,:starts),
+       :ends => happenings_at(time,:ends),
+       :running_count => running,
+       :starting_count => happenings_at(time,:starts).count,
+       :ending_count => happenings_at(time,:ends).count}
+    end
+  end
+
+  def as_json(options = {})
+    {
+        attributes: self.attributes,
+        summary: self.summary
+    }
+  end
 end

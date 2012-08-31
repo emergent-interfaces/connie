@@ -2,11 +2,15 @@
   %h1= "#{@schedule.name}"
 
 %ul.nav(class="nav-tabs")
-  %li.active= link_to "Rundown", "#rundown", :html_options => {"data-toggle" => "tab"}
+  %li.active= link_to "Summary", "#summary", :html_options => {"data-toggle" => "tab"}
+  %li= link_to "Rundown", "#rundown", :html_options => {"data-toggle" => "tab"}
   %li= link_to "Timeline", "#timeline", :html_options => {"data-toggle" => "tab"}
 
 .tab-content
-  #rundown.tab-pane(class="active")
+  #summary.tab-pane(class="active")
+    = render :partial => 'schedules/rundown_chart', :locals => {:schedule => @schedule}
+
+  #rundown.tab-pane
     = render "rundown"
 
   #timeline.tab-pane
