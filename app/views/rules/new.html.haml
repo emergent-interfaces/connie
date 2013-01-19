@@ -47,6 +47,7 @@ Design a rule from one of the following types.
 
 .page-header
   %h2 Location Rules
+
 %h3 Create a MeetOccupancyRule
 .row-fluid
   .span3
@@ -59,5 +60,20 @@ Design a rule from one of the following types.
       <br/>
       Capacity
       = text_field_tag 'capacity'
+      <br/>
+      = submit_tag 'Create', :class=>'btn'
+
+%h3 Create a ReservesTaggedRule
+.row-fluid
+  .span3
+    = t "rule.reserves_tagged_rule.description"
+  .span9
+    = form_tag event_rules_create_path(@event), :method => :post do |f|
+      = hidden_field_tag 'rule_type', 'ReservesTaggedRule'
+      = hidden_field_tag 'tagged_type', 'space'
+
+      Tag name
+      = text_field_tag 'tag_name'
+
       <br/>
       = submit_tag 'Create', :class=>'btn'

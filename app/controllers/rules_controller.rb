@@ -19,7 +19,10 @@ class RulesController < ApplicationController
 
       when 'MeetOccupancyRule'
         @rule = MeetsOccupancyRule.create(:arrangement => params[:arrangement],
-                                        :capacity => params[:capacity])
+                                          :capacity => params[:capacity])
+      when 'ReservesTaggedRule'
+        @rule = ReservesTaggedRule.create(:tagged_type => params[:tagged_type],
+                                          :tag_name => params[:tag_name])
     end
 
     if @rule and !@rule.new_record?

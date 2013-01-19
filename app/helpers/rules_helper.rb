@@ -72,6 +72,28 @@ module RulesHelper
     msg
   end
 
+  def message_for_reserves_tagged_rule(rule)
+    msg = ""
+
+    tag_name = rule.tag_name
+    tagged_type = rule.tagged_type.capitalize
+
+    msg << "The event requires a reservation of a #{tagged_type} tagged with #{tag_name}."
+
+    case rule.message
+      when :meets_tagged
+        msg << " This rule is satisfied by "
+        msg << rule.met_by.collect {|reservable| link_to reservable.name, reservable }.to_sentence
+        msg << "."
+      when :no_reservation_of_type
+        msg << " No #{tagged_type.pluralize} are reserved."
+      when :no_reservation_with_tag
+        msg << " None of the reserved #{tagged_type.pluralize} meet this."
+    end
+
+    msg
+  end
+
   def rule_status_icon(rule)
     if rule.satisfied?
       rule_satisfied_icon

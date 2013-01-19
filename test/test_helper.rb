@@ -1,39 +1,5 @@
 require 'rubygems'
-require 'spork'
 require 'paperclip/matchers'
-#uncomment the following line to use spork with the debugger
-#require 'spork/ext/ruby-debug'
-
-Spork.prefork do
-  # Loading more in this block will cause your tests to run faster. However,
-  # if you change any configuration or code from libraries loaded here, you'll
-  # need to restart spork for it take effect.
-
-  require 'simplecov'
-  SimpleCov.start
-
-  ENV["RAILS_ENV"] = "test"
-  require File.expand_path('../../config/environment', __FILE__)
-  require 'rails/test_help'
-
-  require 'minitest/reporters'
-  MiniTest::Unit.runner = MiniTest::SuiteRunner.new
-  if ENV["RM_INFO"] || ENV["TEAMCITY_VERSION"]
-    MiniTest::Unit.runner.reporters << MiniTest::Reporters::RubyMineReporter.new
-  elsif ENV['TM_PID']
-    MiniTest::Unit.runner.reporters << MiniTest::Reporters::RubyMateReporter.new
-  else
-    MiniTest::Unit.runner.reporters << MiniTest::Reporters::ProgressReporter.new
-  end
-
-  require 'mocha'
-
-end
-
-Spork.each_run do
-  # This code will be run each time you run your specs.
-
-end
 
 # --- Instructions ---
 # Sort the contents of this file into a Spork.prefork and a Spork.each_run
@@ -71,15 +37,9 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
+require 'minitest/autorun'
 require 'minitest/reporters'
-MiniTest::Unit.runner = MiniTest::SuiteRunner.new
-if ENV["RM_INFO"] || ENV["TEAMCITY_VERSION"]
-  MiniTest::Unit.runner.reporters << MiniTest::Reporters::RubyMineReporter.new
-elsif ENV['TM_PID']
-  MiniTest::Unit.runner.reporters << MiniTest::Reporters::RubyMateReporter.new
-else
-  MiniTest::Unit.runner.reporters << MiniTest::Reporters::ProgressReporter.new
-end
+#MiniTest::Reporters.use!  todo fix this
 
 require 'mocha'
 

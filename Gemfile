@@ -26,13 +26,13 @@ gem 'acts_as_commentable_with_threading'
 
 gem 'acts-as-taggable-on'
 
-group :test do
-  gem 'spork'
-  gem 'spork-minitest'
-  gem 'mocha', :require => false  # Prevent mocha from loading until after test framework
-  gem 'minitest', '3.2.0'         # Allowing minitest to update prevents tests from running
-                                  # See https://github.com/seattlerb/minitest/issues
+group :test, :development do
+  gem 'minitest'
   gem 'minitest-reporters'
+end
+
+group :test do
+  gem 'mocha', :require => false  # Prevent mocha from loading until after test framework
   gem 'shoulda'
   gem 'factory_girl_rails'
   gem 'simplecov', :require => false

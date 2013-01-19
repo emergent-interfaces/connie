@@ -2,6 +2,7 @@
   %h1
     = best_in_place @space, :name
     = render :partial => 'shared/model_tools', :locals => {model: @space, name: @space.name}
+    %small= best_in_place @space, :venue_designated_name, :nil => "(no venue name)"
 
 .row-fluid
   .span9
@@ -10,12 +11,10 @@
       Contained Spaces:
       = @space.children.collect {|child| link_to child.name, child}.join(", ").html_safe
 
-    %h2 Venue Designated Name
-    = best_in_place @space, :venue_designated_name
-
-    %h2 Tags
     - @space.tags.each do |tag|
-      = tag.name
+      = "<span class='label'>#{tag.name}</span>".html_safe
+
+
 
     %h2 Type
     = best_in_place @space, :space_type, :type => :select, :collection => [['room','room'],['building','building'],['area','area'],['floor','floor']]

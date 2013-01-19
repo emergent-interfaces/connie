@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130119005102) do
+ActiveRecord::Schema.define(:version => 20130119152825) do
 
   create_table "addresses", :force => true do |t|
     t.text     "text"
@@ -146,6 +146,14 @@ ActiveRecord::Schema.define(:version => 20130119005102) do
     t.boolean  "inherit_time_span"
     t.integer  "reservee_id"
     t.string   "reservee_type"
+  end
+
+  create_table "reserves_tagged_rules", :force => true do |t|
+    t.string   "tagged_type"
+    t.string   "tag_name"
+    t.string   "context"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "roles", :force => true do |t|
