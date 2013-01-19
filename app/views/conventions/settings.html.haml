@@ -3,6 +3,21 @@
 
 .page-header
   %h2 Periods
+
+.row-fluid
+  %div.span3
+    %h3 Planning
+    - debug @convention.planning_period
+
+  %div.span3
+    %h3 Production
+
+  %div.span3
+    %h3 Open
+
+  %div.span3
+    %h3 Wrap-up
+
 %ul.unstyled
   - @convention.periods.each do |period|
     %li

@@ -7,6 +7,15 @@
  *= require_tree .
 */
 
+body {
+    padding-top: 60px;
+}
+
+.caret {
+    border-top-color: #EEE !important;
+    border-bottom-color: #EEE !important;
+}
+
 /* Best In Place */
 .best_in_place .nil {
     color: gray;

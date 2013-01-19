@@ -15,6 +15,8 @@ class ConventionTest < ActiveSupport::TestCase
   should have_many :periods
   should have_many :auth_requirements
 
+  should have_one :planning_period
+
   should "create AuthRequirements at creation" do
     @convention = FactoryGirl.create(:convention)
     abilities = @convention.auth_requirements.collect{|ar| [ar.action, ar.model]}

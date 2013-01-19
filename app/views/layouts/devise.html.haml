@@ -16,17 +16,10 @@
 
     %link(href="/favicon.ico" rel="shortcut icon")
 
-  %body
-    .navbar(class="navbar navbar-inverse navbar-fixed-top")
-      .navbar-inner
-        .container-fluid
-          = render 'shared/con_filter'
-          = render 'shared/nav'
-          .pull-right= render 'users/status'
-          = render 'shared/search'
-
-    .container-fluid
+  %body.devise
+    .devise-alert
       = render :partial => 'shared/flash', :locals => {:flash => flash}
+    .container-fluid
       .row-fluid
         = yield
 

@@ -20,6 +20,8 @@ class Convention < ActiveRecord::Base
   has_many :periods
   has_many :auth_requirements
 
+  has_one :planning_period, :class_name => 'Period', :conditions => {:special => 'planning'}
+
   searchable :auto_index => true, :auto_remove => true do
     text :name
   end
