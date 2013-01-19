@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120827004959) do
+ActiveRecord::Schema.define(:version => 20130119005102) do
 
   create_table "addresses", :force => true do |t|
     t.text     "text"
@@ -197,33 +197,22 @@ ActiveRecord::Schema.define(:version => 20120827004959) do
     t.boolean  "inherit_address",       :default => true
   end
 
-  create_table "tag_groups", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "description"
-  end
-
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
     t.string   "taggable_type"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       :limit => 128
+    t.datetime "created_at"
   end
 
   add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id"], :name => "index_taggings_on_taggable_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
 
   create_table "tags", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.integer  "tag_group_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string "name"
   end
-
-  add_index "tags", ["tag_group_id"], :name => "index_tags_on_tag_group_id"
 
   create_table "time_spans", :force => true do |t|
     t.datetime "start_time"

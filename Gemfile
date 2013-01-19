@@ -24,6 +24,8 @@ gem 'sunspot_solr'   #pre-packaged Solr distribution for development
 gem 'progress_bar'
 gem 'acts_as_commentable_with_threading'
 
+gem 'acts-as-taggable-on'
+
 group :test do
   gem 'spork'
   gem 'spork-minitest'

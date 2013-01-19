@@ -1,6 +1,7 @@
 require 'icalendar'
 
 class Space < ActiveRecord::Base
+  acts_as_taggable_on :tags   # needs to be called before acts_as_nested set https://github.com/mbleigh/acts-as-taggable-on/issues/229
   acts_as_nested_set
   include ReservableMixin
 

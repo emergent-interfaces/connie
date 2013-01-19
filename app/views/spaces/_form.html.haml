@@ -2,6 +2,7 @@
   = f.inputs do
     = f.input :name
     = f.input :venue_designated_name
+    = f.input :tag_list
     = f.input :parent_id, :as => :select, :collection => nested_set_options(Space, @space) {|i| "#{'-' * i.level} #{i.name}"}
     = f.input :space_type, :as => :select, :collection => %w{area building floor room}
     = f.input :conventions, :as => :check_boxes

@@ -13,6 +13,10 @@
     %h2 Venue Designated Name
     = best_in_place @space, :venue_designated_name
 
+    %h2 Tags
+    - @space.tags.each do |tag|
+      = tag.name
+
     %h2 Type
     = best_in_place @space, :space_type, :type => :select, :collection => [['room','room'],['building','building'],['area','area'],['floor','floor']]
 

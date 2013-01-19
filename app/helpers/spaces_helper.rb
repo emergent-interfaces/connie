@@ -1,4 +1,6 @@
 module SpacesHelper
+  include ActsAsTaggableOn::TagsHelper
+
   def space_breadcrumbs(space)
     trail = "<ul class='breadcrumb'>"
 
