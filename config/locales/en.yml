@@ -76,3 +76,6 @@ en:
       description:
         Checks that the event reservees a space that can provide enough seating
         or standing capacity for the expected number of attendees.
+    reserves_tagged_space_rule:
+      description:
+        Checks that the event reserves a space with a specific tag.

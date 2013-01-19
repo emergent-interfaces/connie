@@ -66,7 +66,7 @@ Design a rule from one of the following types.
 %h3 Create a ReservesTaggedRule
 .row-fluid
   .span3
-    = t "rule.reserves_tagged_rule.description"
+    = t "rule.reserves_tagged_space_rule.description"
   .span9
     = form_tag event_rules_create_path(@event), :method => :post do |f|
       = hidden_field_tag 'rule_type', 'ReservesTaggedRule'
