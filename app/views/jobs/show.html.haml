@@ -6,5 +6,17 @@
 %h2 Description
 = best_in_place @job, :description, :type => :textarea, :nil => "<span class=\"nil\">#{t(:please_set_description)}</span>"
 
+%h2 Assignees
+%ul
+  - @job.assignees.each do |assignee|
+    %li
+      = link_to assignee.profile.name, assignee.profile
+      = link_to delete_link_text, [@job, assignee], :method => :delete
+
+- if @convention
+  = link_to add_link_text('Add assignee'), new_convention_job_assignee_path(@convention, @job), :class=>'btn'
+  - else
+  = link_to add_link_text('Add assignee'), new_job_assignee_path(@job), :class=>'btn'
+
 %h2 Comments
 = render :partial => 'comments/listing', :locals => {:commentable => @job}

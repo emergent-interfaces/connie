@@ -4,6 +4,8 @@
     %small= "Listing of jobs for #{default_convention_name}"
     = link_to add_link_text("New Job"), session_filter(new_job_path), {class:'btn pull-right'}
 
-= table(@jobs,["Name"]) do |job,klass|
+= table(@jobs,["Name", "Assignees"]) do |job,klass|
   %tr(class=klass)
     %td= link_to job.name, job
+    %td
+      = responsible_for job

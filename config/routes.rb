@@ -22,7 +22,9 @@ Connie::Application.routes.draw do
 
     resources :events
     resources :spaces
-    resources :jobs
+    resources :jobs do
+      resources :assignees
+    end
     resources :schedules
     resources :periods
     resources :auth_requirements
@@ -55,6 +57,7 @@ Connie::Application.routes.draw do
   resources :roles
   resources :jobs do
     resources :comments
+    resources :assignees
   end
 
 

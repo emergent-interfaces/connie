@@ -8,6 +8,9 @@ class Profile < ActiveRecord::Base
 
   has_one :user
 
+  has_many :assignees
+  has_many :jobs, :through => :assignees
+
   searchable :auto_index => true, :auto_remove => true do
     text :name
   end
