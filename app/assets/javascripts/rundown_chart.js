@@ -11,7 +11,7 @@ $(document).ready(function() {
     _.each(chart, function(schedule) {
         $.getJSON($(schedule).data('url'),
             function(data) {
-                console.log(data);
+                //console.log(data);
                 draw_rundown_chart(schedule,data);
             }
         );

@@ -10,7 +10,7 @@
 
 .tab-content
   #summary.tab-pane(class="active")
-    = render :partial => 'schedules/rundown_chart', :locals => {:schedule => @schedule}
+    = render :partial => 'schedules/rundown_chart', :locals => {:convention => @convention, :schedule => @schedule}
 
   #rundown.tab-pane
     = render "rundown"
