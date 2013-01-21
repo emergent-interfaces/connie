@@ -6,7 +6,7 @@ function google_charts_callback() {
 }
 
 $(document).ready(function() {
-    var chart = $('.rundown_chart');
+    var chart = $('.running_events_chart');
 
     _.each(chart, function(schedule) {
         $.getJSON($(schedule).data('url'),
