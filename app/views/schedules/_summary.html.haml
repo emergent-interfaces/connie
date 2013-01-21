@@ -1,3 +1,34 @@
-= content_tag "div", class: "running_events_chart", id: "rundown_chart_#{schedule.id}",
-              data: {url: "#{convention_schedule_url(convention, schedule)}.json"} do
-  Loading running events chart...
+- if @schedule.public?
+  .row-fluid
+    .span12
+      .alert
+        = "<i class='icon-globe'></i> This schedule is publicly accessible.".html_safe
+
+.row-fluid
+  .span3
+    %h2 Time Span
+    = condensed_time_span(schedule.time_span)
+
+  .span3
+    %h2 Spaces
+    - if schedule.spaces.any?
+      = schedule.spaces.collect{|r| link_to r.name, r}.join(", ").html_safe
+      - else
+      No spaces in this schedule
+
+  .span3
+    %h2 Profiles
+    - if schedule.profiles.any?
+      = schedule.profiles.collect{|r| link_to r.name, r}.join(", ").html_safe
+      - else
+      No profiles in this schedule
+
+  .span3
+    = qr_image_for(convention_schedule_url(@convention, @schedule))
+
+.row-fluid
+  .span12
+    %h2 Analytics
+    = content_tag "div", class: "running_events_chart", id: "rundown_chart_#{schedule.id}",
+                  data: {url: "#{convention_schedule_url(convention, schedule)}.json"} do
+      Loading running events chart...
