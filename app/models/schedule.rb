@@ -48,7 +48,12 @@ class Schedule < ActiveRecord::Base
 
   def critical_times
     critical_times = reservations.collect{|r| r.time_span.start_time} + reservations.collect{|r| r.time_span.end_time}
-    critical_times.uniq!.sort!
+    critical_times.uniq!
+    if critical_times.any?
+      critical_times.sort!
+    else
+      []
+    end
   end
 
   def happenings_at(time, type)

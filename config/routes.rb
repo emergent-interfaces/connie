@@ -60,7 +60,6 @@ Connie::Application.routes.draw do
     resources :assignees
   end
 
-
   resources :users do
     resource :profile
   end

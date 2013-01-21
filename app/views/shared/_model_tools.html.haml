@@ -1,3 +1,7 @@
 .model_tools
-  = link_to edit_link_text("edit"), ['edit', model], :class => 'btn'
-  = link_to delete_link_text("delete"), model, :method => :delete, :confirm => "Are you sure you want to delete #{name}?", :class => 'btn btn-danger'
+  - if @convention and model.class != Convention
+    = link_to edit_link_text("edit"), ['edit', @convention, model], :class => 'btn'
+    = link_to delete_link_text("delete"), [@convention, model], :method => :delete, :confirm => "Are you sure you want to delete #{name}?", :class => 'btn btn-danger'
+    - else
+    = link_to edit_link_text("edit"), ['edit', model], :class => 'btn'
+    = link_to delete_link_text("delete"), model, :method => :delete, :confirm => "Are you sure you want to delete #{name}?", :class => 'btn btn-danger'

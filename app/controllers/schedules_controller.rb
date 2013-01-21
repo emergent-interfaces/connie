@@ -25,6 +25,7 @@ class SchedulesController < ApplicationController
   end
 
   def show
+    @convention = Convention.find(params[:convention_id])
     @schedule = Schedule.find(params[:id])
     authenticate_user! unless @schedule.public?
 
