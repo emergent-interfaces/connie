@@ -113,3 +113,9 @@ a.reservation, a.reservation:visited {
 .reservation .name {
     padding: 4px 0px;
 }
+
+
+/* Styles for google charts */
+.running_events_chart {
+    overflow: hidden;
+}
