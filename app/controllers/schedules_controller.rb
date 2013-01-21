@@ -1,5 +1,7 @@
 class SchedulesController < ApplicationController
   respond_to :html, :json
+  skip_before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:show]
 
   def index
 
@@ -24,6 +26,8 @@ class SchedulesController < ApplicationController
 
   def show
     @schedule = Schedule.find(params[:id])
+    authenticate_user! unless @schedule.public?
+
     respond_with(@schedule)
   end
 

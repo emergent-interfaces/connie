@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130120133711) do
+ActiveRecord::Schema.define(:version => 20130120234956) do
 
   create_table "addresses", :force => true do |t|
     t.text     "text"
@@ -192,9 +192,10 @@ ActiveRecord::Schema.define(:version => 20130120133711) do
   create_table "schedules", :force => true do |t|
     t.string   "name"
     t.integer  "time_span_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.integer  "convention_id"
+    t.boolean  "public",        :default => false
   end
 
   create_table "spaces", :force => true do |t|

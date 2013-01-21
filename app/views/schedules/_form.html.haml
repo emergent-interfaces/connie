@@ -1,6 +1,7 @@
 = semantic_form_for [@convention, @schedule] do |f|
   = f.inputs do
     = f.input :name
+    = f.input :public, :as => :radio
 
   = f.inputs :title => "Time Span" do
     = f.semantic_fields_for :time_span do |time_span|
