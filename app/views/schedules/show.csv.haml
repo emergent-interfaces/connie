@@ -1,0 +1,17 @@
+Name,Location,Start Time,End Time,Description,Cost,Date,Track
+- @schedule.reservations.select{|r| r.reservable.class == Space and r.reservee.class == Event}.each do |reservation|
+  - space = reservation.reservable
+  - event = reservation.reservee
+
+  - data = [event.name,
+            space.name,
+            l(event.time_span.start_time, format: "%I:%M:%S %p"),
+            l(event.time_span.end_time, format: "%I:%M:%S %p"),
+            event.description,
+            "0",
+            l(event.time_span.start_time, format: "%m/%d/%Y"),
+            ""]
+  - data = data.collect{|item| '"'.html_safe + raw(item) + '"'.html_safe}
+
+  - puts data
+  = data.join(",").html_safe

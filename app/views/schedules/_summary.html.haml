@@ -25,6 +25,8 @@
 
   .span3
     = qr_image_for(convention_schedule_url(@convention, @schedule))
+    = image_tag asset_path 'bloodhound.png'
+    = link_to "Bloodhound CSV", convention_schedule_path(@convention, @schedule, :format => :csv)
 
 .row-fluid
   .span12
