@@ -19,13 +19,9 @@ class ConventionTest < ActiveSupport::TestCase
 
   should "create AuthRequirements at creation" do
     @convention = FactoryGirl.create(:convention)
-    abilities = @convention.auth_requirements.collect{|ar| [ar.action, ar.model]}
-    ars = [["read", "Convention"],["update", "Convention"],
-           ["read", "Event"],["update", "Event"],["create", "Event"],["destroy", "Event"],
-           ["read", "Space"],["update", "Space"],["create", "Space"],["destroy", "Space"],
-           ["read", "Profile"],["update", "Profile"],["create", "Profile"],["destroy", "Profile"],
-           ["read", "Job"],["update", "Job"],["create", "Job"],["destroy", "Job"]
-          ]
-    assert_equal ars, abilities
+    @convention.reload
+    abilities = @convention.auth_requirements.collect{|ar| ar.action}
+    actions = ["read", "manage"]
+    assert_equal actions, abilities
   end
 end

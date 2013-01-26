@@ -32,16 +32,15 @@
 %p= t("convention_authorization.description")
 %p= t("formtastic.hints.auth_requirement.requirement")
 
-- @convention.auth_requirements.sort_by(&:created_at).group_by(&:model).each do |model, ars|
-  %table.table(class='auth_requirements')
-    %thead
+%table.table(class='auth_requirements')
+  %thead
+    %tr
+      %th(width="200px")= "Convention Actions"
+      %th(width="*") Authorized Roles
+      %th(width="200px")
+  %tbody
+    - @convention.auth_requirements.sort_by(&:created_at).each do |ar|
       %tr
-        %th(width="200px")= "#{model.capitalize} Actions"
-        %th(width="*") Authorized Roles
-        %th(width="200px")
-    %tbody
-      - ars.sort_by(&:created_at).each do |ar|
-        %tr
-          %td= ar.action
-          %td= best_in_place [@convention, ar], :requirement, :nil => t("no_requirement_set")
-          %td= link_to edit_link_text("edit"), edit_convention_auth_requirement_path(@convention,ar)
+        %td= ar.action
+        %td= best_in_place [@convention, ar], :requirement, :nil => t("no_requirement_set")
+        %td= link_to edit_link_text("edit"), edit_convention_auth_requirement_path(@convention,ar)

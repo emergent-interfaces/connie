@@ -5,7 +5,6 @@ class AuthRequirement < ActiveRecord::Base
   belongs_to :convention
   validates_presence_of :convention
   validates_presence_of :action
-  validates_presence_of :model
 
   def requirements
     req_array = []

@@ -13,8 +13,7 @@ class AbilityTest < ActiveSupport::TestCase
       @con2 = FactoryGirl.create(:convention)
       @profile.roles.create(:department => "concert", :name => "staff", :convention => @con1)
       @con1.auth_requirements.create(:action => "clean",
-                                           :model => "Event",
-                                           :requirement => "concert:staff")
+                                     :requirement => "concert:staff")
 
       ability = Ability.new(@user)
       @event1 = Event.new(:conventions => [@con1])
@@ -36,21 +35,41 @@ class AbilityTest < ActiveSupport::TestCase
         @con = FactoryGirl.create(:convention)
       end
 
-      should "require Event read to read event schedule" do
+      should "require convention read to read an event" do
+        @event = FactoryGirl.create(:event, :conventions => [@con])
+        ability = Ability.new(@user)
+        assert ability.cannot?(:read, @event)
+
+        @con.auth_requirements.create(:action => "read", :requirement => "*:*")
+        @profile.roles.create(:department => "any", :name => "any", :convention => @con)
+        ability = Ability.new(@user)
+        assert ability.can?(:read, @event)
+      end
+
+      should "require convention read to manage events" do
+        @event = FactoryGirl.create(:event, :conventions => [@con])
+        ability = Ability.new(@user)
+        assert ability.cannot?(:manage, @event)
+
+        @con.auth_requirements.create(:action => "manage", :requirement => "*:*")
+        @profile.roles.create(:department => "any", :name => "any", :convention => @con)
+        ability = Ability.new(@user)
+        assert ability.can?(:manage, @event)
+      end
+
+      should "require convention read to read event schedule" do
         @event = FactoryGirl.create(:event, :conventions => [@con])
 
         ability = Ability.new(@user)
         assert ability.cannot?(:read, @event.create_time_span)
 
-        @con.auth_requirements.create(:action => "read",
-                                      :model => "Event",
-                                      :requirement => "*:*")
+        @con.auth_requirements.create(:action => "read", :requirement => "*:*")
         @profile.roles.create(:department => "any", :name => "any", :convention => @con)
         ability = Ability.new(@user)
         assert ability.can?(:read, @event.create_time_span)
       end
 
-      should "require Event update to modify event schedule" do
+      should "require convention manage to modify event schedule" do
         @event = FactoryGirl.create(:event, :conventions => [@con])
 
         ability = Ability.new(@user)
@@ -58,8 +77,7 @@ class AbilityTest < ActiveSupport::TestCase
         assert ability.cannot?(:update, @event.create_time_span)
         assert ability.cannot?(:destroy, @event.create_time_span)
 
-        @con.auth_requirements.create(:action => "update",
-                                      :model => "Event",
+        @con.auth_requirements.create(:action => "manage",
                                       :requirement => "*:*")
         @profile.roles.create(:department => "any", :name => "any", :convention => @con)
         ability = Ability.new(@user)
@@ -69,21 +87,20 @@ class AbilityTest < ActiveSupport::TestCase
       end
 
 
-      should "require Event read to read event reservations" do
+      should "require convention read to read event reservations" do
         @event = FactoryGirl.create(:event, :conventions => [@con])
 
         ability = Ability.new(@user)
         assert ability.cannot?(:read, @event.reservations.create)
 
         @con.auth_requirements.create(:action => "read",
-                                      :model => "Event",
                                       :requirement => "*:*")
         @profile.roles.create(:department => "any", :name => "any", :convention => @con)
         ability = Ability.new(@user)
         assert ability.can?(:read, @event.reservations.create)
       end
 
-      should "require Event update to modify reservation" do
+      should "require convention manage to modify reservation" do
         @event = FactoryGirl.create(:event, :conventions => [@con])
 
         ability = Ability.new(@user)
@@ -91,8 +108,7 @@ class AbilityTest < ActiveSupport::TestCase
         assert ability.cannot?(:update, @event.reservations.create)
         assert ability.cannot?(:destroy, @event.reservations.create)
 
-        @con.auth_requirements.create(:action => "update",
-                                      :model => "Event",
+        @con.auth_requirements.create(:action => "manage",
                                       :requirement => "*:*")
         @profile.roles.create(:department => "any", :name => "any", :convention => @con)
         ability = Ability.new(@user)

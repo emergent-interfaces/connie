@@ -38,7 +38,7 @@ def load_convention(file_name)
   if data["convention"]["auth_requirements"]
     puts "Setting AuthRequirements"
     data["convention"]["auth_requirements"].each do |auth_req|
-      ar = convention.auth_requirements.find_by_model_and_action(auth_req["model"],auth_req["action"])
+      ar = convention.auth_requirements.find_by_action!(auth_req["action"])
       ar.requirement = auth_req["requirement"]
       ar.save!
       puts "- #{ar.model}, #{ar.action}, #{ar.requirement}"
