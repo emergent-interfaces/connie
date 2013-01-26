@@ -4,27 +4,15 @@
 .page-header
   %h2 Periods
 
-.row-fluid
-  %div.span3
-    %h3 Planning
-    - debug @convention.planning_period
-
-  %div.span3
-    %h3 Production
-
-  %div.span3
-    %h3 Open
-
-  %div.span3
-    %h3 Wrap-up
-
 %ul.unstyled
   - @convention.periods.each do |period|
     %li
       = period.name
+      = special_period_labels_for period
       = render :partial=>'time_spans/inline', :locals=>{:time_span => period.time_span, :text_only => true}
       = link_to edit_link_text, edit_convention_period_path(@convention, period)
       = link_to delete_link_text, [@convention, period], :method => :delete, :confirm => "Are you sure you want to delete #{period.name}?"
+
 = link_to "Create new period", new_convention_period_path(@convention), :class=>'btn'
 
 .page-header

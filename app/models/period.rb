@@ -9,6 +9,5 @@ class Period < ActiveRecord::Base
 
   validates_presence_of :name
 
-  SPECIAL_PERIODS = ["planning", "production", "running", "wrap"]
-  validates_inclusion_of :special, :in => [nil, "", "planning", "production", "running", "wrap"]
+  SPECIAL_PERIODS = ["planning", "production", "open", "wrap-up"]
 end

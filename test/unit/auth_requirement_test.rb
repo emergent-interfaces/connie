@@ -4,7 +4,6 @@ class AuthRequirementTest < ActiveSupport::TestCase
   should belong_to :convention
   should validate_presence_of :convention
   should validate_presence_of :action
-  should validate_presence_of :model
 
   context "with a convention" do
     setup do

@@ -47,6 +47,13 @@ en:
           These should match roles you have assigned to profiles for this convention.
           The "*" character can be used to match all (or none-specified).  The requirement
           "*:*" matches all roles in all departments in the convention.
+      period:
+        name:
+          "This name is used to uniquely identify the period.  Names containing the
+          following keywords are used by the planning system to understand the convention:
+          planning, production, open, and wrap-up.  You should have at least one of
+          each of these periods in your convention."
+
 
   rule:
     be_scheduled_rule:

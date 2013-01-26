@@ -17,8 +17,6 @@ class Convention < ActiveRecord::Base
   has_many :periods
   has_many :auth_requirements
 
-  has_one :planning_period, :class_name => 'Period', :conditions => {:special => 'planning'}
-
   searchable :auto_index => true, :auto_remove => true do
     text :name
   end
@@ -27,5 +25,13 @@ class Convention < ActiveRecord::Base
   def add_auth_requirements
     auth_requirements.create(:action => "read")
     auth_requirements.create(:action => "manage")
+  end
+
+  alias old_periods periods
+
+  def periods(keyword=nil)
+    return old_periods if keyword == nil
+
+    old_periods.select{|period| period.name.underscore.include? keyword.to_s}
   end
 end
