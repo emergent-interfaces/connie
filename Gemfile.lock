@@ -34,12 +34,11 @@ GEM
       activerecord (>= 3.0)
       activesupport (~> 3.0)
       awesome_nested_set (>= 2.0)
-    ansi (1.4.3)
     arel (3.0.2)
     awesome_nested_set (2.1.5)
       activerecord (>= 3.0.0)
     bcrypt-ruby (3.0.1)
-    best_in_place (2.0.2)
+    best_in_place (2.0.3)
       jquery-rails
       rails (~> 3.1)
     bourne (1.1.2)
@@ -66,10 +65,10 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    factory_girl (4.1.0)
+    factory_girl (4.2.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.1.0)
-      factory_girl (~> 4.1.0)
+    factory_girl_rails (4.2.0)
+      factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
     fattr (2.2.1)
     formtastic (2.2.1)
@@ -78,13 +77,12 @@ GEM
       formtastic (~> 2.2)
       formtastic-bootstrap
     haml (3.1.7)
-    hashie (1.2.0)
     highline (1.6.15)
     hike (1.2.1)
     i18n (0.6.1)
     icalendar (1.2.1)
     journey (1.0.4)
-    jquery-rails (2.1.4)
+    jquery-rails (2.2.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.7.6)
@@ -100,12 +98,6 @@ GEM
       treetop (~> 1.4.8)
     metaclass (0.0.1)
     mime-types (1.19)
-    minitest (4.4.0)
-    minitest-reporters (0.14.3)
-      ansi
-      builder
-      minitest (>= 2.12, < 5.0)
-      powerbar
     mocha (0.10.5)
       metaclass (~> 0.0.1)
     multi_json (1.5.0)
@@ -122,9 +114,6 @@ GEM
       mime-types
     pg (0.14.1)
     polyglot (0.3.3)
-    powerbar (1.0.11)
-      ansi (~> 1.4.0)
-      hashie (>= 1.1.0)
     pr_geohash (1.0.0)
     progress_bar (0.4.0)
       highline (~> 1.6.1)
@@ -185,10 +174,11 @@ GEM
       nokogiri
       sunspot (= 1.3.3)
     sunspot_solr (1.3.3)
+    test-unit (2.5.4)
     therubyracer (0.11.3)
       libv8 (~> 3.11.8.12)
       ref
-    thor (0.16.0)
+    thor (0.17.0)
     tilt (1.3.3)
     treetop (1.4.12)
       polyglot
@@ -224,8 +214,6 @@ DEPENDENCIES
   icalendar
   jquery-rails
   less-rails
-  minitest
-  minitest-reporters
   mocha
   paperclip
   pg
@@ -236,6 +224,7 @@ DEPENDENCIES
   simplecov
   sunspot_rails
   sunspot_solr
+  test-unit
   therubyracer
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)

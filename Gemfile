@@ -27,13 +27,14 @@ gem 'acts_as_commentable_with_threading'
 gem 'acts-as-taggable-on'
 
 group :test, :development do
-  gem 'minitest'
-  gem 'minitest-reporters'
+  #gem 'minitest'
+  #gem 'minitest-reporters'
 end
 
 group :test do
+  gem 'test-unit'
   gem 'mocha', :require => false  # Prevent mocha from loading until after test framework
-  gem 'shoulda'
+  gem 'shoulda', :require => false # http://devnet.jetbrains.net/message/5472429;jsessionid=A266A074258B1A6871811D3AB361F202
   gem 'factory_girl_rails'
   gem 'simplecov', :require => false
 end
