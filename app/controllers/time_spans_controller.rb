@@ -6,10 +6,6 @@ class TimeSpansController < ApplicationController
 
   def create
     @event = Event.find(params[:event_id])
-
-    params[:time_span][:start_time] = Chronic.parse(params[:time_span][:start_time])
-    params[:time_span][:end_time] = Chronic.parse(params[:time_span][:end_time])
-
     @time_span = @event.build_time_span(params[:time_span])
 
     if @time_span.save

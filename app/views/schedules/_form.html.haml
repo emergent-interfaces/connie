@@ -5,9 +5,7 @@
 
   = f.inputs :title => "Time Span" do
     = f.semantic_fields_for :time_span do |time_span|
-      = time_span.input :start_time, :as => :string
-      = time_span.input :end_time, :as => :string
-      = time_span.input :confidence, :as => :hidden, :input_html => {:value => "firm"}
+      = render :partial => 'time_spans/fields', :locals => {:form => time_span, :time_span => time_span.object}
 
   = f.inputs :title => "Reservables" do
     = f.input :spaces, :as => :check_boxes

@@ -1,10 +1,6 @@
 = semantic_form_for [@event, @time_span], :url => event_time_span_path(@event) do |f|
   = f.inputs do
-    - start_val = @time_span.start_time ? l(@time_span.start_time) : @time_span.start_time
-    - end_val = @time_span.end_time ? l(@time_span.end_time) : @time_span.end_time
-    = f.input :start_time, :as => :string, :input_html => {:value => start_val}
-    = f.input :end_time, :as => :string, :input_html => {:value => end_val}
-    = f.input :confidence, :as => :select, :collection => TimeSpan::CONFIDENCES
+    = render :partial => 'time_spans/fields', :locals => {:form => f, :time_span => @time_span}
 
   = f.actions do
     = f.action :submit, :as => :button

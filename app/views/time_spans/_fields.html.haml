@@ -1,0 +1,7 @@
+- start_val = time_span.start_time ? l(time_span.start_time) : ""
+- end_val = time_span.end_time ? l(time_span.end_time) : ""
+-#= form.input :start_time, :as => :string, :input_html => {:value => start_val}
+-#= form.input :end_time, :as => :string, :input_html => {:value => end_val}
+= form.input :natural_start_time, :label => "Start time"
+= form.input :natural_end_time, :label => "End time"
+= form.input :confidence, :as => :select, :collection => TimeSpan::CONFIDENCES
